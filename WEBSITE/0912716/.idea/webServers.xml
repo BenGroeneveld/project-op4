@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="615bc710-617f-4d74-ac70-24ecd12ca2ca" name="hr" url="http://stud.hr.nl/0912716/">
+        <fileTransfer host="ftp.hr.nl" port="21" rootFolder="/USERS16/6/0912716" password="dfe8dfc9dfcedf87dfc4dfd8df87df9b" username="0912716.cmi">
+          <advancedOptions>
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" showHiddenFiles="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
