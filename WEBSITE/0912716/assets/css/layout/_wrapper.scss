@@ -104,9 +104,10 @@
     position: relative;
     @include wrapper-edges-color(_palette(default-color));
 
-    #preBlock01
+    pre, #preBlock1
     {
         padding: 0;
+        display: none;
     }
 
     &:before, &:after {
@@ -232,9 +233,10 @@
                          }
                      }
                  }
-
-                 #iframe1
+                 iframe
                  {
+                     height:600px;
+                     width:100%;
                      display: none;
                  }
              }

@@ -2791,7 +2791,7 @@ Prism.languages.j = {
 };
 (function(Prism) {
 	// TODO:
-	// - Add CSS highlighting inside <style> tags
+	// - Add css highlighting inside <style> tags
 	// - Add support for multi-line code blocks
 	// - Add support for interpolation #{} and !{}
 	// - Add support for tag interpolation #[]
@@ -5028,7 +5028,7 @@ Prism.languages.scss = Prism.languages.extend('css', {
 	},
 	// url, compassified
 	'url': /(?:[-a-z]+-)*url(?=\()/i,
-	// CSS selector regex is not appropriate for Sass
+	// css selector regex is not appropriate for Sass
 	// since there can be lot more things (var, @ directive, nesting..)
 	// a selector must start at the end of a property or after a brace (end of other rules or nesting)
 	// it can contain some characters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable
@@ -5660,7 +5660,7 @@ Prism.languages.tcl = {
 					}
 				},
 
-				// CSS(Cascading Style Sheet)
+				// css(Cascading Style Sheet)
 				'acronym': {
 					pattern: /\b[A-Z\d]+\([^)]+\)/,
 					inside: {

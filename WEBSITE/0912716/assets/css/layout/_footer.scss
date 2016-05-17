@@ -26,7 +26,7 @@
 
         .contact {
             //width: calc(33.33% - #{_size(section-spacing, large) * 0.5});
-            width: calc(100% / 3);
+            width: calc(100% / 4);
         }
 
         .copyright {
@@ -112,8 +112,9 @@
                 margin: 0 0 (_size(element-margin) * 1.5) 0;
             }
 
-            .contact {
-                margin: 0 0 (_size(element-margin) * 1.5) 0;
+            .contact
+            {
+                width: 100%;
             }
         }
     }

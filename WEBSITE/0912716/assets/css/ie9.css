@@ -6,7 +6,7 @@
 /* Basic */
 body {
   background-color: #2B2B2B;
-  background-image: url("http://stud.hr.nl/0912716/images/bg3.jpg");
+  background-image: url("/0912716/images/bg3.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center; }

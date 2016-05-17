@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Ons Project</title>
+      <link href="css/main.css" rel="stylesheet">
+   </head>
+   <body>
+      <div id="main">
+         <header id="page_header">
+            <nav>
+               <ul>
+
+               <li><a href='index.html'>Home</a></li>
+               <li><a href='Bouwplan.html'>Bouwplan</a></li>
+               <li><a href='Documentatie.html'>Documentatie</a></li>
+               <li><a href='Broncode.html' class='currentPage'>Broncode</a></li>
+               <li><a href='Contract.html'>Contract</a></li>
+               <li><a href='Fotos.html'>Foto's</a></li>
+               <li><a href='Filmpje.html'>Filmpje</a></li>
+
+               </ul>
+            </nav>
+         </header>
+         <h1>Broncode</h1>
+         <div class="codebox"><pre class="arduinoCode">
+#include &lt;<span style="color: #FF0000;">Keypad</span>.h&gt;
+
+<span style="color: #FF0000;">double</span> noot_C4 = 261.63, noot_D4 = 293.66, noot_E4 = 329.63, noot_C5 = 523.25;
+
+<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">long</span> interval = 1000, timer, kinderslotTimer;
+<span style="color: #FF5500;">boolean</span> isAan = <span style="color: #FF0000;">true</span>, isKinderslotAan = <span style="color: #FF0000;">false</span>;
+
+<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> i, digitSelected = 0;
+<span style="color: #FF0000;">const</span> <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> dataPin = 2, clockPin = 3, latchPin = 4, buzzer = 12;
+<span style="color: #FF0000;">const</span> <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> ledBrightness[] = { 0, 1, 2, 4, 8, 16, 32, 64, 128, 255 };
+<span style="color: #FF0000;">const</span> <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> led[] = { 9, 10, 6, 5 };
+
+<span style="color: #FF5500;">char</span> holdKey;
+<span style="color: #FF0000;">const</span> <span style="color: #FF5500;">byte</span> ROWS = 2, COLS = 4;
+<span style="color: #FF5500;">byte</span> rowPins[ROWS] = { 7, 8 };
+<span style="color: #FF5500;">byte</span> colPins[COLS] = { A0, A1, A2, A3 }; 
+<span style="color: #FF5500;">char</span> keys[ROWS][COLS] =
+{
+   { <span style="color: #288AB5;">'0'</span>, <span style="color: #288AB5;">'1'</span>, <span style="color: #288AB5;">'2'</span>, <span style="color: #288AB5;">'3'</span> },
+   { <span style="color: #288AB5;">'4'</span>, <span style="color: #288AB5;">'5'</span>, <span style="color: #288AB5;">'6'</span>, <span style="color: #288AB5;">'7'</span> }
+};
+<span style="color: #FF0000;">Keypad</span> <span style="color: #CC0000;"><b>keypad</b></span> = <span style="color: #FF0000;">Keypad</span>(<span style="color: #FF5500;">makeKeymap</span>(keys), rowPins, colPins, ROWS, COLS);
+
+<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> digit[] = { 0, 0, 0, 0 };
+<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> dpValue[4] = { 128, 0, 0, 0 };
+<span style="color: #FF0000;">const</span> <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> numberTable[10] =
+{
+   0x3F, <span style="color: #92B532;">// 0</span>
+   0x06, <span style="color: #92B532;">// 1</span>
+   0x5B, <span style="color: #92B532;">// 2</span>
+   0x4F, <span style="color: #92B532;">// 3</span>
+   0x66, <span style="color: #92B532;">// 4</span>
+   0x6D, <span style="color: #92B532;">// 5</span>
+   0x7D, <span style="color: #92B532;">// 6</span>
+   0x07, <span style="color: #92B532;">// 7</span>
+   0x7F, <span style="color: #92B532;">// 8</span>
+   0x6F, <span style="color: #92B532;">// 9</span>
+};
+
+<span style="color: #FF0000;">void</span> <span style="color: #CC0000;"><b>setup</b></span>()
+{
+   <span style="color: #FF5500;">pinMode</span>(buzzer, <span style="color: #288AB5;">OUTPUT</span>);
+   <span style="color: #FF5500;">pinMode</span>(dataPin, <span style="color: #288AB5;">OUTPUT</span>);
+   <span style="color: #FF5500;">pinMode</span>(clockPin, <span style="color: #288AB5;">OUTPUT</span>);
+   <span style="color: #FF5500;">pinMode</span>(latchPin, <span style="color: #288AB5;">OUTPUT</span>);
+   <span style="color: #CC0000;"><b>Serial</b></span>.<span style="color: #FF5500;">begin</span>(9600);
+}
+
+<span style="color: #FF0000;">void</span> updateDigits(<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> number, <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> dpDigit, <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> digitNumber)
+{
+   <span style="color: #FF5500;">digitalWrite</span>(latchPin, <span style="color: #288AB5;">LOW</span>);
+   <span style="color: #FF5500;">shiftOut</span>(dataPin, clockPin, <span style="color: #288AB5;">MSBFIRST</span>, (0x100 + digitNumber));
+   <span style="color: #FF5500;">shiftOut</span>(dataPin, clockPin, <span style="color: #288AB5;">MSBFIRST</span>, ~(number + dpDigit));
+   <span style="color: #FF5500;">digitalWrite</span>(latchPin, <span style="color: #288AB5;">HIGH</span>);
+   <span style="color: #FF5500;">delay</span>(1);
+}
+
+<span style="color: #FF0000;">void</span> updateLeds(<span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> x, <span style="color: #FF0000;">unsigned</span> <span style="color: #FF5500;">int</span> ledNumber)
+{
+   <span style="color: #FF5500;">analogWrite</span>(led[ledNumber], ledBrightness[x]);
+}
+
+<span style="color: #FF0000;">void</span> toon(<span style="color: #FF5500;">int</span> noot, <span style="color: #FF5500;">int</span> duur)
+{
+   <span style="color: #FF5500;">tone</span>(buzzer, noot, duur);
+}
+
+<span style="color: #FF0000;">void</span> <span style="color: #CC0000;"><b>loop</b></span>()
+{
+   <span style="color: #FF5500;">char</span> key = <span style="color: #CC0000;"><b>keypad</b></span>.<span style="color: #FF5500;">getKey</span>();
+   <span style="color: #FF0000;">if</span>(key)
+   {
+      holdKey = key;
+   }
+
+   <span style="color: #FF0000;">if</span>(isAan)
+   {
+      <span style="color: #FF0000;">if</span>(!isKinderslotAan)
+      {
+         <span style="color: #FF0000;">switch</span>(key)
+         {
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'0'</span>:
+            {
+               digitSelected = 0;
+               toon(noot_D4, 100);
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'1'</span>:
+            {
+               digitSelected = 1;
+               toon(noot_D4, 100);
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'2'</span>:
+            {
+               digitSelected = 2;
+               toon(noot_D4, 100);
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'3'</span>:
+            {
+               digitSelected = 3;
+               toon(noot_D4, 100);
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'4'</span>:
+            {
+               <span style="color: #FF0000;">if</span>(digit[digitSelected] &gt; 0)
+               {
+                  digit[digitSelected]--;
+                  toon(noot_E4, 100);
+               }
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'5'</span>:
+            {
+               <span style="color: #FF0000;">if</span>(digit[digitSelected] &lt; 9)
+               {
+                  digit[digitSelected]++;
+                  toon(noot_C5, 100);
+               }
+               <span style="color: #FF0000;">break</span>;
+            }
+            <span style="color: #FF0000;">case</span> <span style="color: #288AB5;">'7'</span>:
+            {
+               isAan = <span style="color: #FF0000;">false</span>;
+               toon(noot_C4, 500);
+               updateLeds(0, 0);
+               updateLeds(0, 1);
+               updateLeds(0, 2);
+               updateLeds(0, 3);
+
+               timer = <span style="color: #FF5500;">millis</span>();
+               <span style="color: #FF0000;">while</span>(<span style="color: #FF5500;">millis</span>() - timer &lt;= interval)
+               {
+                  updateDigits(0x3F, 0, 1);
+                  updateDigits(0x71, 0, 2);
+                  updateDigits(0x71, 128, 4);
+                  updateDigits(0x00, 0, 8);
+               }
+               <span style="color: #FF0000;">break</span>;
+            }
+         }
+         <span style="color: #FF0000;">for</span>(i = 0; i &lt; 4; i++)
+         {
+            <span style="color: #FF0000;">if</span>(digitSelected == i)
+            {
+               dpValue[i] = 128;
+            }
+            <span style="color: #FF0000;">else</span>
+            {
+               dpValue[i] = 0;
+            }
+         }
+
+         updateDigits(numberTable[digit[0]], dpValue[0], 1);
+         updateDigits(numberTable[digit[1]], dpValue[1], 2);
+         updateDigits(numberTable[digit[2]], dpValue[2], 4);
+         updateDigits(numberTable[digit[3]], dpValue[3], 8);
+         
+         updateLeds(digit[0], 0);
+         updateLeds(digit[1], 1);
+         updateLeds(digit[2], 2);
+         updateLeds(digit[3], 3);
+      }
+
+      <span style="color: #FF0000;">if</span>(<span style="color: #CC0000;"><b>keypad</b></span>.<span style="color: #FF5500;">getState</span>() == <span style="color: #288AB5;">HOLD</span>)
+      {
+         <span style="color: #FF0000;">if</span>(<span style="color: #FF5500;">millis</span>() - kinderslotTimer &gt; 2000)
+         {
+            <span style="color: #FF0000;">if</span>(!isKinderslotAan)
+            {
+               <span style="color: #FF0000;">if</span>(holdKey == <span style="color: #288AB5;">'6'</span>)
+               {
+                  isKinderslotAan = <span style="color: #FF0000;">true</span>;
+                  toon(noot_D4, 500);
+                  timer = <span style="color: #FF5500;">millis</span>();
+                  <span style="color: #FF0000;">while</span>(<span style="color: #FF5500;">millis</span>() - timer &lt;= interval)
+                  {
+                     updateDigits(0x38, 0, 1);
+                     updateDigits(0x3F, 0, 2);
+                     updateDigits(0x39, 0, 4);
+                     updateDigits(0x76, 128, 8);
+                  }
+               }
+
+               <span style="color: #FF0000;">for</span>(i = 0; i &lt; 4; i++)
+               {
+                  <span style="color: #FF0000;">if</span>(digitSelected == i)
+                  {
+                     dpValue[i] = 128;
+                  }
+                  <span style="color: #FF0000;">else</span>
+                  {
+                     dpValue[i] = 0;
+                  }
+               }
+
+               updateDigits(numberTable[digit[0]], dpValue[0], 1);
+               updateDigits(numberTable[digit[1]], dpValue[1], 2);
+               updateDigits(numberTable[digit[2]], dpValue[2], 4);
+               updateDigits(numberTable[digit[3]], dpValue[3], 8);
+               
+               updateLeds(digit[0], 0);
+               updateLeds(digit[1], 1);
+               updateLeds(digit[2], 2);
+               updateLeds(digit[3], 3);
+
+               kinderslotTimer = <span style="color: #FF5500;">millis</span>();
+            }
+            <span style="color: #FF0000;">else</span>
+            {
+               <span style="color: #FF0000;">if</span>(holdKey == <span style="color: #288AB5;">'6'</span>)
+               {
+                  isKinderslotAan = <span style="color: #FF0000;">false</span>;
+                  toon(noot_D4, 500);
+                  timer = <span style="color: #FF5500;">millis</span>();
+                  <span style="color: #FF0000;">while</span>(<span style="color: #FF5500;">millis</span>() - timer &lt;= interval)
+                  {
+                     updateDigits(0x3E, 0, 1);
+                     updateDigits(0x37, 0, 2);
+                     updateDigits(0x38, 128, 4);
+                     updateDigits(0x00, 0, 8);
+                  }
+               }
+
+
+               kinderslotTimer = <span style="color: #FF5500;">millis</span>();
+            }
+         }
+      }
+      updateDigits(numberTable[digit[0]], 0, 1);
+      updateDigits(numberTable[digit[1]], 0, 2);
+      updateDigits(numberTable[digit[2]], 0, 4);
+      updateDigits(numberTable[digit[3]], 0, 8);
+      
+      updateLeds(digit[0], 0);
+      updateLeds(digit[1], 1);
+      updateLeds(digit[2], 2);
+      updateLeds(digit[3], 3);
+   }
+   <span style="color: #FF0000;">else</span>
+   {
+      <span style="color: #FF0000;">if</span>(key == <span style="color: #288AB5;">'7'</span>)
+      {
+         isAan = <span style="color: #FF0000;">true</span>;
+         toon(noot_C4, 500);
+         timer = <span style="color: #FF5500;">millis</span>();
+         <span style="color: #FF0000;">while</span>(<span style="color: #FF5500;">millis</span>() - timer &lt;= interval)
+         {
+            updateDigits(0x3F, 0, 1);
+            updateDigits(0x37, 128, 2);
+            updateDigits(0x00, 0, 12);
+            digitSelected = 0;
+         }
+         digit[0] = 0;
+         digit[1] = 0;
+         digit[2] = 0;
+         digit[3] = 0;
+      }
+      updateLeds(0, 0);
+      updateLeds(0, 1);
+      updateLeds(0, 2);
+      updateLeds(0, 3);
+      updateDigits(0, 0, 15);
+   }
+}
+				</pre>
+			</div>
+			<footer>
+				<hr>
+				Ben Groeneveld 0912716@hr.nl
+				<br>
+				Martijn Bankert 0911554@hr.nl
+				<br>
+				Hogeschool Rotterdam, TI1C
+				<br>
+			</footer>
+		</div>
+	</body>
+</html>
