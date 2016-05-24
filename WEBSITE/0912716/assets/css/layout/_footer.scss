@@ -62,16 +62,16 @@
     @include breakpoint(large)
     {
 
-        background-color:		_palette(wrppr);
+        //background-color:		_palette(wrppr);
 
-        background-image:		linear-gradient(to top, transparentize(_palette(wrppr), _palette(wrppr-opc)), transparentize(_palette(wrppr), _palette(wrppr-opc))),
-                                 _image(background-img);
+        //background-image:		linear-gradient(to top, transparentize(_palette(wrppr), _palette(wrppr-opc)), transparentize(_palette(wrppr), _palette(wrppr-opc))),
+        //                         _image(background-img);
 
         background-size:		auto,
-                                 cover;
+                                cover;
 
         background-position:	center,
-                                 center;
+                                center;
 
         margin-top: (_size(wrapper-edges, large) * -1);
         padding-top: _size(wrapper-edges, large);

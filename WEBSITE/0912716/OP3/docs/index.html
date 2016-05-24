@@ -53,20 +53,21 @@
                                     <h3 class="major"><span class="icon fa-file-text-o"></span> De documenten</h3>
                                     <div class="docButton">
                                         <div class="veranderContainer">
-                                            <button value="https://www.youtube.com/embed/2SliUzBROZE" class="button switchContent verander">Video</button>
-                                            <button value="OP3/docs/samenwerkingscontract.pdf" class="button switchContent verander">Samenwerkingscontract</button>
-                                            <button value="https://drive.google.com/file/d/0B_r88WbJP4uISkNUWUxSeWZoMzg/preview" class="button switchContent verander">Ontwerp</button>
-                                            <button value="OP3/docs/productBacklog.pdf" class="button switchContent verander">Product Backlog</button>
-                                            <button value="OP3/docs/sprintWeek2.pdf" class="button switchContent verander">Sprintplanning Week 2</button>
-                                            <button value="OP3/docs/sprintWeek3.pdf" class="button switchContent verander">Sprintplanning Week 3</button>
-                                            <button value="OP3/docs/sprintWeek4.pdf" class="button switchContent verander">Sprintplanning Week 4</button>
-                                            <button value="OP3/docs/retrospectives.pdf" class="button switchContent verander">Retrospectives</button>
+                                            <button value="https://www.youtube.com/embed/2SliUzBROZE" class="button switchContent ifr">Video</button>
+                                            <button value="OP3/docs/samenwerkingscontract.pdf" class="button switchContent ifr">Samenwerkingscontract</button>
+                                            <button value="https://drive.google.com/file/d/0B_r88WbJP4uISkNUWUxSeWZoMzg/preview" class="button switchContent ifr">Ontwerp</button>
+                                            <button value="OP3/docs/productBacklog.pdf" class="button switchContent ifr">Product Backlog</button>
+                                            <button value="OP3/docs/sprintWeek2.pdf" class="button switchContent ifr">Sprintplanning Week 2</button>
+                                            <button value="OP3/docs/sprintWeek3.pdf" class="button switchContent ifr">Sprintplanning Week 3</button>
+                                            <button value="OP3/docs/sprintWeek4.pdf" class="button switchContent ifr">Sprintplanning Week 4</button>
+                                            <button value="OP3/docs/retrospectives.pdf" class="button switchContent ifr">Retrospectives</button>
                                         </div>
                                         <div class="verbergContainer">
-                                            <button value="" class="button special switchContent verberg">Verberg document</button>
+                                            <button value="" class="button special switchContent verberg" id="verbergButton">Verberg document</button>
                                         </div>
                                     </div>
-                                    <iframe id="iframe1"></iframe>
+                                    <iframe class="switchable" id="iframe1"></iframe>
+                                    <img class="switchable" id="img1">
                                 </div>
                             </div>
                         </section>
@@ -106,47 +107,42 @@
                 <script src="assets/js/main.js"></script>
 
                 <script type="text/javascript">
-                $(
-                    function()
-                    {
-                        $('#iframe1').load
-                        (
-                            function()
-                            {
-                                if($.trim($(this).contents().find("body").html()) == "")
-                                {
-                                    $(this).hide();
-                                }
-                                else
-                                {
-                                    $(this).show();
-                                }
-                            }
-                        );
-                    }
-                );
-                </script>
-
-                <script type="text/javascript">
                     window.onload = function()
                     {
-                        var elements = document.getElementsByClassName('switchContent');
-                        for (var i = 0; i < elements.length; i++)
+                        var ifr = document.getElementsByClassName('ifr');
+                        var pic = document.getElementsByClassName('pic');
+                        var hideAll = document.getElementById("verbergButton");
+
+                        for(var i = 0; i < ifr.length; i++)
                         {
-                            elements[i].onclick = function()
+                            ifr[i].onclick = function()
                             {
+                                document.getElementById('img1').style.display = "none";
                                 document.getElementById("iframe1").src = this.value;
                                 document.getElementById("iframe1").style.display = "block";
+                                document.getElementById("verbergButton").style.display = "block";
                             }
+                        }
+
+                        for(var j = 0; j < pic.length; j++)
+                        {
+                            pic[j].onclick = function()
+                            {
+                                document.getElementById('iframe1').style.display = "none";
+                                document.getElementById("img1").src = this.value;
+                                document.getElementById("img1").style.display = "block";
+                                document.getElementById("verbergButton").style.display = "block";
+                            }
+                        }
+
+                        hideAll.onclick = function()
+                        {
+                            document.getElementById('iframe1').style.display = "none";
+                            document.getElementById('img1').style.display = "none";
+                            document.getElementById("verbergButton").style.display = "none";
                         }
                     }
                 </script>
-
-                <script>
-
-                </script>
-
-
             </div>
         </div>
     </body>

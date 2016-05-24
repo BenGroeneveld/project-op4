@@ -11,7 +11,7 @@ body {
   background-attachment: fixed;
   background-position: center; }
   body:before {
-    background: rgba(43, 43, 43, 0.925);
+    background: rgba(43, 43, 43, 0.81);
     content: '';
     display: block;
     height: 100%;

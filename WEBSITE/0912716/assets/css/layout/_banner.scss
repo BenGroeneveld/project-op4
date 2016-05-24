@@ -11,6 +11,8 @@
 		padding-bottom: 1em;
 		padding-left: 0;
 		padding-right: 0;
+		margin-top: 10%;
+		margin-bottom: 10%;
 
 		.inner {
 			margin: 0 auto;
@@ -76,10 +78,10 @@
 		@include breakpoint(large) {
 			@include padding(7em, 0, (0, 0, 0, 0));
 
-			background-color:		_palette(wrppr);
+			//background-color:		_palette(wrppr);
 
-			background-image:		linear-gradient(to top, transparentize(_palette(wrppr), _palette(wrppr-opc)), transparentize(_palette(wrppr), _palette(wrppr-opc))),
-									_image(background-img);
+			//background-image:		linear-gradient(to top, transparentize(_palette(wrppr), _palette(wrppr-opc)), transparentize(_palette(wrppr), _palette(wrppr-opc))),
+			//						_image(background-img);
 
 			background-size:		auto,
 									cover;
@@ -88,14 +90,13 @@
 									center;
 
 		 	//margin-bottom: (_size(wrapper-edges, large) * -1);
-			margin-bottom: 0;
 		}
 
 		@include breakpoint(medium) {
 			@include padding(12em, 3em, (0, 0, 0, 0));
 
 		 	//margin-bottom: (_size(wrapper-edges, medium) * -1);
-			margin-bottom: 0;
+			//margin-bottom: 0;
 
 			.inner {
 				width: 100%;
@@ -106,7 +107,7 @@
 			@include padding(5em, 2em, (0, 0, 0, 0));
 
 		 	//margin-bottom: (_size(wrapper-edges, small) * -1);
-			margin-bottom: 0;
+			//margin-bottom: 0;
 
 			.logo {
 				margin: 0 0 (_size(element-margin) * 0.5) 0;

@@ -55,8 +55,8 @@
 
 // Palette.
 	$default-color:				#2B2B2B;
-	$default-color-bg:			#333340;
-	$accent-color:				#AA0000;
+	$default-color-bg:			#333;
+	$accent-color:				#A00;
 
 	$palette:
 	(
@@ -64,9 +64,9 @@
 		accent-color:			$accent-color,
 		bg:						$default-color,
         wrppr:                  $default-color-bg,
-        wrppr-opc:              0.075,
+        wrppr-opc:              0.19,
         hdr:                    $default-color,
-		hdr-opc:				0.0,
+		hdr-opc:				0.25,
 	    hdr-lghtn:				0.0,
 		hdr-dsat:				0.0,
 		fg:						#ffffff,
