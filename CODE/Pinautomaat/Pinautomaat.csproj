@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A78E650A-033F-43CA-A379-4AB411354C24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Pinautomaat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Pinautomaat</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DYMO.Label.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5426002a38745af9, processorArchitecture=MSIL" />
+    <Reference Include="LibUsbDotNet">
+      <HintPath>..\..\..\..\Programming\Csharp\MonoBrick\LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoBrick">
+      <HintPath>..\..\..\..\Programming\Csharp\MonoBrick\MonoBrick.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="atm.label">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="packages\MySql.Data.6.9.8\CHANGES" />
+    <None Include="packages\MySql.Data.6.9.8\content\app.config.transform" />
+    <None Include="packages\MySql.Data.6.9.8\content\web.config.transform" />
+    <None Include="packages\MySql.Data.6.9.8\MySql.Data.6.9.8.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArduinoInput.cs" />
+    <Compile Include="Background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Background.Designer.cs">
+      <DependentUpon>Background.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bedankt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bedankt.Designer.cs">
+      <DependentUpon>Bedankt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeldOpnemen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeldOpnemen.Designer.cs">
+      <DependentUpon>GeldOpnemen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBackend.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pincode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pincode.Designer.cs">
+      <DependentUpon>Pincode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Saldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Saldo.Designer.cs">
+      <DependentUpon>Saldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Welkom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welkom.Designer.cs">
+      <DependentUpon>Welkom.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bedankt.resx">
+      <DependentUpon>Bedankt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeldOpnemen.resx">
+      <DependentUpon>GeldOpnemen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pincode.resx">
+      <DependentUpon>Pincode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Saldo.resx">
+      <DependentUpon>Saldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welkom.resx">
+      <DependentUpon>Welkom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\MySql.Data.6.9.8\lib\net20-cf\MySql.Data.CF.dll" />
+    <Content Include="packages\MySql.Data.6.9.8\lib\net20\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.8\lib\net40\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.6.9.8\Readme.txt" />
+    <Content Include="Resources\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

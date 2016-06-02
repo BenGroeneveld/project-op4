@@ -1,0 +1,92 @@
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\MySql.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\DYMO.DLS.Runtime.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\DYMO.Common.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.xml
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Configuration.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Data.DataSetExtensions.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Drawing.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Windows.Forms.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Xml.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\System.Xml.Linq.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\Pinautomaat.exe.config
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\Pinautomaat.exe
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Release\Pinautomaat.pdb
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.exe
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.exe.config
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.exe
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Resources\Logo.png
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\atm.label
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.exe
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\MySql.Data.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Configuration.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Data.DataSetExtensions.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Data.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Drawing.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Windows.Forms.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Xml.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\System.Xml.Linq.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\DYMO.DLS.Runtime.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Common.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.xml
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Background.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Bedankt.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.GeldOpnemen.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.MainMenu.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Pincode.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Properties.Resources.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Saldo.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Welkom.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Properties\Resources.resx
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.exe.config
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.exe
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.exe.config
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\Resources\Logo.png
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\Properties\Resources.resx
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\atm.label
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\MySql.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Configuration.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Data.DataSetExtensions.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Drawing.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Windows.Forms.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Xml.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\System.Xml.Linq.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\DYMO.DLS.Runtime.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Common.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Release\DYMO.Label.Framework.xml
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Background.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Bedankt.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.GeldOpnemen.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.MainMenu.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Pincode.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Properties.Resources.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Saldo.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.Welkom.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Release\Pinautomaat.csproj.GenerateResource.Cache
