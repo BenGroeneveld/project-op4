@@ -11,19 +11,52 @@ namespace Pinautomaat
         private static string recognizeText = "Arduino";
         private static int loggedInValue = 0;
 
+        public static int LoggedInValue { get; set; }
+
         private static MySqlConnection connection;
         private static string rfid = "";
         private static string rekening = "";
 
+        public static bool checkAllConnections()
+        {
+            if(privateCheckAllConnections())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static bool privateCheckAllConnections()
+        {
+            try
+            {
+                makeDatabaseConnection();
+                checkArduino();
+                if(Dispenser.testDispense())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public static void doWelkom()
         {
-            makeDatabaseConnection();
             checkCard();
         }
 
-        private static void checkCard()
+        private static void checkArduino()
         {
-            loggedInValue = 0;
             ArduinoInput.strCardID = "";
             if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
             {
@@ -36,12 +69,20 @@ namespace Pinautomaat
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
                 }
             }
-            rfid = ArduinoInput.strRFID();
-            ArduinoInput.strCardID = rfid;
-            Program.Rfid = rfid;
-            rekening = strDbQuery("RekeningID", rfid);
-            Program.StrRekeningID = rekening;
-            loggedInValue = 255;
+        }
+
+        private static void checkCard()
+        {
+            try
+            {
+                rfid = ArduinoInput.strRFID();
+                ArduinoInput.strCardID = rfid;
+                Program.Rfid = rfid;
+                rekening = strDbQuery("RekeningID", rfid);
+                Program.StrRekeningID = rekening;
+                loggedInValue = 255;
+            }
+            catch { }
         }
 
         public static void restart()
@@ -51,27 +92,18 @@ namespace Pinautomaat
 
         private static void privateRestart()
         {
-            for(int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                if(Application.OpenForms[i].Name != "Welkom")
-                {
-                    Application.OpenForms[i].Close();
-                }
-            }
+            Form active = Form.ActiveForm;
+            string strActive = active.Name;
+            active.Close();
         }
 
         public static void closePrevForms()
         {
             List<Form> openForms = new List<Form>();
 
-            foreach(Form f in Application.OpenForms)
-            {
-                openForms.Add(f);
-            }
-
             foreach(Form f in openForms)
             {
-                if(f.Name != "Welkom" && f.Name != Form.ActiveForm.Name)
+                if(f.Name != Form.ActiveForm.Name)
                 {
                     f.Close();
                 }

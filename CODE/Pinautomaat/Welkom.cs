@@ -6,6 +6,8 @@ namespace Pinautomaat
     public partial class Welkom : Background
     {
         public static bool waitingText = false;
+        public static bool restart { get; set; }
+
         public Welkom()
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace Pinautomaat
 
         private void privateStartWelkom()
         {
+            restart = false;
             MainBackend.doWelkom();
             nextPage();
         }

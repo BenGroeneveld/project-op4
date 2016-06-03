@@ -17,18 +17,43 @@ namespace Pinautomaat
             privateDispense(bedrag);
         }
 
-        public static void privateDispense(int bedrag)
+        public static bool testDispense()
         {
-            connect();
+            if(connect())
+            {
+                try
+                {
+                    geefBiljetten(motor10, 0);
+                    geefBiljetten(motor20, 0);
+                    geefBiljetten(motor50, 0);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static void privateDispense(int bedrag)
+        {
             int aantal50 = bedrag / 50;
             int aantalOver50 = bedrag % 50;
             int aantal20 = aantalOver50 / 20;
             int aantalOver20 = aantalOver50 % 20;
             int aantal10 = aantalOver20 / 10;
 
-            geefBiljetten(motor10, aantal10);
-            geefBiljetten(motor20, aantal20);
-            geefBiljetten(motor50, aantal50);
+            try
+            {
+                geefBiljetten(motor10, aantal10);
+                geefBiljetten(motor20, aantal20);
+                geefBiljetten(motor50, aantal50);
+            }
+            catch { }
         }
 
         private static void geefBiljetten(Motor motor, int aantalBiljetten)
@@ -51,7 +76,7 @@ namespace Pinautomaat
             motor.Off();
         }
 
-        private static void connect()
+        private static bool connect()
         {
             string[] ports = SerialPort.GetPortNames();
             foreach(string port in ports)
@@ -64,6 +89,10 @@ namespace Pinautomaat
                         brick.Connection.Open();
                         brick.Beep(20, 100);
                         brickEV3 = brick;
+                        motor10 = brickEV3.MotorA;
+                        motor20 = brickEV3.MotorB;
+                        motor50 = brickEV3.MotorC;
+                        return true;
                     }
                     catch
                     {
@@ -71,9 +100,7 @@ namespace Pinautomaat
                     }
                 }
             }
-            motor10 = brickEV3.MotorA;
-            motor20 = brickEV3.MotorB;
-            motor50 = brickEV3.MotorC;
+            return false;
         }
     }
 }

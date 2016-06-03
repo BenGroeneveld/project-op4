@@ -48,7 +48,7 @@ namespace Pinautomaat
                 label1.Text += "\nVergeet uw geld niet";
             }
             
-            Thread.Sleep(2500);
+            Thread.Sleep(5000);
             MainBackend.restart();
         }
     }

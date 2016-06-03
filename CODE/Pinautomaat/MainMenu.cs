@@ -61,6 +61,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                Dispenser.dispense(opnemenBedrag / 100);
                 bedanktSnelpinnen();
             }
         }
@@ -74,6 +75,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                Dispenser.dispense(opnemenBedrag / 100);
                 bedanktSnelpinnen();
             }
         }
@@ -87,6 +89,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                Dispenser.dispense(opnemenBedrag / 100);
                 bedanktSnelpinnen();
             }
         }

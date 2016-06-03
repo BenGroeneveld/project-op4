@@ -214,17 +214,16 @@ namespace Pinautomaat
                         MessageBox.Show("Foutje2");
                     }
                 }
+                startPincode();
             }
             else
             {
                 MessageBox.Show("Foutje1");
             }
-            startPincode();
         }
 
         private void Pincode_Shown(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             MainBackend.closePrevForms();
             setup();
             startPincode();
