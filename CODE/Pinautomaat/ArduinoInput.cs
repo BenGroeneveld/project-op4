@@ -51,7 +51,7 @@ namespace Pinautomaat
                 buffer[4] = Convert.ToByte(4);
 
                 int intReturnASCII = 0;
-                char charReturnValue = (char)intReturnASCII;
+                char charReturnValue = (Char)intReturnASCII;
 
                 string[] ports = SerialPort.GetPortNames();
                 foreach(string newport in ports)

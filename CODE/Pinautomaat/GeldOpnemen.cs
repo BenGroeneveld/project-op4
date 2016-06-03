@@ -43,6 +43,7 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = true;
+                Dispenser.dispense();
                 MainBackend.printBon(geldOpnemenBedrag, Program.StrRekeningID, Program.Rfid);
                 nextPage(printBon);
             }
@@ -57,6 +58,7 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = false;
+                Dispenser.dispense();
                 nextPage(printBon);
             }
             else

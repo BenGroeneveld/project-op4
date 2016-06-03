@@ -18,7 +18,8 @@ namespace Pinautomaat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            runProgram();
+            //runProgram();
+            Dispenser.dispense();
         }
 
         private static void runProgram()
