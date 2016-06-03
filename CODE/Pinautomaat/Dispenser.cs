@@ -12,15 +12,23 @@ namespace Pinautomaat
         private static Motor motor50;
 
 
-        public static void dispense()
+        public static void dispense(int bedrag)
         {
-            privateDispense();
+            privateDispense(bedrag);
         }
 
-        public static void privateDispense()
+        public static void privateDispense(int bedrag)
         {
             connect();
-            geefBiljetten(motor10, 2);
+            int aantal50 = bedrag / 50;
+            int aantalOver50 = bedrag % 50;
+            int aantal20 = aantalOver50 / 20;
+            int aantalOver20 = aantalOver50 % 20;
+            int aantal10 = aantalOver20 / 10;
+
+            geefBiljetten(motor10, aantal10);
+            geefBiljetten(motor20, aantal20);
+            geefBiljetten(motor50, aantal50);
         }
 
         private static void geefBiljetten(Motor motor, int aantalBiljetten)
