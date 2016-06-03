@@ -20,24 +20,27 @@ namespace Pinautomaat
         public static void privateDispense()
         {
             connect();
-            geefBiljetten(motor10);
+            geefBiljetten(motor10, 2);
         }
 
-        private static void waitForMotorToStop(Motor motor)
+        private static void geefBiljetten(Motor motor, int aantalBiljetten)
         {
-            Thread.Sleep(150);
-            while(motor.IsRunning())
+            for(int i = 0; i < aantalBiljetten; i++)
             {
-                Thread.Sleep(10);
+                motor.Reverse = true;
+                motor.On(20);
+                Thread.Sleep(2500);
+                motor.Off();
+                correctie(motor);
             }
         }
 
-        private static void geefBiljetten(Motor motor)
+        private static void correctie(Motor motor)
         {
-            motor.MoveTo(50, 200, false);
-            waitForMotorToStop(motor);
-            motor.MoveTo(50, -200, false);
-            waitForMotorToStop(motor);
+            motor.Reverse = false;
+            motor.On(20);
+            Thread.Sleep(1000);
+            motor.Off();
         }
 
         private static void connect()
