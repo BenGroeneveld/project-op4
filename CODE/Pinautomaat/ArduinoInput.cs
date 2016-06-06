@@ -12,14 +12,6 @@ namespace Pinautomaat
         public static string strCardID = "";
         public static int connectionCorrect = 128;
 
-        public static void disconnect()
-        {
-            connectionCorrect = 128;
-            MainBackend.LoggedInValue = 0;
-            currentPort.Dispose();
-            //currentPort.Close();
-        }
-
         public static void connect(int baud, string recognizeText, int loggedInValue)
         {
             while(!isConnected(baud, recognizeText, loggedInValue))
@@ -124,6 +116,7 @@ namespace Pinautomaat
                 str = strInputText();
             }
             SendKeys.SendWait(str.ToLower());
+            //SendKeys.Send(str.ToLower());
         }
     }
 }

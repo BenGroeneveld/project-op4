@@ -116,6 +116,12 @@
     <Compile Include="Bedankt.Designer.cs">
       <DependentUpon>Bedankt.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuitenGebruik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuitenGebruik.Designer.cs">
+      <DependentUpon>BuitenGebruik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dispenser.cs" />
     <Compile Include="GeldOpnemen.cs">
       <SubType>Form</SubType>
@@ -159,6 +165,9 @@
     <EmbeddedResource Include="Bedankt.resx">
       <DependentUpon>Bedankt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuitenGebruik.resx">
+      <DependentUpon>BuitenGebruik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeldOpnemen.resx">
       <DependentUpon>GeldOpnemen.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +179,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Saldo.resx">
       <DependentUpon>Saldo.cs</DependentUpon>
@@ -187,6 +198,7 @@
     <Content Include="Resources\Logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\SofaLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\" />

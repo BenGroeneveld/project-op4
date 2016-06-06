@@ -17,19 +17,9 @@ namespace Pinautomaat
             InitializeComponent();
         }
 
-        protected override CreateParams CreateParams
+        private void bedankt(bool bon, int saldo, int bedrag)
         {
-            get
-            {
-                var cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
-        }
-
-        private void nextPage(bool printBon)
-        {
-            Bedankt next = new Bedankt(printBon);
+            Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
         }
 
@@ -43,9 +33,11 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = true;
-                Dispenser.dispense(Convert.ToInt32(geldOpnemenBedrag) / 100);
-                MainBackend.printBon(geldOpnemenBedrag, Program.StrRekeningID, Program.Rfid);
-                nextPage(printBon);
+                int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int nieuwSaldo = huidigSaldo - bedrag;
+
+                bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
             {
@@ -58,8 +50,11 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = false;
-                Dispenser.dispense(Convert.ToInt32(geldOpnemenBedrag) / 100);
-                nextPage(printBon);
+                int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int nieuwSaldo = huidigSaldo - bedrag;
+
+                bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
             {
@@ -164,7 +159,6 @@ namespace Pinautomaat
 
         private void GeldOpnemen_Load(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             label1.Text = "Hoeveel geld wilt u opnemen?\nTyp een veelvoud van €" + veelvoudBedrag + ",00 in.";
             MainBackend.closePrevForms();
             doGeldOpnemen();
@@ -207,8 +201,8 @@ namespace Pinautomaat
                 geldOpnemenBedrag += str;
                 strGeldOpnemen = geldOpnemenBedrag + ",00";
                 bedrag.Text = strGeldOpnemen;
+                checkButtonPushed();
             }
-            checkButtonPushed();
         }
     }
 }

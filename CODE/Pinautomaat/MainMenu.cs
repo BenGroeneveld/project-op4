@@ -14,16 +14,6 @@ namespace Pinautomaat
             Program.StrBedrag = MainBackend.strDbQuery(attribute, Program.Rfid);
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                var cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
-        }
-
         private void btnSaldo_Click(object sender, EventArgs e)
         {
             Saldo next = new Saldo();
@@ -46,9 +36,9 @@ namespace Pinautomaat
             ArduinoInput.checkKeypad();
         }
 
-        private void bedanktSnelpinnen()
+        private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(false);
+            Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
         }
 
@@ -57,12 +47,12 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 10;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                Dispenser.dispense(opnemenBedrag / 100);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
@@ -71,12 +61,12 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 20;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                Dispenser.dispense(opnemenBedrag / 100);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
@@ -85,18 +75,17 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 50;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                Dispenser.dispense(opnemenBedrag / 100);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             MainBackend.closePrevForms();
         }
 
@@ -130,7 +119,7 @@ namespace Pinautomaat
             }
             else if(strKey.Equals(keyA))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(keyB))
             {
@@ -144,8 +133,10 @@ namespace Pinautomaat
             {
                 btnGeldOpnemen.PerformClick();
             }
-
-            checkButtonPushed();
+            else
+            {
+                checkButtonPushed();
+            }
         }
     }
 }

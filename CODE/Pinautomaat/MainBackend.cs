@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Windows.Forms;
@@ -10,8 +11,6 @@ namespace Pinautomaat
         private static int baud = 9600;
         private static string recognizeText = "Arduino";
         private static int loggedInValue = 0;
-
-        public static int LoggedInValue { get; set; }
 
         private static MySqlConnection connection;
         private static string rfid = "";
@@ -73,6 +72,12 @@ namespace Pinautomaat
 
         private static void checkCard()
         {
+            Program.Rfid = null;
+            Program.StrBedrag = null;
+            Program.StrRekeningID = null;
+            ArduinoInput.strCardID = "";
+            loggedInValue = 0;
+
             try
             {
                 rfid = ArduinoInput.strRFID();
@@ -92,21 +97,46 @@ namespace Pinautomaat
 
         private static void privateRestart()
         {
-            Form active = Form.ActiveForm;
-            string strActive = active.Name;
-            active.Close();
+            List<Form> openForms = new List<Form>();
+
+            foreach(Form f in Application.OpenForms)
+            {
+                openForms.Add(f);
+            }
+
+            foreach(Form f in openForms)
+            {
+                try
+                {
+                    f.Close();
+                    //f.Dispose();
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
         }
 
         public static void closePrevForms()
         {
             List<Form> openForms = new List<Form>();
 
+            foreach(Form f in Application.OpenForms)
+            {
+                openForms.Add(f);
+            }
+
             foreach(Form f in openForms)
             {
-                if(f.Name != Form.ActiveForm.Name)
+                try
                 {
-                    f.Close();
+                    if(f.Name != Form.ActiveForm.Name && f.Name != "Welkom")
+                    {
+                        f.Close();
+                    }
                 }
+                catch { }
             }
         }
 

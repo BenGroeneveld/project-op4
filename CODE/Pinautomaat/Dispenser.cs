@@ -41,6 +41,7 @@ namespace Pinautomaat
 
         private static void privateDispense(int bedrag)
         {
+            bedrag = bedrag / 100;
             int aantal50 = bedrag / 50;
             int aantalOver50 = bedrag % 50;
             int aantal20 = aantalOver50 / 20;

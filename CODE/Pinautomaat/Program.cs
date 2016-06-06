@@ -23,15 +23,25 @@ namespace Pinautomaat
 
         private static void runProgram()
         {
-            //SystemGood = false; //USE THIS
-            SystemGood = true; //DEBUGGING ONLY
+            SystemGood = false; //USE THIS IN NORMAL SITUATIONS
+            //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
             if(MainBackend.checkAllConnections())
             {
                 SystemGood = true;
             }
-            while(SystemGood)
+            if(SystemGood)
             {
-                Application.Run(new Welkom());
+                while(SystemGood)
+                {
+                    Application.Run(new Welkom());
+                }
+            }
+            else
+            {
+                while(!SystemGood)
+                {
+                    Application.Run(new BuitenGebruik());
+                }
             }
         }
     }

@@ -225,7 +225,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bi
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.Common.dll
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
@@ -238,3 +237,5 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\ob
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\LibUsbDotNet.dll
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MonoBrick.dll
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MonoBrick.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.BuitenGebruik.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache

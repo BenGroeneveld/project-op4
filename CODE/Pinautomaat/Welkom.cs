@@ -13,16 +13,6 @@ namespace Pinautomaat
             InitializeComponent();
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                var cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;    // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
-        }
-
         private void nextPage()
         {
             Pincode next = new Pincode();
@@ -41,14 +31,8 @@ namespace Pinautomaat
 
         private void privateStartWelkom()
         {
-            restart = false;
             MainBackend.doWelkom();
             nextPage();
-        }
-
-        private void Welkom_Load(object sender, EventArgs e)
-        {
-            //Application.DoEvents();
         }
     }
 }
