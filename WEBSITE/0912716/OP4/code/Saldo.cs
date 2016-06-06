@@ -57,7 +57,6 @@ namespace Pinautomaat
 
         private void Saldo_Load(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             MainBackend.closePrevForms();
             checkButtonPushed();
         }
@@ -76,23 +75,23 @@ namespace Pinautomaat
 
             if(strKey.Equals(key1))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(key2))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(key3))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(keyA))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(keyB))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(keyC))
             {
@@ -102,7 +101,10 @@ namespace Pinautomaat
             {
                 btnGeldOpnemen.PerformClick();
             }
-            checkButtonPushed();
+            else
+            {
+                checkButtonPushed();
+            }
         }
     }
 }

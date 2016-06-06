@@ -8,7 +8,7 @@ namespace Pinautomaat
         public static string Rfid { get; set; }
         public static string StrBedrag { get; set; }
         public static string StrRekeningID { get; set; }
-        public static int processId = 0;
+        public static bool SystemGood { get; set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -23,10 +23,25 @@ namespace Pinautomaat
 
         private static void runProgram()
         {
-            while(true)
+            SystemGood = false; //USE THIS IN NORMAL SITUATIONS
+            //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
+            if(MainBackend.checkAllConnections())
             {
-                Welkom welkom = new Welkom();
-                Application.Run(welkom);
+                SystemGood = true;
+            }
+            if(SystemGood)
+            {
+                while(SystemGood)
+                {
+                    Application.Run(new Welkom());
+                }
+            }
+            else
+            {
+                while(!SystemGood)
+                {
+                    Application.Run(new BuitenGebruik());
+                }
             }
         }
     }

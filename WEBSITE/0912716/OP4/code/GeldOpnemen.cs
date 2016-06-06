@@ -17,9 +17,9 @@ namespace Pinautomaat
             InitializeComponent();
         }
 
-        private void nextPage(bool printBon)
+        private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(printBon);
+            Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
         }
 
@@ -33,8 +33,11 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = true;
-                MainBackend.printBon(geldOpnemenBedrag, Program.StrRekeningID, Program.Rfid);
-                nextPage(printBon);
+                int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int nieuwSaldo = huidigSaldo - bedrag;
+
+                bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
             {
@@ -47,7 +50,11 @@ namespace Pinautomaat
             if(isCorrectBedrag(geldOpnemenBedrag))
             {
                 printBon = false;
-                nextPage(printBon);
+                int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int nieuwSaldo = huidigSaldo - bedrag;
+
+                bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
             {
@@ -152,7 +159,6 @@ namespace Pinautomaat
 
         private void GeldOpnemen_Load(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             label1.Text = "Hoeveel geld wilt u opnemen?\nTyp een veelvoud van €" + veelvoudBedrag + ",00 in.";
             MainBackend.closePrevForms();
             doGeldOpnemen();
@@ -195,8 +201,8 @@ namespace Pinautomaat
                 geldOpnemenBedrag += str;
                 strGeldOpnemen = geldOpnemenBedrag + ",00";
                 bedrag.Text = strGeldOpnemen;
+                checkButtonPushed();
             }
-            checkButtonPushed();
         }
     }
 }

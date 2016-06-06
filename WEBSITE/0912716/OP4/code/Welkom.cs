@@ -6,6 +6,8 @@ namespace Pinautomaat
     public partial class Welkom : Background
     {
         public static bool waitingText = false;
+        public static bool restart { get; set; }
+
         public Welkom()
         {
             InitializeComponent();
@@ -30,16 +32,7 @@ namespace Pinautomaat
         private void privateStartWelkom()
         {
             MainBackend.doWelkom();
-            if(waitingText)
-            {
-                label1.Text = "Een moment geduld a.u.b.";
-            }
             nextPage();
-        }
-
-        private void Welkom_Load(object sender, EventArgs e)
-        {
-            //Application.DoEvents();
         }
     }
 }

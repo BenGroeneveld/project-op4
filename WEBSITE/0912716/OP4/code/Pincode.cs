@@ -12,7 +12,6 @@ namespace Pinautomaat
         private bool approval = true;
         private int poging = 1;
         private int actief = 0;
-        private string strVerkeerdWachtwoord = "Verkeerd wachtwoord";
 
         public Pincode()
         {
@@ -34,7 +33,7 @@ namespace Pinautomaat
                     {
                         approval = false;
                         clearPincode();
-                        infoText.Text = strVerkeerdWachtwoord;
+                        infoText.Text = "Verkeerd wachtwoord";
                         if(poging < 3)
                         {
                             infoText.Text += " (" + poging + " / 3)";
@@ -53,7 +52,7 @@ namespace Pinautomaat
                             btnCorrectie.Hide();
                             btnVolgende.Hide();
                             MainBackend.blokkeerPas(Program.Rfid);
-                            checkButtonPushed();
+                            startPincode();
                         }
                     }
                     else
@@ -200,20 +199,23 @@ namespace Pinautomaat
                         string passwordStr = inputInloggen.Text + textBox1.Text + textBox2.Text + textBox3.Text;
                         password = Convert.ToInt32(passwordStr);
                     }
+                    else
+                    {
+                        MessageBox.Show("Foutje2");
+                    }
                 }
+                startPincode();
             }
-            startPincode();
+            else
+            {
+                MessageBox.Show("Foutje1");
+            }
         }
 
         private void Pincode_Shown(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             MainBackend.closePrevForms();
             setup();
-            if(actief == 1)
-            {
-                infoText.Text = "Voer uw pincode in.";
-            }
             startPincode();
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Windows.Forms;
 
@@ -16,15 +16,46 @@ namespace Pinautomaat
         private static string rfid = "";
         private static string rekening = "";
 
+        public static bool checkAllConnections()
+        {
+            if(privateCheckAllConnections())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static bool privateCheckAllConnections()
+        {
+            try
+            {
+                makeDatabaseConnection();
+                checkArduino();
+                if(Dispenser.testDispense())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public static void doWelkom()
         {
-            makeDatabaseConnection();
             checkCard();
         }
 
-        private static void checkCard()
+        private static void checkArduino()
         {
-            loggedInValue = 0;
             ArduinoInput.strCardID = "";
             if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
             {
@@ -37,12 +68,26 @@ namespace Pinautomaat
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
                 }
             }
-            rfid = ArduinoInput.strRFID();
-            ArduinoInput.strCardID = rfid;
-            Program.Rfid = rfid;
-            rekening = strDbQuery("RekeningID", rfid);
-            Program.StrRekeningID = rekening;
-            loggedInValue = 255;
+        }
+
+        private static void checkCard()
+        {
+            Program.Rfid = null;
+            Program.StrBedrag = null;
+            Program.StrRekeningID = null;
+            ArduinoInput.strCardID = "";
+            loggedInValue = 0;
+
+            try
+            {
+                rfid = ArduinoInput.strRFID();
+                ArduinoInput.strCardID = rfid;
+                Program.Rfid = rfid;
+                rekening = strDbQuery("RekeningID", rfid);
+                Program.StrRekeningID = rekening;
+                loggedInValue = 255;
+            }
+            catch { }
         }
 
         public static void restart()
@@ -52,27 +97,46 @@ namespace Pinautomaat
 
         private static void privateRestart()
         {
-            for(int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            List<Form> openForms = new List<Form>();
+
+            foreach(Form f in Application.OpenForms)
             {
-                if(Application.OpenForms[i].Name != "Welkom")
+                openForms.Add(f);
+            }
+
+            foreach(Form f in openForms)
+            {
+                try
                 {
-                    Application.OpenForms[i].Close();
+                    f.Close();
+                    //f.Dispose();
                 }
-                else
+                catch(Exception e)
                 {
-                    Application.OpenForms[i].Refresh();
+                    MessageBox.Show(e.Message);
                 }
             }
         }
 
         public static void closePrevForms()
         {
-            for(int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            List<Form> openForms = new List<Form>();
+
+            foreach(Form f in Application.OpenForms)
             {
-                if(Application.OpenForms[i].Name != "Background" && Application.OpenForms[i].Name != "Welkom" && Application.OpenForms[i].Name != Form.ActiveForm.Name)
+                openForms.Add(f);
+            }
+
+            foreach(Form f in openForms)
+            {
+                try
                 {
-                    Application.OpenForms[i].Close();
+                    if(f.Name != Form.ActiveForm.Name && f.Name != "Welkom")
+                    {
+                        f.Close();
+                    }
                 }
+                catch { }
             }
         }
 

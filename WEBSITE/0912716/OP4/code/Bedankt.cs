@@ -6,39 +6,47 @@ namespace Pinautomaat
 {
     public partial class Bedankt : Background
     {
-        private bool printBon;
+        private bool Bon { get; set; }
+        private int Saldo { get; set; }
+        private int Bedrag { get; set; }
 
-        public Bedankt(bool bon)
+        public Bedankt(bool bon, int saldo, int bedrag)
         {
             InitializeComponent();
-            printBon = bon;
+
+            Bon = bon;
+            Saldo = saldo;
+            Bedrag = bedrag;
         }
 
-        public void startBedankt(bool printBon)
+        public void startBedankt()
         {
-            privateStartBedankt(printBon);
+            privateStartBedankt();
         }
 
         private void Bedankt_Load(object sender, EventArgs e)
         {
-            startBedankt(printBon);
+            startBedankt();
         }
 
-        private void privateStartBedankt(bool printBon)
+        private void privateStartBedankt()
         {
-            //Application.DoEvents();
             label1.Text = "Bedankt voor het pinnen!";
 
-            if(printBon)
+            if(Bon)
             {
                 label1.Text += "\nVergeet uw geld en bon niet";
+                MainBackend.printBon(Bedrag.ToString(), Program.StrRekeningID, Program.Rfid);
             }
             else
             {
                 label1.Text += "\nVergeet uw geld niet";
             }
-            
-            Thread.Sleep(2500);
+
+            MainBackend.doTransactie(Saldo, Program.Rfid);
+            Dispenser.dispense(Bedrag);
+
+            Thread.Sleep(1000);
             MainBackend.restart();
         }
     }

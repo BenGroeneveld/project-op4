@@ -2,7 +2,6 @@
 using System.Threading;
 using System.IO.Ports;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace Pinautomaat
 {
@@ -40,25 +39,26 @@ namespace Pinautomaat
             }
         }
 
-        public static void tryConnect(int baud, string recognizeText, int loggedInValue)
+        private static void tryConnect(int baud, string recognizeText, int loggedInValue)
         {
-            try
+            byte[] buffer = new byte[5];
+            buffer[0] = Convert.ToByte(16);
+            buffer[1] = Convert.ToByte(connectionCorrect);
+            buffer[2] = Convert.ToByte(0);
+            buffer[3] = Convert.ToByte(loggedInValue);
+            buffer[4] = Convert.ToByte(4);
+
+            int intReturnASCII = 0;
+            char charReturnValue = (Char)intReturnASCII;
+
+            string[] ports = SerialPort.GetPortNames();
+            foreach(string newport in ports)
             {
-                byte[] buffer = new byte[5];
-                buffer[0] = Convert.ToByte(16);
-                buffer[1] = Convert.ToByte(connectionCorrect);
-                buffer[2] = Convert.ToByte(0);
-                buffer[3] = Convert.ToByte(loggedInValue);
-                buffer[4] = Convert.ToByte(4);
-
-                int intReturnASCII = 0;
-                char charReturnValue = (char)intReturnASCII;
-
-                string[] ports = SerialPort.GetPortNames();
-                foreach(string newport in ports)
+                try
                 {
                     currentPort = new SerialPort(newport, baud);
                     currentPort.Open();
+                    currentPort.WriteTimeout = 1000;
                     currentPort.Write(buffer, 0, 5);
                     Thread.Sleep(1000);
                     int count = currentPort.BytesToRead;
@@ -74,12 +74,13 @@ namespace Pinautomaat
                     if(returnMessage.Contains(recognizeText))
                     {
                         connectionCorrect = 127;
+                        break;
                     }
                 }
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
+                catch
+                {
+
+                }
             }
         }
 
@@ -111,11 +112,12 @@ namespace Pinautomaat
         private static void privateCheckKeypad()
         {
             string str = "";
-            while(str.Equals(""))
+            while(str.Equals("") || str.Contains("ID"))
             {
                 str = strInputText();
             }
             SendKeys.SendWait(str.ToLower());
+            //SendKeys.Send(str.ToLower());
         }
     }
 }

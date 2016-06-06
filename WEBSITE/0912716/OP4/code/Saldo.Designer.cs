@@ -195,11 +195,10 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Saldo";
             this.Text = "Form4";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Saldo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Saldo_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);

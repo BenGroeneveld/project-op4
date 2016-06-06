@@ -36,9 +36,9 @@ namespace Pinautomaat
             ArduinoInput.checkKeypad();
         }
 
-        private void bedanktSnelpinnen()
+        private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(false);
+            Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
         }
 
@@ -47,11 +47,12 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 10;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
@@ -60,11 +61,12 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 20;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
@@ -73,17 +75,17 @@ namespace Pinautomaat
             int opnemenBedrag = 100 * 50;
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
+            int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                bedanktSnelpinnen();
+                bedrag = opnemenBedrag;
+                bedankt(false, nieuwSaldo, bedrag);
             }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            //Application.DoEvents();
             MainBackend.closePrevForms();
         }
 
@@ -95,8 +97,6 @@ namespace Pinautomaat
         private void MainMenu_KeyDown(object sender, KeyEventArgs e)
         {
             string strKey = e.KeyValue.ToString().Trim();
-
-            string keyDebug = "106"; //vermenigvuldigingsteken
             string key1 = "49";
             string key2 = "50";
             string key3 = "51";
@@ -119,7 +119,7 @@ namespace Pinautomaat
             }
             else if(strKey.Equals(keyA))
             {
-
+                checkButtonPushed();
             }
             else if(strKey.Equals(keyB))
             {
@@ -133,8 +133,10 @@ namespace Pinautomaat
             {
                 btnGeldOpnemen.PerformClick();
             }
-
-            checkButtonPushed();
+            else
+            {
+                checkButtonPushed();
+            }
         }
     }
 }

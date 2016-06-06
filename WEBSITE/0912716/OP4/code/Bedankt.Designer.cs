@@ -110,10 +110,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.DoubleBuffered = true;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Bedankt";
             this.Text = "Bedankt";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Bedankt_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
