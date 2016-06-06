@@ -63,7 +63,7 @@ namespace Pinautomaat
             {
                 motor.Reverse = true;
                 motor.On(20);
-                Thread.Sleep(2500);
+                Thread.Sleep(3000);
                 motor.Off();
                 correctie(motor);
             }
@@ -73,7 +73,7 @@ namespace Pinautomaat
         {
             motor.Reverse = false;
             motor.On(20);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             motor.Off();
         }
 
@@ -82,9 +82,10 @@ namespace Pinautomaat
             string[] ports = SerialPort.GetPortNames();
             foreach(string port in ports)
             {
+                Brick<Sensor, Sensor, Sensor, Sensor> brick = new Brick<Sensor, Sensor, Sensor, Sensor>(port.ToLower());
+
                 if(port.Contains("COM"))
                 {
-                    Brick<Sensor, Sensor, Sensor, Sensor> brick = new Brick<Sensor, Sensor, Sensor, Sensor>(port.ToLower());
                     try
                     {
                         brick.Connection.Open();

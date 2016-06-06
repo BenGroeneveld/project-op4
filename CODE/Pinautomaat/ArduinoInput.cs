@@ -58,6 +58,7 @@ namespace Pinautomaat
                 {
                     currentPort = new SerialPort(newport, baud);
                     currentPort.Open();
+                    currentPort.WriteTimeout = 1000;
                     currentPort.Write(buffer, 0, 5);
                     Thread.Sleep(1000);
                     int count = currentPort.BytesToRead;
@@ -76,9 +77,9 @@ namespace Pinautomaat
                         break;
                     }
                 }
-                catch(Exception e)
+                catch
                 {
-                    MessageBox.Show(e.Message);
+
                 }
             }
         }
