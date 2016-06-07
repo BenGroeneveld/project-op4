@@ -81,9 +81,17 @@ namespace Pinautomaat
         {
             try
             {
-                string printer = @"atm.label";
-                var label = DYMO.Label.Framework.Label.Open(printer);
-                return true;
+                string print = @"atm.label";
+                var label = DYMO.Label.Framework.Label.Open(print);
+                var printer = DYMO.Label.Framework.Framework.GetPrinters().GetPrinterByName("DYMO LabelWriter 400");
+                if(printer.IsConnected)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch
             {
