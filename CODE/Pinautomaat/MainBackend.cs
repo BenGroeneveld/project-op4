@@ -36,7 +36,14 @@ namespace Pinautomaat
                 checkArduino();
                 if(Dispenser.testDispense())
                 {
-                    return true;
+                    if(checkPrinter())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
@@ -67,6 +74,20 @@ namespace Pinautomaat
                 {
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
                 }
+            }
+        }
+
+        private static bool checkPrinter()
+        {
+            try
+            {
+                string printer = @"atm.label";
+                var label = DYMO.Label.Framework.Label.Open(printer);
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -108,13 +129,12 @@ namespace Pinautomaat
             {
                 try
                 {
-                    f.Close();
-                    //f.Dispose();
+                    if(f.Name != "Background")
+                    {
+                        f.Close();
+                    }
                 }
-                catch(Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                }
+                catch { }
             }
         }
 
@@ -131,9 +151,13 @@ namespace Pinautomaat
             {
                 try
                 {
-                    if(f.Name != Form.ActiveForm.Name && f.Name != "Welkom")
+                    if(f.Name != Form.ActiveForm.Name && f.Name != "Welkom" && f.Name != "Background")
                     {
                         f.Close();
+                    }
+                    else if(f.Name == "Welkom")
+                    {
+                        f.Hide();
                     }
                 }
                 catch { }

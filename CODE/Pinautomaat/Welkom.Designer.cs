@@ -110,7 +110,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 750);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.DoubleBuffered = true;
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Welkom";
             this.Text = "Welkom";

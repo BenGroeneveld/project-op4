@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Bedankt : Background
+    public partial class Bedankt : Helper
     {
         private bool Bon { get; set; }
         private int Saldo { get; set; }
@@ -32,11 +32,13 @@ namespace Pinautomaat
         private void privateStartBedankt()
         {
             label1.Text = "Bedankt voor het pinnen!";
+            string strBedrag = (Bedrag / 100).ToString();
+            strBedrag += ",00";
 
             if(Bon)
             {
                 label1.Text += "\nVergeet uw geld en bon niet";
-                MainBackend.printBon(Bedrag.ToString(), Program.StrRekeningID, Program.Rfid);
+                MainBackend.printBon(strBedrag, Program.StrRekeningID, Program.Rfid);
             }
             else
             {

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Saldo : Background
+    public partial class Saldo : Helper
     {
         private static string attribute = "";
         private static string doubleBedrag = "";

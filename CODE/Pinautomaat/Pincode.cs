@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Pincode : Background
+    public partial class Pincode : Helper
     {
 
         public int password = 0;
@@ -212,7 +212,7 @@ namespace Pinautomaat
             }
         }
 
-        private void Pincode_Shown(object sender, EventArgs e)
+        private void Pincode_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
             setup();

@@ -233,12 +233,20 @@
                          }
                      }
                  }
-                 
+
                  .switchable
                  {
-                     height: 85%;
+                     height: calc((60em / 16) * 9);
                      width: 100%;
                      display: none;
+                 }
+
+                 @include breakpoint(medium)
+                 {
+                     .switchable
+                     {
+                         height:  calc((100% / 16) * 9);
+                     }
                  }
              }
          }

@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArduinoInput.cs" />
+    <Compile Include="Helper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper.Designer.cs">
+      <DependentUpon>Helper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Background.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Helper.resx">
+      <DependentUpon>Helper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Background.resx">
       <DependentUpon>Background.cs</DependentUpon>
     </EmbeddedResource>
