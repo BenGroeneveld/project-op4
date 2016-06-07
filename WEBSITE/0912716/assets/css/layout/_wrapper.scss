@@ -176,38 +176,11 @@
                      margin-bottom: 0.85em;
                      .veranderContainer
                      {
-                         //width: 100%;
-                         //float: left;
+                         width: 100%;
+                         float: left;
                          button
                          {
-                             @include quantity-query(1);
-                         }
-                     }
-
-                     //.verbergContainer > button
-                     //{
-                     //    width: 100%;
-                     //}
-
-                     @include breakpoint(large)
-                     {
-                         .veranderContainer
-                         {
-                             button
-                             {
-                                 @include quantity-query(1);
-                             }
-                         }
-                     }
-
-                     @include breakpoint(medium)
-                     {
-                         .veranderContainer
-                         {
-                             button
-                             {
-                                 @include quantity-query(1);
-                             }
+                             margin: 4px;
                          }
                      }
 

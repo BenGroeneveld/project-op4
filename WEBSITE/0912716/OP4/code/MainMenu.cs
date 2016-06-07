@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Pinautomaat
 {
-    public partial class MainMenu  : Background
+    public partial class MainMenu  : Helper
     {
         public MainMenu()
         {

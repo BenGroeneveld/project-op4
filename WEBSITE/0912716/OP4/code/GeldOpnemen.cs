@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class GeldOpnemen : Background
+    public partial class GeldOpnemen : Helper
     {
         private int veelvoudBedrag = 10;
         private bool uitloggen = false;

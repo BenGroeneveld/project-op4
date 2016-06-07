@@ -39,7 +39,8 @@
 
             &.verberg
             {
-                width: 100%;
+                width: calc(100% - 4px);
+				margin: 8px 4px;
 				display: none;
             }
         }

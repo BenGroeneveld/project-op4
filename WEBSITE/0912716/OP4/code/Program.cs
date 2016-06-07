@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Pinautomaat
@@ -21,10 +22,25 @@ namespace Pinautomaat
             runProgram();
         }
 
+        private static void runBackground()
+        {
+            Thread thBackground = new Thread(bg);
+            thBackground.Start();
+        }
+
+        private static void bg()
+        {
+            Background bg = new Background();
+            Application.Run(bg);
+        }
+
         private static void runProgram()
         {
             SystemGood = false; //USE THIS IN NORMAL SITUATIONS
             //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
+
+            runBackground();
+
             if(MainBackend.checkAllConnections())
             {
                 SystemGood = true;

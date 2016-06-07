@@ -1909,7 +1909,8 @@ button,
     input[type="button"].switchContent.verberg,
     button.switchContent.verberg,
     .button.switchContent.verberg {
-      width: 100%;
+      width: calc(100% - 4px);
+      margin: 8px 4px;
       display: none; }
   input[type="submit"]:hover,
   input[type="reset"]:hover,
@@ -2545,14 +2546,11 @@ body.is-menu-visible #menu {
       .wrapper.main .inner .content .docButton {
         overflow: hidden;
         margin-bottom: 0.85em; }
-        .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child, .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child ~ button {
-          width: 100%; }
-        @media screen and (max-width: 1280px) {
-          .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child, .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child ~ button {
-            width: 100%; } }
-        @media screen and (max-width: 1050px) {
-          .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child, .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child ~ button {
-            width: 100%; } }
+        .wrapper.main .inner .content .docButton .veranderContainer {
+          width: 100%;
+          float: left; }
+          .wrapper.main .inner .content .docButton .veranderContainer button {
+            margin: 4px; }
         @media screen and (max-width: 836px) {
           .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child, .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child ~ button {
             width: 100%; } }
