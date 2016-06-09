@@ -103,6 +103,24 @@
     <None Include="packages\MySql.Data.6.9.8\MySql.Data.6.9.8.nupkg" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin10.Designer.cs">
+      <DependentUpon>Admin10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin20.Designer.cs">
+      <DependentUpon>Admin20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin50.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin50.Designer.cs">
+      <DependentUpon>Admin50.cs</DependentUpon>
+    </Compile>
     <Compile Include="ArduinoInput.cs" />
     <Compile Include="Helper.cs">
       <SubType>Form</SubType>
@@ -165,6 +183,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin10.resx">
+      <DependentUpon>Admin10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin20.resx">
+      <DependentUpon>Admin20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin50.resx">
+      <DependentUpon>Admin50.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Helper.resx">
       <DependentUpon>Helper.cs</DependentUpon>
     </EmbeddedResource>

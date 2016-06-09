@@ -131,8 +131,16 @@ namespace Pinautomaat
 
         private void nextPage()
         {
-            MainMenu next = new MainMenu();
-            next.Show();
+            if(!MainBackend.AdminKaart)
+            {
+                MainMenu next = new MainMenu();
+                next.Show();
+            }
+            else
+            {
+                Admin50 next = new Admin50();
+                next.Show();
+            }
         }
 
         private void btnCorrectie_Click(object sender, EventArgs e)

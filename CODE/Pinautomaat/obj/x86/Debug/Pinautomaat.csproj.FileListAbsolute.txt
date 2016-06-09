@@ -239,4 +239,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bi
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MonoBrick.xml
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.BuitenGebruik.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Helper.resources
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin20.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin50.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin10.resources
