@@ -201,14 +201,14 @@ namespace Pinautomaat
                     }
                     else
                     {
-                        MessageBox.Show("Foutje2");
+                        startPincode();
                     }
                 }
                 startPincode();
             }
             else
             {
-                MessageBox.Show("Foutje1");
+                startPincode();
             }
         }
 
