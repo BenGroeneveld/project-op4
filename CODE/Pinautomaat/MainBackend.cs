@@ -33,11 +33,6 @@ namespace Pinautomaat
             }
         }
 
-        private static void setGeldBeschikbaar()
-        {
-
-        }
-
         private static bool privateCheckAllConnections()
         {
             try

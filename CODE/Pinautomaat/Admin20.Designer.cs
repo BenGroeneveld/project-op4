@@ -31,6 +31,7 @@
             this.btnVolgende = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnVorige = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.aantal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.btnVolgende, 2);
             this.btnVolgende.Size = new System.Drawing.Size(270, 124);
             this.btnVolgende.TabIndex = 10;
-            this.btnVolgende.Text = "[D] Ga verder (10)";
+            this.btnVolgende.Text = "[D] Ga verder";
             this.btnVolgende.UseVisualStyleBackColor = false;
             this.btnVolgende.Click += new System.EventHandler(this.btnVolgende_Click);
             // 
@@ -92,6 +93,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.091001F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090091F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel1.Controls.Add(this.btnVorige, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.button1, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.aantal, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 3);
@@ -118,6 +120,27 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 750);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // btnVorige
+            // 
+            this.btnVorige.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.btnVorige, 3);
+            this.btnVorige.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVorige.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVorige.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnVorige.FlatAppearance.BorderSize = 2;
+            this.btnVorige.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVorige.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVorige.ForeColor = System.Drawing.Color.White;
+            this.btnVorige.Location = new System.Drawing.Point(180, 558);
+            this.btnVorige.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVorige.Name = "btnVorige";
+            this.tableLayoutPanel1.SetRowSpan(this.btnVorige, 2);
+            this.btnVorige.Size = new System.Drawing.Size(270, 124);
+            this.btnVorige.TabIndex = 22;
+            this.btnVorige.Text = "[C] Vorige";
+            this.btnVorige.UseVisualStyleBackColor = false;
+            this.btnVorige.Click += new System.EventHandler(this.btnVorige_Click);
             // 
             // button1
             // 
@@ -215,5 +238,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVorige;
     }
 }

@@ -242,3 +242,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\ob
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin20.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin50.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin10.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminCheck.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminHome.resources

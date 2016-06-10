@@ -168,9 +168,6 @@ namespace Pinautomaat
         {
             string strKey = e.KeyValue.ToString().Trim();
 
-            string key1 = "49";
-            string key2 = "50";
-            string key3 = "51";
             string keyA = "65";
             string keyB = "66";
             string keyC = "67";

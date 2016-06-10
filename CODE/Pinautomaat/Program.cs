@@ -40,21 +40,17 @@ namespace Pinautomaat
             //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
 
             runBackground();
-
-            if(MainBackend.checkAllConnections())
+            while(true)
             {
-                SystemGood = true;
-            }
-            if(SystemGood)
-            {
-                while(SystemGood)
+                if(MainBackend.checkAllConnections())
+                {
+                    SystemGood = true;
+                }
+                if(SystemGood)
                 {
                     Application.Run(new Welkom());
                 }
-            }
-            else
-            {
-                while(!SystemGood)
+                else
                 {
                     Application.Run(new BuitenGebruik());
                 }

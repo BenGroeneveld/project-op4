@@ -138,7 +138,7 @@ namespace Pinautomaat
             }
             else
             {
-                Admin50 next = new Admin50();
+                AdminHome next = new AdminHome();
                 next.Show();
             }
         }
@@ -165,7 +165,6 @@ namespace Pinautomaat
             string key8 = "56";
             string key9 = "57";
             string keyA = "65";
-            string keyB = "66";
             string keyC = "67";
             string keyD = "68";
 
