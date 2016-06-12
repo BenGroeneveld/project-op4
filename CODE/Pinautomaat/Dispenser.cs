@@ -10,11 +10,13 @@ namespace Pinautomaat
         private static Motor motor10;
         private static Motor motor20;
         private static Motor motor50;
+        private static int biljetten10 = 0;
+        private static int biljetten20 = 0;
+        private static int biljetten50 = 0;
 
-
-        public static void dispense(int bedrag)
+        public static void dispense()
         {
-            privateDispense(bedrag);
+            privateDispense(biljetten10, biljetten20, biljetten50);
         }
 
         public static bool testDispense()
@@ -39,15 +41,8 @@ namespace Pinautomaat
             }
         }
 
-        private static void privateDispense(int bedrag)
+        private static void privateDispense(int aantal10, int aantal20, int aantal50)
         {
-            bedrag = bedrag / 100;
-            int aantal50 = bedrag / 50;
-            int aantalOver50 = bedrag % 50;
-            int aantal20 = aantalOver50 / 20;
-            int aantalOver20 = aantalOver50 % 20;
-            int aantal10 = aantalOver20 / 10;
-
             try
             {
                 geefBiljetten(motor10, aantal10);
@@ -55,6 +50,99 @@ namespace Pinautomaat
                 geefBiljetten(motor50, aantal50);
             }
             catch { }
+        }
+
+        public static bool checkBeschikbaarGeld(int bedrag)
+        {
+            int aantalBiljetten10 = MainBackend.AantalBiljetten10;
+            int aantalBiljetten20 = MainBackend.AantalBiljetten20;
+            int aantalBiljetten50 = MainBackend.AantalBiljetten50;
+
+            int aantalBiljetten10Eind = aantalBiljetten10;
+            int aantalBiljetten20Eind = aantalBiljetten20;
+            int aantalBiljetten50Eind = aantalBiljetten50;
+
+            bedrag = bedrag / 100;
+
+            int aantal50 = bedrag / 50;
+            int aantalOver50 = bedrag % 50;
+            if(aantal50 > aantalBiljetten50)
+            {
+                if(aantalBiljetten50 > 0)
+                {
+                    aantalOver50 = bedrag - (aantalBiljetten50 * 50);
+                }
+                else
+                {
+                    aantalOver50 = bedrag;
+                }
+                aantalBiljetten50Eind = aantalBiljetten50;
+                aantalBiljetten50 = 0;
+            }
+            else
+            {
+                aantalBiljetten50 -= aantal50;
+                aantalBiljetten50Eind -= aantal50;
+            }
+
+            int aantal20 = aantalOver50 / 20;
+            int aantalOver20 = aantalOver50 % 20;
+            if(aantal20 > aantalBiljetten20)
+            {
+                if(aantalBiljetten20 > 0)
+                {
+                    aantalOver20 = aantalOver50 - (aantalBiljetten20 * 20);
+                }
+                else
+                {
+                    aantalOver20 = aantalOver50;
+                }
+                aantalBiljetten20Eind = aantalBiljetten20;
+                aantalBiljetten20 = 0;
+            }
+            else
+            {
+                aantalBiljetten20 -= aantal20;
+                aantalBiljetten20Eind -= aantal20;
+            }
+
+            int aantal10 = aantalOver20 / 10;
+            int aantalOver10 = aantalOver20 % 10;
+            if(aantal10 > aantalBiljetten10)
+            {
+                if(aantalBiljetten10 > 0)
+                {
+                    aantalOver10 = aantalOver20 - (aantalBiljetten10 * 10);
+                }
+                else
+                {
+                    aantalOver10 = aantalOver20;
+                }
+                aantalBiljetten10Eind = aantalBiljetten10;
+                aantalBiljetten10 = 0;
+            }
+            else
+            {
+                aantalBiljetten10 -= aantal10;
+                aantalBiljetten10Eind -= aantal10;
+            }
+
+            if(aantalOver10 > 0)
+            {
+                return false;
+            }
+            else
+            {
+                MainBackend.AantalBiljetten50 = aantalBiljetten50;
+                MainBackend.AantalBiljetten20 = aantalBiljetten20;
+                MainBackend.AantalBiljetten10 = aantalBiljetten10;
+
+                biljetten10 = aantalBiljetten10Eind;
+                biljetten20 = aantalBiljetten20Eind;
+                biljetten50 = aantalBiljetten50Eind;
+
+                return true;
+            }
         }
 
         private static void geefBiljetten(Motor motor, int aantalBiljetten)

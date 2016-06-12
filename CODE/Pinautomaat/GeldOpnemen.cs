@@ -15,6 +15,10 @@ namespace Pinautomaat
         public GeldOpnemen()
         {
             InitializeComponent();
+
+            label7.Text = MainBackend.AantalBiljetten10.ToString();
+            label8.Text = MainBackend.AantalBiljetten20.ToString();
+            label9.Text = MainBackend.AantalBiljetten50.ToString();
         }
 
         private void bedankt(bool bon, int saldo, int bedrag)
@@ -53,7 +57,6 @@ namespace Pinautomaat
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
                 int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
                 int nieuwSaldo = huidigSaldo - bedrag;
-
                 bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
@@ -132,8 +135,17 @@ namespace Pinautomaat
             }
             else
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                return true;
+                if(Dispenser.checkBeschikbaarGeld(opnemenBedrag))
+                {
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    return true;
+                }
+                else
+                {
+                    label1.Text = "Er is niet genoeg geld beschikbaar voor deze transactie.";
+                    resetBedrag();
+                    return false;
+                }
             }
         }
 

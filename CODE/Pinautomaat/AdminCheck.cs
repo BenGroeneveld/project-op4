@@ -36,7 +36,6 @@ namespace Pinautomaat
             else if(strKey.Equals(keyD))
             {
                 btnVolgende.PerformClick();
-                leaveThisPage = true;
             }
         }
 
@@ -48,6 +47,7 @@ namespace Pinautomaat
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
+            leaveThisPage = true;
             MainBackend.restart();
         }
 

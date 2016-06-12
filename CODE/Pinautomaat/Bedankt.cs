@@ -46,7 +46,7 @@ namespace Pinautomaat
             }
 
             MainBackend.doTransactie(Saldo, Program.Rfid);
-            Dispenser.dispense(Bedrag);
+            Dispenser.dispense();
 
             Thread.Sleep(1000);
             MainBackend.restart();

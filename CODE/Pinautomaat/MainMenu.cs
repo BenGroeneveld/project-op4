@@ -12,6 +12,10 @@ namespace Pinautomaat
 
             string attribute = "Balans";
             Program.StrBedrag = MainBackend.strDbQuery(attribute, Program.Rfid);
+
+            label7.Text = MainBackend.AantalBiljetten10.ToString();
+            label8.Text = MainBackend.AantalBiljetten20.ToString();
+            label9.Text = MainBackend.AantalBiljetten50.ToString();
         }
 
         private void btnSaldo_Click(object sender, EventArgs e)
@@ -52,7 +56,16 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                bedankt(false, nieuwSaldo, bedrag);
+                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                {
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    bedankt(false, nieuwSaldo, bedrag);
+                }
+                else
+                {
+                    label1.Text = "Er is niet genoeg geld beschikbaar voor deze transactie.";
+                    checkButtonPushed();
+                }
             }
         }
 
@@ -66,7 +79,16 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                bedankt(false, nieuwSaldo, bedrag);
+                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                {
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    bedankt(false, nieuwSaldo, bedrag);
+                }
+                else
+                {
+                    label1.Text = "Er is niet genoeg geld beschikbaar voor deze transactie.";
+                    checkButtonPushed();
+                }
             }
         }
 
@@ -80,7 +102,16 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                bedankt(false, nieuwSaldo, bedrag);
+                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                {
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    bedankt(false, nieuwSaldo, bedrag);
+                }
+                else
+                {
+                    label1.Text = "Er is niet genoeg geld beschikbaar voor deze transactie.";
+                    checkButtonPushed();
+                }
             }
         }
 
