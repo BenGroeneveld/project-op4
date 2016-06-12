@@ -38,7 +38,7 @@ namespace Pinautomaat
             try
             {
                 makeDatabaseConnection();
-                if(checkArduino())// && Dispenser.testDispense() && checkPrinter())
+                if(checkArduino() && Dispenser.testDispense() && checkPrinter())
                 {
                     return true;
                 }
