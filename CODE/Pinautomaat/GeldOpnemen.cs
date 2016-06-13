@@ -57,6 +57,7 @@ namespace Pinautomaat
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
                 int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
                 int nieuwSaldo = huidigSaldo - bedrag;
+
                 bedankt(printBon, nieuwSaldo, bedrag);
             }
             else
@@ -111,13 +112,19 @@ namespace Pinautomaat
 
         private bool isCorrectBedrag(string str)
         {
-            if(str.Equals(""))
+            int opnemenBedrag = 0;
+            try
+            {
+                opnemenBedrag = 100 * (Convert.ToInt32(str));
+            }
+            catch { }
+
+            if(str.Equals("") || opnemenBedrag <= 0)
             {
                 label1.Text = "Incorrect bedrag.\nTyp een veelvoud van €" + veelvoudBedrag + ",00 in.";
                 resetBedrag();
                 return false;
             }
-            int opnemenBedrag = 100*(Convert.ToInt32(str));
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
 

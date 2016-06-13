@@ -39,7 +39,6 @@ namespace Pinautomaat
                             infoText.Text += " (" + poging + " / 3)";
                             poging++;
                             approval = true;
-                            startPincode();
                         }
                         else
                         {
@@ -52,8 +51,8 @@ namespace Pinautomaat
                             btnCorrectie.Hide();
                             btnVolgende.Hide();
                             MainBackend.blokkeerPas(Program.Rfid);
-                            startPincode();
                         }
+                        startPincode();
                     }
                     else
                     {
@@ -205,10 +204,6 @@ namespace Pinautomaat
                         textBox3.Text = str;
                         string passwordStr = inputInloggen.Text + textBox1.Text + textBox2.Text + textBox3.Text;
                         password = Convert.ToInt32(passwordStr);
-                    }
-                    else
-                    {
-                        startPincode();
                     }
                 }
                 startPincode();

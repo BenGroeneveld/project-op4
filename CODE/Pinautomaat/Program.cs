@@ -36,8 +36,8 @@ namespace Pinautomaat
 
         private static void runProgram()
         {
-            //SystemGood = false; //USE THIS IN NORMAL SITUATIONS
-            SystemGood = true; //USE THIS FOR DEBUGGING ONLY
+            SystemGood = false; //USE THIS IN NORMAL SITUATIONS
+            //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
 
             runBackground();
             while(true)
