@@ -9,7 +9,7 @@ namespace Pinautomaat
         public static string Rfid { get; set; }
         public static string StrBedrag { get; set; }
         public static string StrRekeningID { get; set; }
-        public static bool SystemGood { get; set; }
+        private static bool SystemGood { get; set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -36,8 +36,8 @@ namespace Pinautomaat
 
         private static void runProgram()
         {
-            SystemGood = false; //USE THIS IN NORMAL SITUATIONS
-            //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
+            //SystemGood = false; //USE THIS IN NORMAL SITUATIONS
+            SystemGood = true; //USE THIS FOR DEBUGGING ONLY
 
             runBackground();
             while(true)

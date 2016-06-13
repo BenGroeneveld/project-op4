@@ -52,7 +52,19 @@ namespace Pinautomaat
             catch { }
         }
 
-        public static bool checkBeschikbaarGeld(int bedrag)
+        public static bool isGeldBeschikbaar(int bedrag)
+        {
+            if(privateIsGeldBeschikbaar(bedrag))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static bool privateIsGeldBeschikbaar(int bedrag)
         {
             int aantalBiljetten10 = MainBackend.AantalBiljetten10;
             int aantalBiljetten20 = MainBackend.AantalBiljetten20;
@@ -61,73 +73,79 @@ namespace Pinautomaat
             int aantalBiljetten10Eind = aantalBiljetten10;
             int aantalBiljetten20Eind = aantalBiljetten20;
             int aantalBiljetten50Eind = aantalBiljetten50;
+            
+            int aantal50;
+            int aantal20;
+            int aantal10;
+            int restGetal = 1;
+
+            int i;
+            int j;
+            int n;
+
+            bool checking = true;
 
             bedrag = bedrag / 100;
 
-            int aantal50 = bedrag / 50;
-            int aantalOver50 = bedrag % 50;
-            if(aantal50 > aantalBiljetten50)
+            aantal50 = bedrag / 50;
+            if(aantalBiljetten50 > aantal50)
             {
-                if(aantalBiljetten50 > 0)
-                {
-                    aantalOver50 = bedrag - (aantalBiljetten50 * 50);
-                }
-                else
-                {
-                    aantalOver50 = bedrag;
-                }
-                aantalBiljetten50Eind = aantalBiljetten50;
-                aantalBiljetten50 = 0;
+                i = aantal50;
             }
             else
             {
-                aantalBiljetten50 -= aantal50;
-                aantalBiljetten50Eind -= aantal50;
+                i = aantalBiljetten50;
             }
-
-            int aantal20 = aantalOver50 / 20;
-            int aantalOver20 = aantalOver50 % 20;
-            if(aantal20 > aantalBiljetten20)
+            while(i >= 0 && checking == true)
             {
-                if(aantalBiljetten20 > 0)
+                aantal50 = bedrag - (i * 50);
+                aantalBiljetten50Eind = i;
+
+                aantal20 = aantal50 / 20;
+                if(aantalBiljetten20 > aantal20)
                 {
-                    aantalOver20 = aantalOver50 - (aantalBiljetten20 * 20);
+                    j = aantal20;
                 }
                 else
                 {
-                    aantalOver20 = aantalOver50;
+                    j = aantalBiljetten20;
                 }
-                aantalBiljetten20Eind = aantalBiljetten20;
-                aantalBiljetten20 = 0;
-            }
-            else
-            {
-                aantalBiljetten20 -= aantal20;
-                aantalBiljetten20Eind -= aantal20;
+                while(j >= 0 && checking == true)
+                {
+                    aantal20 = aantal50 - (j * 20);
+                    aantalBiljetten20Eind = j;
+
+                    aantal10 = aantal20 / 10;
+                    if(aantalBiljetten10 > aantal10)
+                    {
+                        n = aantal10;
+                    }
+                    else
+                    {
+                        n = aantalBiljetten10;
+                    }
+                    while(n >= 0 && checking == true)
+                    {
+                        aantal10 = aantal20 - (n * 10);
+                        aantalBiljetten10Eind = n;
+
+                        restGetal = aantal10;
+
+                        if(restGetal == 0)
+                        {
+                            aantalBiljetten50 -= i;
+                            aantalBiljetten20 -= j;
+                            aantalBiljetten10 -= n;
+                            checking = false;
+                        }
+                        n--;
+                    }
+                    j--;
+                }
+                i--;
             }
 
-            int aantal10 = aantalOver20 / 10;
-            int aantalOver10 = aantalOver20 % 10;
-            if(aantal10 > aantalBiljetten10)
-            {
-                if(aantalBiljetten10 > 0)
-                {
-                    aantalOver10 = aantalOver20 - (aantalBiljetten10 * 10);
-                }
-                else
-                {
-                    aantalOver10 = aantalOver20;
-                }
-                aantalBiljetten10Eind = aantalBiljetten10;
-                aantalBiljetten10 = 0;
-            }
-            else
-            {
-                aantalBiljetten10 -= aantal10;
-                aantalBiljetten10Eind -= aantal10;
-            }
-
-            if(aantalOver10 > 0)
+            if(restGetal > 0)
             {
                 return false;
             }

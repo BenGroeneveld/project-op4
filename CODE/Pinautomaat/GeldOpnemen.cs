@@ -135,7 +135,7 @@ namespace Pinautomaat
             }
             else
             {
-                if(Dispenser.checkBeschikbaarGeld(opnemenBedrag))
+                if(Dispenser.isGeldBeschikbaar(opnemenBedrag))
                 {
                     MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     return true;

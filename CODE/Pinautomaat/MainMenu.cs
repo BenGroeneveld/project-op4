@@ -56,7 +56,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
                     MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
@@ -79,7 +79,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
                     MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
@@ -102,7 +102,7 @@ namespace Pinautomaat
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(Dispenser.checkBeschikbaarGeld(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
                     MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
