@@ -2777,7 +2777,7 @@ body.is-menu-visible #menu {
     margin: 0 3em 0 0;
     width: calc(50% - 1.5em); }
   #footer .inner .contact {
-    width: calc(100% / 4); }
+    width: calc(100% / 3); }
   #footer .inner .copyright {
     border-top: solid 2px rgba(255, 255, 255, 0.125);
     list-style: none;
