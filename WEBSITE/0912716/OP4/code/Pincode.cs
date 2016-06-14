@@ -39,7 +39,6 @@ namespace Pinautomaat
                             infoText.Text += " (" + poging + " / 3)";
                             poging++;
                             approval = true;
-                            startPincode();
                         }
                         else
                         {
@@ -52,8 +51,8 @@ namespace Pinautomaat
                             btnCorrectie.Hide();
                             btnVolgende.Hide();
                             MainBackend.blokkeerPas(Program.Rfid);
-                            startPincode();
                         }
+                        startPincode();
                     }
                     else
                     {
@@ -131,8 +130,16 @@ namespace Pinautomaat
 
         private void nextPage()
         {
-            MainMenu next = new MainMenu();
-            next.Show();
+            if(!MainBackend.AdminKaart)
+            {
+                MainMenu next = new MainMenu();
+                next.Show();
+            }
+            else
+            {
+                AdminHome next = new AdminHome();
+                next.Show();
+            }
         }
 
         private void btnCorrectie_Click(object sender, EventArgs e)
@@ -157,7 +164,6 @@ namespace Pinautomaat
             string key8 = "56";
             string key9 = "57";
             string keyA = "65";
-            string keyB = "66";
             string keyC = "67";
             string keyD = "68";
 
@@ -199,16 +205,12 @@ namespace Pinautomaat
                         string passwordStr = inputInloggen.Text + textBox1.Text + textBox2.Text + textBox3.Text;
                         password = Convert.ToInt32(passwordStr);
                     }
-                    else
-                    {
-                        MessageBox.Show("Foutje2");
-                    }
                 }
                 startPincode();
             }
             else
             {
-                MessageBox.Show("Foutje1");
+                startPincode();
             }
         }
 

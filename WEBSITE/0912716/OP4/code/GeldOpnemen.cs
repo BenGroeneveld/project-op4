@@ -15,6 +15,10 @@ namespace Pinautomaat
         public GeldOpnemen()
         {
             InitializeComponent();
+
+            label7.Text = MainBackend.AantalBiljetten10.ToString();
+            label8.Text = MainBackend.AantalBiljetten20.ToString();
+            label9.Text = MainBackend.AantalBiljetten50.ToString();
         }
 
         private void bedankt(bool bon, int saldo, int bedrag)
@@ -108,13 +112,19 @@ namespace Pinautomaat
 
         private bool isCorrectBedrag(string str)
         {
-            if(str.Equals(""))
+            int opnemenBedrag = 0;
+            try
+            {
+                opnemenBedrag = 100 * (Convert.ToInt32(str));
+            }
+            catch { }
+
+            if(str.Equals("") || opnemenBedrag <= 0)
             {
                 label1.Text = "Incorrect bedrag.\nTyp een veelvoud van €" + veelvoudBedrag + ",00 in.";
                 resetBedrag();
                 return false;
             }
-            int opnemenBedrag = 100*(Convert.ToInt32(str));
             int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
 
@@ -132,8 +142,17 @@ namespace Pinautomaat
             }
             else
             {
-                MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
-                return true;
+                if(Dispenser.isGeldBeschikbaar(opnemenBedrag))
+                {
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    return true;
+                }
+                else
+                {
+                    label1.Text = "Er is niet genoeg geld beschikbaar voor deze transactie.";
+                    resetBedrag();
+                    return false;
+                }
             }
         }
 
@@ -168,9 +187,6 @@ namespace Pinautomaat
         {
             string strKey = e.KeyValue.ToString().Trim();
 
-            string key1 = "49";
-            string key2 = "50";
-            string key3 = "51";
             string keyA = "65";
             string keyB = "66";
             string keyC = "67";

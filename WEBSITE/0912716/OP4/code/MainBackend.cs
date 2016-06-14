@@ -15,6 +15,11 @@ namespace Pinautomaat
         private static MySqlConnection connection;
         private static string rfid = "";
         private static string rekening = "";
+        
+        public static bool AdminKaart { get; set; }
+        public static int AantalBiljetten10 { get; set; }
+        public static int AantalBiljetten20 { get; set; }
+        public static int AantalBiljetten50 { get; set; }
 
         public static bool checkAllConnections()
         {
@@ -33,17 +38,9 @@ namespace Pinautomaat
             try
             {
                 makeDatabaseConnection();
-                checkArduino();
-                if(Dispenser.testDispense())
+                if(checkArduino() && Dispenser.testDispense() && checkPrinter())
                 {
-                    if(checkPrinter())
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return true;
                 }
                 else
                 {
@@ -61,19 +58,20 @@ namespace Pinautomaat
             checkCard();
         }
 
-        private static void checkArduino()
+        private static bool checkArduino()
         {
-            ArduinoInput.strCardID = "";
-            if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
+            try
             {
-                ArduinoInput.connect(baud, recognizeText, loggedInValue);
-            }
-            else
-            {
-                while(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
+                ArduinoInput.strCardID = "";
+                if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
                 {
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
                 }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
 

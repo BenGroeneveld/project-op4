@@ -90,6 +90,16 @@ namespace Pinautomaat
             {
                 strCardID = currentPort.ReadLine().ToString().Trim();
             }
+
+            if(strCardID.EndsWith("RF"))
+            {
+                MainBackend.AdminKaart = true;
+                strCardID = strCardID.Remove(5, 2);
+            }
+            else
+            {
+                MainBackend.AdminKaart = false;
+            }
             return strCardID;
         }
 
