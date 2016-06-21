@@ -14,10 +14,7 @@ namespace Pinautomaat
 
         public static void connect(int baud, string recognizeText, int loggedInValue)
         {
-            while(!isConnected(baud, recognizeText, loggedInValue))
-            {
-                tryConnect(baud, recognizeText, loggedInValue);
-            }
+            tryConnect(baud, recognizeText, loggedInValue);
         }
 
         public static bool isConnected(int baud, string recognizeText, int loggedInValue)
@@ -86,7 +83,7 @@ namespace Pinautomaat
 
         public static string strRFID()
         {
-            while(!strCardID.Contains("ID"))
+            while(!strCardID.StartsWith("PasID"))
             {
                 strCardID = currentPort.ReadLine().ToString().Trim();
             }

@@ -1,13 +1,73 @@
-﻿using System;
+﻿using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
+
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Text;
+using System.Security.Cryptography;
+
 
 namespace Pinautomaat
 {
+    public static class Pas
+    {
+        public static int PasID
+        {
+            get; set;
+        }
+        public static int Poging
+        {
+            get; set;
+        }
+        public static int Actief
+        {
+            get; set;
+        }
+        public static string RekeningID
+        {
+            get; set;
+        }
+        public static int KlantID
+        {
+            get; set;
+        }
+    }
+
+    public static class Rekening
+    {
+        public static string RekeningID
+        {
+            get; set;
+        }
+        public static int Balans
+        {
+            get; set;
+        }
+        public static string Hash
+        {
+            get; set;
+        }
+    }
+
     public static class MainBackend
     {
+        public static string makeHash(string RekeningID, string pincode)
+        {
+            string input = string.Concat(RekeningID, pincode);
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
+            SHA512Managed hashstring = new SHA512Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach(byte x in hash)
+            {
+                hashString += string.Format("{0:x2}", x);
+            }
+            return hashString;
+        }
+
         private static int baud = 9600;
         private static string recognizeText = "Arduino";
         private static int loggedInValue = 0;
@@ -177,7 +237,7 @@ namespace Pinautomaat
 
         private static void privateMakeDatabaseConnection()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDbContextConnectionStringRemote"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["LocalDbConnection"].ConnectionString; //MyDbContextConnectionStringRemote
 
             try
             {
@@ -198,6 +258,28 @@ namespace Pinautomaat
         public static void doTransactie(int bedrag, string rfidCard)
         {
             privateDoTransactie(bedrag, rfidCard);
+        }
+
+        public static void getAllData()
+        {
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT RekeningID FROM Pas WHERE PasID ='" + Program.Rfid + "'";
+            Pas.RekeningID = cmd.ExecuteScalar().ToString();
+
+            cmd.CommandText = "SELECT KlantID FROM Pas WHERE PasID ='" + Program.Rfid + "'";
+            Pas.KlantID = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+            cmd.CommandText = "SELECT Actief FROM Pas WHERE PasID ='" + Program.Rfid + "'";
+            Pas.Actief = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+            cmd.CommandText = "SELECT Hash FROM Rekening INNER JOIN Pas ON Pas.RekeningID = Rekening.RekeningID WHERE PasID = '" + Program.Rfid + "'";
+            Rekening.Hash = cmd.ExecuteScalar().ToString();
+
+            cmd.CommandText = "SELECT Balans FROM Rekening INNER JOIN Pas ON Pas.RekeningID = Rekening.RekeningID WHERE PasID = '" + Program.Rfid + "'";
+            Rekening.Balans = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+
+            cmd.CommandText = "SELECT Poging FROM Pas WHERE PasID ='" + Program.Rfid + "'";
+            Pas.Poging = Convert.ToInt32(cmd.ExecuteScalar().ToString());
         }
 
         public static string strDbQuery(string getAttribute, string rfidCard)

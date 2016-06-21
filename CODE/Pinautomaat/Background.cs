@@ -2,7 +2,7 @@
 
 namespace Pinautomaat
 {
-    public partial class Background : Helper
+    public partial class Background : Form
     {
         public Background()
         {

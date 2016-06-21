@@ -3,8 +3,16 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class AdminCheck : Helper
+    public partial class AdminCheck : Form
     {
+        private DatabaseConnection dbConnect = new DatabaseConnection();
+        private MainBackend mainBackend = new MainBackend();
+        private Dispenser dispenser = new Dispenser();
+        private Rekening rekening = new Rekening();
+        private Pas pas = new Pas();
+        private Klant klant = new Klant();
+        private Transactie transactie = new Transactie();
+
         private bool leaveThisPage = false;
 
         public AdminCheck()
@@ -43,6 +51,7 @@ namespace Pinautomaat
         {
             Admin50 next = new Admin50();
             next.Show();
+            next.Focus();
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)

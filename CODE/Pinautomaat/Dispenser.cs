@@ -4,22 +4,28 @@ using System.Threading;
 
 namespace Pinautomaat
 {
-    public static class Dispenser
+    public class Dispenser
     {
-        private static Brick<Sensor, Sensor, Sensor, Sensor> brickEV3;
-        private static Motor motor10;
-        private static Motor motor20;
-        private static Motor motor50;
-        private static int biljetten10 = 0;
-        private static int biljetten20 = 0;
-        private static int biljetten50 = 0;
+        private Brick<Sensor, Sensor, Sensor, Sensor> brickEV3;
+        private Motor motor10;
+        private Motor motor20;
+        private Motor motor50;
+        private int biljetten10 = 0;
+        private int biljetten20 = 0;
+        private int biljetten50 = 0;
 
-        public static void dispense()
+        private DatabaseConnection dbConnect;
+        private MainBackend mainBackend;
+        private Dispenser dispenser;
+        private Rekening rekening;
+        private Pas pas;
+
+        public void dispense()
         {
             privateDispense(biljetten10, biljetten20, biljetten50);
         }
 
-        public static bool testDispense()
+        public bool testDispense()
         {
             if(connect())
             {
@@ -41,7 +47,7 @@ namespace Pinautomaat
             }
         }
 
-        private static void privateDispense(int aantal10, int aantal20, int aantal50)
+        private void privateDispense(int aantal10, int aantal20, int aantal50)
         {
             try
             {
@@ -52,7 +58,7 @@ namespace Pinautomaat
             catch { }
         }
 
-        public static bool isGeldBeschikbaar(int bedrag)
+        public bool isGeldBeschikbaar(int bedrag)
         {
             if(privateIsGeldBeschikbaar(bedrag))
             {
@@ -64,7 +70,7 @@ namespace Pinautomaat
             }
         }
 
-        private static bool privateIsGeldBeschikbaar(int bedrag)
+        private bool privateIsGeldBeschikbaar(int bedrag)
         {
             int aantalBiljetten10 = MainBackend.AantalBiljetten10;
             int aantalBiljetten20 = MainBackend.AantalBiljetten20;
@@ -163,7 +169,7 @@ namespace Pinautomaat
             }
         }
 
-        private static void geefBiljetten(Motor motor, int aantalBiljetten)
+        private void geefBiljetten(Motor motor, int aantalBiljetten)
         {
             for(int i = 0; i < aantalBiljetten; i++)
             {
@@ -175,7 +181,7 @@ namespace Pinautomaat
             }
         }
 
-        private static void correctie(Motor motor)
+        private void correctie(Motor motor)
         {
             motor.Reverse = false;
             motor.On(20);
@@ -183,7 +189,7 @@ namespace Pinautomaat
             motor.Off();
         }
 
-        private static bool connect()
+        private bool connect()
         {
             string[] ports = SerialPort.GetPortNames();
             foreach(string port in ports)

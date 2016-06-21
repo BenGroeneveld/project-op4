@@ -3,17 +3,15 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Saldo : Helper
+    public partial class Saldo : Form
     {
-        private static string attribute = "";
-        private static string doubleBedrag = "";
+
+        private string doubleBedrag = "";
 
         public Saldo()
         {
             InitializeComponent();
-
-            attribute = "Balans";
-            string str = MainBackend.strDbQuery(attribute, Program.Rfid);
+            string str = Convert.ToString(Program.Balans);
             double i = Convert.ToDouble(str);
             double j = i / 100;
             int saldo = 0;
@@ -34,7 +32,7 @@ namespace Pinautomaat
                 bedrag.Text = doubleBedrag;
             }
             saldo = Convert.ToInt32(100 * j);
-            Program.StrBedrag = Convert.ToString(saldo);
+            Program.Balans = saldo;
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)
@@ -44,10 +42,9 @@ namespace Pinautomaat
 
         private void btnGeldOpnemen_Click(object sender, EventArgs e)
         {
-            var geldOpnemenForm = new GeldOpnemen();
-            geldOpnemenForm.Show();
-            this.Hide();
-            geldOpnemenForm.Closed += (s, args) => this.Close();
+            GeldOpnemen next = new GeldOpnemen();
+            next.Show();
+            next.Focus();
         }
 
         private void checkButtonPushed()
