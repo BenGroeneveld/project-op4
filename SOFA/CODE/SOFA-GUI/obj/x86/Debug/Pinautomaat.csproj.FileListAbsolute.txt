@@ -1,0 +1,302 @@
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\bin\Debug\WindowsApplication.exe.config
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Gui.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\bin\Debug\Pinautomaat.exe.config
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\GuiTest\GuiTest\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\WindowsApplication.exe.config
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\obj\x86\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\Pinautomaat\bin\Debug\atm.label
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.exe.config
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\atm.label
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\DEV\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.exe.config
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\atm.label
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.exe
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\WindowsApplication.pdb
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\BenGroeneveld_RemcoLaBrijn\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Configuration.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Data.DataSetExtensions.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Data.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Drawing.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Windows.Forms.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Xml.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\System.Xml.Linq.dll
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\bin\Debug\Pinautomaat.pdb
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\MEGA\DEV\GitHub\project-op3\Pinautomaat\DEV\CODE\C#\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Resources\Logo.png
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\atm.label
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.pdb
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Configuration.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.DataSetExtensions.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Drawing.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Windows.Forms.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.Linq.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive voor Bedrijven\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Properties\Resources.resx
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Resources\Logo.png
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Properties\Resources.resx
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\atm.label
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.pdb
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Configuration.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.DataSetExtensions.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Drawing.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Windows.Forms.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.Linq.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\MEGA\School\GitHub\project-op3\OP3-BenGroeneveld-RemcoLaBrijn\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op3\OP3\DEV\CODE\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op3\OP3\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op3\OP3\DEV\CODE\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\Resources\Logo.png
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\Properties\Resources.resx
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\atm.label
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Configuration.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.DataSetExtensions.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Drawing.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Windows.Forms.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\System.Xml.Linq.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.exe.config
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Resources\Logo.png
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Properties\Resources.resx
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\atm.label
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.exe
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.Label.Framework.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MySql.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Configuration.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Data.DataSetExtensions.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Data.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Drawing.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Windows.Forms.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Xml.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Xml.Linq.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.DLS.Runtime.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.Common.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\DYMO.Label.Framework.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Background.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Bedankt.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.MainMenu.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Pincode.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Saldo.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Welkom.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\LibUsbDotNet.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MonoBrick.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\MonoBrick.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.BuitenGebruik.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Helper.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin20.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin50.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin10.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminCheck.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminHome.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Newtonsoft.Json.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Formatting.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Formatting.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Extensions.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Primitives.dll
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Extensions.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Primitives.xml
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csproj.App.config
+E:\SOFA\SOFA-GUI\bin\Debug\Pinautomaat.exe.config
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.exe
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.pdb
+E:\SOFA\SOFA-GUI\bin\Debug\Resources\Logo.png
+E:\SOFA\SOFA-GUI\bin\Debug\Properties\Resources.resx
+E:\SOFA\SOFA-GUI\bin\Debug\atm.label
+E:\SOFA\SOFA-GUI\bin\Debug\Pinautomaat.exe
+E:\SOFA\SOFA-GUI\bin\Debug\Pinautomaat.pdb
+E:\SOFA\SOFA-GUI\bin\Debug\DYMO.Label.Framework.dll
+E:\SOFA\SOFA-GUI\bin\Debug\MySql.Data.dll
+E:\SOFA\SOFA-GUI\bin\Debug\Newtonsoft.Json.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Configuration.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Data.DataSetExtensions.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Data.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Drawing.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Extensions.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Formatting.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Primitives.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Windows.Forms.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Xml.dll
+E:\SOFA\SOFA-GUI\bin\Debug\System.Xml.Linq.dll
+E:\SOFA\SOFA-GUI\bin\Debug\DYMO.DLS.Runtime.dll
+E:\SOFA\SOFA-GUI\bin\Debug\DYMO.Common.dll
+E:\SOFA\SOFA-GUI\bin\Debug\DYMO.Label.Framework.xml
+E:\SOFA\SOFA-GUI\bin\Debug\Newtonsoft.Json.xml
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Extensions.xml
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Formatting.xml
+E:\SOFA\SOFA-GUI\bin\Debug\System.Net.Http.Primitives.xml
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.csproj.App.config
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Admin10.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Admin20.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Admin50.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.AdminCheck.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.AdminHome.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Helper.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Background.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Bedankt.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.BuitenGebruik.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.GeldOpnemen.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.MainMenu.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Pincode.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Properties.Resources.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Saldo.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.Welkom.resources
+E:\SOFA\SOFA-GUI\obj\x86\Debug\Pinautomaat.csproj.GenerateResource.Cache
