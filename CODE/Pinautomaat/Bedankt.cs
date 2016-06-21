@@ -38,14 +38,14 @@ namespace Pinautomaat
             if(Bon)
             {
                 label1.Text += "\nVergeet uw geld en bon niet";
-                MainBackend.printBon(strBedrag, Program.StrRekeningID, Program.Rfid);
+                MainBackend.printBon(strBedrag, Program.RekeningID, Program.PasID);
             }
             else
             {
                 label1.Text += "\nVergeet uw geld niet";
             }
 
-            MainBackend.doTransactie(Saldo, Program.Rfid);
+            MainBackend.doTransactie(Saldo);
             Dispenser.dispense();
 
             Thread.Sleep(1000);

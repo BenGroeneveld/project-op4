@@ -38,7 +38,7 @@ namespace Pinautomaat
             {
                 printBon = true;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int huidigSaldo = Convert.ToInt32(Program.Balans);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -55,7 +55,7 @@ namespace Pinautomaat
             {
                 printBon = false;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int huidigSaldo = Convert.ToInt32(Program.Balans);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -125,7 +125,7 @@ namespace Pinautomaat
                 resetBedrag();
                 return false;
             }
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Program.Balans;
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
 
             if(opnemenBedrag % (100 * veelvoudBedrag) != 0)
@@ -144,7 +144,6 @@ namespace Pinautomaat
             {
                 if(Dispenser.isGeldBeschikbaar(opnemenBedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     return true;
                 }
                 else

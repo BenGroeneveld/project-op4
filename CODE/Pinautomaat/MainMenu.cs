@@ -9,10 +9,6 @@ namespace Pinautomaat
         public MainMenu()
         {
             InitializeComponent();
-
-            string attribute = "Balans";
-            Program.StrBedrag = MainBackend.strDbQuery(attribute, Program.Rfid);
-
             label7.Text = MainBackend.AantalBiljetten10.ToString();
             label8.Text = MainBackend.AantalBiljetten20.ToString();
             label9.Text = MainBackend.AantalBiljetten50.ToString();
@@ -49,7 +45,7 @@ namespace Pinautomaat
         private void btnSnelpinnen10_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 10;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -58,7 +54,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -72,7 +68,7 @@ namespace Pinautomaat
         private void btnSnelpinnen20_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 20;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -81,7 +77,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -95,7 +91,7 @@ namespace Pinautomaat
         private void btnSnelpinnen50_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 50;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -104,7 +100,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else

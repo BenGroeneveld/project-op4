@@ -9,7 +9,6 @@ namespace Pinautomaat
     {
         public static string port = "";
         public static SerialPort currentPort;
-        public static string strCardID = "";
         public static int connectionCorrect = 128;
 
         public static void connect(int baud, string recognizeText, int loggedInValue)
@@ -86,21 +85,22 @@ namespace Pinautomaat
 
         public static string strRFID()
         {
-            while(!strCardID.Contains("ID"))
+            string str = "";
+            while(!str.StartsWith("PasID: "))
             {
-                strCardID = currentPort.ReadLine().ToString().Trim();
+                str = currentPort.ReadLine().ToString().Trim();
             }
+            str = str.Remove(0, 7);
 
-            if(strCardID.EndsWith("RF"))
+            if(str.EndsWith("125"))
             {
                 MainBackend.AdminKaart = true;
-                strCardID = strCardID.Remove(5, 2);
             }
             else
             {
                 MainBackend.AdminKaart = false;
             }
-            return strCardID;
+            return str;
         }
 
         public static string strInputText()

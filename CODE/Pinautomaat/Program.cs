@@ -6,10 +6,39 @@ namespace Pinautomaat
 {
     public static class Program
     {
-        public static string Rfid { get; set; }
-        public static string StrBedrag { get; set; }
-        public static string StrRekeningID { get; set; }
-        private static bool SystemGood { get; set; }
+        private static bool SystemGood
+        {
+            get; set;
+        }
+
+        public static string PasID
+        {
+            get; set;
+        }
+        public static int Poging
+        {
+            get; set;
+        }
+        public static int Actief
+        {
+            get; set;
+        }
+        public static string RekeningID
+        {
+            get; set;
+        }
+        public static int KlantID
+        {
+            get; set;
+        }
+        public static int Balans
+        {
+            get; set;
+        }
+        public static string Hash
+        {
+            get; set;
+        }
 
         /// <summary>
         /// The main entry point for the application.

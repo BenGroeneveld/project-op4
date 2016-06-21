@@ -3,18 +3,69 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace Pinautomaat
 {
+    public class Pas
+    {
+        public string PasID
+        {
+            get; set;
+        }
+        public int Poging
+        {
+            get; set;
+        }
+        public int Actief
+        {
+            get; set;
+        }
+        public string RekeningID
+        {
+            get; set;
+        }
+        public int KlantID
+        {
+            get; set;
+        }
+    }
+
+    public class Rekening
+    {
+        public string RekeningID
+        {
+            get; set;
+        }
+        public int Balans
+        {
+            get; set;
+        }
+        public string Hash
+        {
+            get; set;
+        }
+    }
+
     public static class MainBackend
     {
+        public static string makeHash(string RekeningID, string pincode)
+        {
+            string input = string.Concat(RekeningID, pincode);
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
+            SHA512Managed hashstring = new SHA512Managed();
+            byte[] hash = hashstring.ComputeHash(bytes);
+            string hashString = string.Empty;
+            foreach(byte x in hash)
+            {
+                hashString += string.Format("{0:x2}", x);
+            }
+            return hashString;
+        }
         private static int baud = 9600;
         private static string recognizeText = "Arduino";
         private static int loggedInValue = 0;
-
-        private static MySqlConnection connection;
-        private static string rfid = "";
-        private static string rekening = "";
         
         public static bool AdminKaart { get; set; }
         public static int AantalBiljetten10 { get; set; }
@@ -37,8 +88,7 @@ namespace Pinautomaat
         {
             try
             {
-                makeDatabaseConnection();
-                if(checkArduino() && Dispenser.testDispense() && checkPrinter())
+                if(checkArduino())// && Dispenser.testDispense() && checkPrinter())
                 {
                     return true;
                 }
@@ -62,7 +112,6 @@ namespace Pinautomaat
         {
             try
             {
-                ArduinoInput.strCardID = "";
                 if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
                 {
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
@@ -99,19 +148,17 @@ namespace Pinautomaat
 
         private static void checkCard()
         {
-            Program.Rfid = null;
-            Program.StrBedrag = null;
-            Program.StrRekeningID = null;
-            ArduinoInput.strCardID = "";
             loggedInValue = 0;
 
             try
             {
-                rfid = ArduinoInput.strRFID();
-                ArduinoInput.strCardID = rfid;
-                Program.Rfid = rfid;
-                rekening = strDbQuery("RekeningID", rfid);
-                Program.StrRekeningID = rekening;
+                Program.PasID = ArduinoInput.strRFID();
+                Program.RekeningID = DatabaseConnection.getPasFromDatabase().Result.RekeningID;
+                Program.Actief = DatabaseConnection.getPasFromDatabase().Result.Actief;
+                Program.Balans = DatabaseConnection.getRekeningFromDatabase().Result.Balans;
+                Program.Hash = DatabaseConnection.getRekeningFromDatabase().Result.Hash;
+                Program.KlantID = DatabaseConnection.getPasFromDatabase().Result.KlantID;
+                Program.Poging = DatabaseConnection.getPasFromDatabase().Result.Poging;
                 loggedInValue = 255;
             }
             catch { }
@@ -170,83 +217,28 @@ namespace Pinautomaat
             }
         }
 
-        public static void makeDatabaseConnection()
-        {
-            privateMakeDatabaseConnection();
-        }
-
-        private static void privateMakeDatabaseConnection()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDbContextConnectionStringRemote"].ConnectionString;
-
-            try
-            {
-                connection = new MySqlConnection(connectionString);
-                connection.Open();
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         public static void blokkeerPas(string rfidCard)
         {
-            privateBlokkeerPas(rfidCard);
+            Program.Actief = 0;
+            Pas pas = new Pas();
+            pas.Actief = Program.Actief;
+            pas.RekeningID = Program.RekeningID;
+            pas.KlantID = Program.KlantID;
+            pas.PasID = Program.PasID;
+            pas.Poging = Program.Poging;
+            DatabaseConnection.setPasFromDatabase(pas);
+            pas = null;
         }
 
-        public static void doTransactie(int bedrag, string rfidCard)
+        public static void doTransactie(int bedrag)
         {
-            privateDoTransactie(bedrag, rfidCard);
-        }
-
-        public static string strDbQuery(string getAttribute, string rfidCard)
-        {
-            return strPrivateDbQuery(getAttribute, rfidCard);
-        }
-
-        private static string strPrivateDbQuery(string getAttribute, string rfidCard)
-        {
-            MySqlCommand cmd = connection.CreateCommand();
-            if(getAttribute == "RekeningID")
-            {
-                cmd.CommandText = "SELECT RekeningID FROM Pas WHERE PasID ='" + rfidCard + "'";
-            }
-            else if(getAttribute == "KlantID")
-            {
-                cmd.CommandText = "SELECT KlantID FROM Pas WHERE PasID ='" + rfidCard + "'";
-            }
-            else if(getAttribute == "Actief")
-            {
-                cmd.CommandText = "SELECT Actief FROM Pas WHERE PasID ='" + rfidCard + "'";
-            }
-            else if(getAttribute == "Pincode")
-            {
-                cmd.CommandText = "SELECT Pincode FROM Pas WHERE PasID ='" + rfidCard + "'";
-            }
-            else if(getAttribute == "Balans")
-            {
-                cmd.CommandText = "SELECT Balans FROM Rekening INNER JOIN Pas ON Pas.RekeningID = Rekening.RekeningID WHERE PasID = '" + rfidCard + "'";
-            }
-            else if(getAttribute == "RekeningType")
-            {
-                cmd.CommandText = "SELECT RekeningType FROM Rekening INNER JOIN Pas ON Pas.RekeningID = Rekening.RekeningID WHERE PasID = '" + rfidCard + "'";
-            }
-            return cmd.ExecuteScalar().ToString();
-        }
-
-        private static void privateBlokkeerPas(string rfidCard)
-        {
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "UPDATE Pas SET Actief = 0 WHERE PasID ='" + rfidCard + "'";
-            cmd.ExecuteNonQuery();
-        }
-
-        private static void privateDoTransactie(int bedrag, string rfidCard)
-        {
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "UPDATE Rekening INNER JOIN Pas ON Pas.RekeningID = Rekening.RekeningID SET Balans = " + bedrag + " WHERE PasID = '" + rfidCard + "'";
-            cmd.ExecuteNonQuery();
+            Program.Balans = bedrag;
+            Rekening rekening = new Rekening();
+            rekening.Balans = Program.Balans;
+            rekening.RekeningID = Program.RekeningID;
+            rekening.Hash = Program.Hash;
+            DatabaseConnection.setRekeningFromDatabase(rekening);
+            rekening = null;
         }
 
         public static void printBon(string geldOpname, string rekeningID, string labelPasID)
