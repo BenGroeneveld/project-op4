@@ -3,14 +3,12 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Pincode : Form
+    public partial class Pincode : Helper
     {
-        private DatabaseConnection dbConnect;
-        private Pas pas;
 
-        public string password;
-        private string correctPassword;
-        private string cardID;
+        public int password = 0;
+        private int correctPassword = 987654321;
+        private string cardID = ArduinoInput.strCardID;
         private bool approval = true;
         private int poging = 1;
         private int actief = 0;
@@ -31,7 +29,6 @@ namespace Pinautomaat
             {
                 try
                 {
-                    password = MainBackend.makeHash(Program.RekeningID, password);
                     if(password != correctPassword)
                     {
                         approval = false;
@@ -53,7 +50,7 @@ namespace Pinautomaat
                             textBox3.Hide();
                             btnCorrectie.Hide();
                             btnVolgende.Hide();
-                            MainBackend.blokkeerPas(Program.PasID);
+                            MainBackend.blokkeerPas(Program.Rfid);
                         }
                         startPincode();
                     }
@@ -72,15 +69,14 @@ namespace Pinautomaat
 
         public void setup()
         {
-            pas = DatabaseConnection.getPasFromDatabase(Program.PasID).Result;
             setCardID();
             setCorrectPassword();
-            actief = pas.Actief;
+            string strToInt = MainBackend.strDbQuery("Actief", Program.Rfid);
+            actief = Convert.ToInt32(strToInt);
         }
 
         public void setCardID()
         {
-            cardID = ArduinoInput.strCardID;
             privateSetCardID(cardID);
         }
 
@@ -91,8 +87,8 @@ namespace Pinautomaat
 
         private void setCorrectPassword()
         {
-
-            correctPassword = Program.Hash;
+            string strPassword = MainBackend.strDbQuery("Pincode", Program.Rfid);
+            correctPassword = Convert.ToInt32(strPassword);
         }
 
         private void clearPincode()
@@ -117,7 +113,7 @@ namespace Pinautomaat
         {
             if(actief == 1)
             {
-                checkButtonPushed();
+                checkButtonPushed(); ;
             }
             else if(actief == 0)
             {
@@ -138,13 +134,11 @@ namespace Pinautomaat
             {
                 MainMenu next = new MainMenu();
                 next.Show();
-                next.Focus();
             }
             else
             {
                 AdminHome next = new AdminHome();
                 next.Show();
-                next.Focus();
             }
         }
 
@@ -209,7 +203,7 @@ namespace Pinautomaat
                         string str = e.KeyCode.ToString().Remove(0, 1);
                         textBox3.Text = str;
                         string passwordStr = inputInloggen.Text + textBox1.Text + textBox2.Text + textBox3.Text;
-                        password = passwordStr;
+                        password = Convert.ToInt32(passwordStr);
                     }
                 }
                 startPincode();

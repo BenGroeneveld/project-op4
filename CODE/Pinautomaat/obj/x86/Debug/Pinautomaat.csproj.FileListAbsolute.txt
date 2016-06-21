@@ -207,6 +207,8 @@ D:\OneDrive - Hogeschool Rotterdam\School\Programming\Csharp\Interface\Pinautoma
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.exe.config
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.exe
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.pdb
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Resources\Logo.png
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Properties\Resources.resx
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\atm.label
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.exe
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Pinautomaat.pdb
@@ -240,10 +242,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\ob
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin20.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin50.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.Admin10.resources
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminCheck.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.AdminHome.resources
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Formatting.dll
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\System.Net.Http.Formatting.xml
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Newtonsoft.Json.dll
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\bin\Debug\Newtonsoft.Json.xml
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\CODE\Pinautomaat\obj\x86\Debug\Pinautomaat.csprojResolveAssemblyReference.cache

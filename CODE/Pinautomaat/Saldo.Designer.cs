@@ -77,7 +77,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1916, 1053);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1920, 1080);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label3
@@ -88,11 +88,11 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Open Sans", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(348, 261);
+            this.label3.Location = new System.Drawing.Point(348, 270);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.tableLayoutPanel1.SetRowSpan(this.label3, 2);
-            this.label3.Size = new System.Drawing.Size(174, 174);
+            this.label3.Size = new System.Drawing.Size(174, 180);
             this.label3.TabIndex = 17;
             this.label3.Text = "€";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -101,12 +101,12 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo1;
+            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(348, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(348, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -122,11 +122,11 @@
             this.btnGeldOpnemen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGeldOpnemen.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGeldOpnemen.ForeColor = System.Drawing.Color.White;
-            this.btnGeldOpnemen.Location = new System.Drawing.Point(1044, 783);
+            this.btnGeldOpnemen.Location = new System.Drawing.Point(1044, 810);
             this.btnGeldOpnemen.Margin = new System.Windows.Forms.Padding(0);
             this.btnGeldOpnemen.Name = "btnGeldOpnemen";
             this.tableLayoutPanel1.SetRowSpan(this.btnGeldOpnemen, 2);
-            this.btnGeldOpnemen.Size = new System.Drawing.Size(522, 174);
+            this.btnGeldOpnemen.Size = new System.Drawing.Size(522, 178);
             this.btnGeldOpnemen.TabIndex = 13;
             this.btnGeldOpnemen.Text = "[D] Geld opnemen";
             this.btnGeldOpnemen.UseVisualStyleBackColor = false;
@@ -143,11 +143,11 @@
             this.btnUitloggen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUitloggen.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUitloggen.ForeColor = System.Drawing.Color.White;
-            this.btnUitloggen.Location = new System.Drawing.Point(348, 783);
+            this.btnUitloggen.Location = new System.Drawing.Point(348, 810);
             this.btnUitloggen.Margin = new System.Windows.Forms.Padding(0);
             this.btnUitloggen.Name = "btnUitloggen";
             this.tableLayoutPanel1.SetRowSpan(this.btnUitloggen, 2);
-            this.btnUitloggen.Size = new System.Drawing.Size(522, 174);
+            this.btnUitloggen.Size = new System.Drawing.Size(522, 178);
             this.btnUitloggen.TabIndex = 12;
             this.btnUitloggen.Text = "[C] Stoppen";
             this.btnUitloggen.UseVisualStyleBackColor = false;
@@ -162,11 +162,11 @@
             this.bedrag.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.bedrag.Font = new System.Drawing.Font("Open Sans", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bedrag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.bedrag.Location = new System.Drawing.Point(522, 261);
+            this.bedrag.Location = new System.Drawing.Point(522, 270);
             this.bedrag.Margin = new System.Windows.Forms.Padding(0);
             this.bedrag.Name = "bedrag";
             this.tableLayoutPanel1.SetRowSpan(this.bedrag, 2);
-            this.bedrag.Size = new System.Drawing.Size(1044, 174);
+            this.bedrag.Size = new System.Drawing.Size(1044, 180);
             this.bedrag.TabIndex = 8;
             this.bedrag.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -182,7 +182,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.tableLayoutPanel1.SetRowSpan(this.label1, 2);
-            this.label1.Size = new System.Drawing.Size(1218, 174);
+            this.label1.Size = new System.Drawing.Size(1218, 180);
             this.label1.TabIndex = 3;
             this.label1.Text = "Uw saldo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,14 +192,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1916, 1053);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Saldo";
             this.Text = "Form4";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Saldo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Saldo_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);

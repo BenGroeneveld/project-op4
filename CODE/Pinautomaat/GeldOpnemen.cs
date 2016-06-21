@@ -3,16 +3,8 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class GeldOpnemen : Form
+    public partial class GeldOpnemen : Helper
     {
-        private DatabaseConnection dbConnect = new DatabaseConnection();
-        private MainBackend mainBackend = new MainBackend();
-        private Dispenser dispenser = new Dispenser();
-        private Rekening rekening = new Rekening();
-        private Pas pas = new Pas();
-        private Klant klant = new Klant();
-        private Transactie transactie = new Transactie();
-
         private int veelvoudBedrag = 10;
         private bool uitloggen = false;
         private bool leaveThisPage = false;
@@ -33,7 +25,6 @@ namespace Pinautomaat
         {
             Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
-            next.Focus();
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)
@@ -47,7 +38,7 @@ namespace Pinautomaat
             {
                 printBon = true;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = rekening.Balans;
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -64,7 +55,7 @@ namespace Pinautomaat
             {
                 printBon = false;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = rekening.Balans;
+                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -134,7 +125,7 @@ namespace Pinautomaat
                 resetBedrag();
                 return false;
             }
-            int huidigSaldo = rekening.Balans;
+            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
 
             if(opnemenBedrag % (100 * veelvoudBedrag) != 0)
@@ -151,9 +142,9 @@ namespace Pinautomaat
             }
             else
             {
-                if(dispenser.isGeldBeschikbaar(opnemenBedrag))
+                if(Dispenser.isGeldBeschikbaar(opnemenBedrag))
                 {
-                    mainBackend.doTransactie(nieuwSaldo, pas.PasID);
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     return true;
                 }
                 else

@@ -55,15 +55,24 @@ void rfidInput()
       unsigned char i, tmp, checksum1;
       unsigned char status;
       unsigned char str[maxLength];
+      unsigned char RC_size;
+      unsigned char blockAddr;
       status = myRFID.AddicoreRFID_Request(PICC_REQIDL, str);
       status = myRFID.AddicoreRFID_Anticoll(str);
       if(status == MI_OK)
       {
+            Serial.println();
+            iCheck  = str[0] - '0';
+            
             if(activeCard != str[0])
             {
                   Serial.print("ID");
                   Serial.print(str[0], DEC);
                   previousCard = str[0];
+                  if(iCheck == 231)
+                  {
+                      Serial.print("RF");
+                  }
                   Serial.println();
             }
       }

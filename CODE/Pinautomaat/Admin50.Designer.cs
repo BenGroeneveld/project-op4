@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnVorige = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.aantal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolgende = new System.Windows.Forms.Button();
+            this.btnVorige = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,27 +100,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 750);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // btnVorige
-            // 
-            this.btnVorige.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.btnVorige, 3);
-            this.btnVorige.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVorige.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVorige.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnVorige.FlatAppearance.BorderSize = 2;
-            this.btnVorige.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVorige.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVorige.ForeColor = System.Drawing.Color.White;
-            this.btnVorige.Location = new System.Drawing.Point(180, 558);
-            this.btnVorige.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVorige.Name = "btnVorige";
-            this.tableLayoutPanel1.SetRowSpan(this.btnVorige, 2);
-            this.btnVorige.Size = new System.Drawing.Size(270, 124);
-            this.btnVorige.TabIndex = 23;
-            this.btnVorige.Text = "[C] Vorige";
-            this.btnVorige.UseVisualStyleBackColor = false;
-            this.btnVorige.Click += new System.EventHandler(this.btnVorige_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -175,20 +154,6 @@
             this.label3.TabIndex = 18;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(180, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnVolgende
             // 
             this.btnVolgende.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -210,6 +175,41 @@
             this.btnVolgende.UseVisualStyleBackColor = false;
             this.btnVolgende.Click += new System.EventHandler(this.btnVolgende_Click);
             // 
+            // btnVorige
+            // 
+            this.btnVorige.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.btnVorige, 3);
+            this.btnVorige.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVorige.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVorige.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnVorige.FlatAppearance.BorderSize = 2;
+            this.btnVorige.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVorige.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVorige.ForeColor = System.Drawing.Color.White;
+            this.btnVorige.Location = new System.Drawing.Point(180, 558);
+            this.btnVorige.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVorige.Name = "btnVorige";
+            this.tableLayoutPanel1.SetRowSpan(this.btnVorige, 2);
+            this.btnVorige.Size = new System.Drawing.Size(270, 124);
+            this.btnVorige.TabIndex = 23;
+            this.btnVorige.Text = "[C] Vorige";
+            this.btnVorige.UseVisualStyleBackColor = false;
+            this.btnVorige.Click += new System.EventHandler(this.btnVorige_Click);
+            // 
+            // pictureBox1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admin50
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,11 +217,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1000, 750);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Admin50";
             this.Text = "Admin50";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Admin50_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Admin50_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);

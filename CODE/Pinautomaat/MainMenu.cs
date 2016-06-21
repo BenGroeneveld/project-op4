@@ -4,19 +4,15 @@ using System.Threading;
 
 namespace Pinautomaat
 {
-    public partial class MainMenu  : Form
+    public partial class MainMenu  : Helper
     {
-        private DatabaseConnection dbConnect = new DatabaseConnection();
-        private MainBackend mainBackend = new MainBackend();
-        private Dispenser dispenser = new Dispenser();
-        private Rekening rekening = new Rekening();
-        private Pas pas = new Pas();
-        private Klant klant = new Klant();
-        private Transactie transactie = new Transactie();
-
         public MainMenu()
         {
             InitializeComponent();
+
+            string attribute = "Balans";
+            Program.StrBedrag = MainBackend.strDbQuery(attribute, Program.Rfid);
+
             label7.Text = MainBackend.AantalBiljetten10.ToString();
             label8.Text = MainBackend.AantalBiljetten20.ToString();
             label9.Text = MainBackend.AantalBiljetten50.ToString();
@@ -26,7 +22,6 @@ namespace Pinautomaat
         {
             Saldo next = new Saldo();
             next.Show();
-            next.Focus();
         }
 
         private void btnStoppen_Click(object sender, EventArgs e)
@@ -38,7 +33,6 @@ namespace Pinautomaat
         {
             GeldOpnemen next = new GeldOpnemen();
             next.Show();
-            next.Focus();
         }
 
         private void checkButtonPushed()
@@ -50,22 +44,21 @@ namespace Pinautomaat
         {
             Bedankt next = new Bedankt(bon, saldo, bedrag);
             next.Show();
-            next.Focus();
         }
 
         private void btnSnelpinnen10_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 10;
-            int huidigSaldo = rekening.Balans;
+            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(dispenser.isGeldBeschikbaar(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    mainBackend.doTransactie(nieuwSaldo, pas.PasID);
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -79,16 +72,16 @@ namespace Pinautomaat
         private void btnSnelpinnen20_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 20;
-            int huidigSaldo = rekening.Balans;
+            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(dispenser.isGeldBeschikbaar(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    mainBackend.doTransactie(nieuwSaldo, pas.PasID);
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -102,16 +95,16 @@ namespace Pinautomaat
         private void btnSnelpinnen50_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 50;
-            int huidigSaldo = rekening.Balans;
+            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
             if(nieuwSaldo >= 0)
             {
                 bedrag = opnemenBedrag;
-                if(dispenser.isGeldBeschikbaar(bedrag))
+                if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    mainBackend.doTransactie(nieuwSaldo, pas.PasID);
+                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else

@@ -4,40 +4,12 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public class Program
+    public static class Program
     {
-        private static MainBackend mainBackend;
-
+        public static string Rfid { get; set; }
+        public static string StrBedrag { get; set; }
+        public static string StrRekeningID { get; set; }
         private static bool SystemGood { get; set; }
-
-        public static string PasID
-        {
-            get; set;
-        }
-        public static int Poging
-        {
-            get; set;
-        }
-        public static int Actief
-        {
-            get; set;
-        }
-        public static string RekeningID
-        {
-            get; set;
-        }
-        public static int KlantID
-        {
-            get; set;
-        }
-        public static int Balans
-        {
-            get; set;
-        }
-        public static string Hash
-        {
-            get; set;
-        }
 
         /// <summary>
         /// The main entry point for the application.
@@ -48,16 +20,6 @@ namespace Pinautomaat
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             runProgram();
-            /*
-            string text = mainBackend.makeHash("SOFA1995", "0123");
-            System.IO.File.WriteAllText(@"D:\Downloads\SOFA1995.txt", text);
-
-            string text2 = mainBackend.makeHash("SOFA1996", "0124");
-            System.IO.File.WriteAllText(@"D:\Downloads\SOFA1996.txt", text2);
-
-            string text3 = mainBackend.makeHash("SOFA2016", "0125");
-            System.IO.File.WriteAllText(@"D:\Downloads\SOFA2016.txt", text3);
-            */
         }
 
         private static void runBackground()
@@ -71,17 +33,16 @@ namespace Pinautomaat
             Background bg = new Background();
             Application.Run(bg);
         }
-        
+
         private static void runProgram()
         {
             SystemGood = false; //USE THIS IN NORMAL SITUATIONS
             //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
-            //runBackground();
 
-            mainBackend = new MainBackend();
+            runBackground();
             while(true)
             {
-                if(mainBackend.checkAllConnections())
+                if(MainBackend.checkAllConnections())
                 {
                     SystemGood = true;
                 }

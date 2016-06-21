@@ -4,16 +4,8 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Bedankt : Form
+    public partial class Bedankt : Helper
     {
-        private DatabaseConnection dbConnect = new DatabaseConnection();
-        private MainBackend mainBackend = new MainBackend();
-        private Dispenser dispenser = new Dispenser();
-        private Rekening rekening = new Rekening();
-        private Pas pas = new Pas();
-        private Klant klant = new Klant();
-        private Transactie transactie = new Transactie();
-
         private bool Bon { get; set; }
         private int Saldo { get; set; }
         private int Bedrag { get; set; }
@@ -40,21 +32,21 @@ namespace Pinautomaat
         private void privateStartBedankt()
         {
             label1.Text = "Bedankt voor het pinnen!";
-            string balans = (Bedrag / 100).ToString();
-            balans += ",00";
+            string strBedrag = (Bedrag / 100).ToString();
+            strBedrag += ",00";
 
             if(Bon)
             {
                 label1.Text += "\nVergeet uw geld en bon niet";
-                MainBackend.printBon(balans, pas.RekeningID, pas.PasID);
+                MainBackend.printBon(strBedrag, Program.StrRekeningID, Program.Rfid);
             }
             else
             {
                 label1.Text += "\nVergeet uw geld niet";
             }
 
-            mainBackend.doTransactie(Saldo, pas.PasID);
-            dispenser.dispense();
+            MainBackend.doTransactie(Saldo, Program.Rfid);
+            Dispenser.dispense();
 
             Thread.Sleep(1000);
             MainBackend.restart();

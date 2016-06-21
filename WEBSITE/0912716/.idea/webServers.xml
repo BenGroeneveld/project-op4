@@ -7,19 +7,7 @@
           <advancedOptions>
             <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" forceListCommand="true" showHiddenFiles="true" />
           </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
-      </webServer>
-      <webServer id="615bc710-617f-4d74-ac70-24ecd12ca2ca" name="hr" url="http://stud.hr.nl/0912716/">
-        <fileTransfer host="ftp.hr.nl" port="21" rootFolder="/USERS16/6/0912716" password="dfe8dfc9dfcedf87dfc4dfd8df87df9b" username="0912716.cmi">
-          <advancedOptions>
-            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" />
-          </advancedOptions>
-          <option name="port" value="21" />
-        </fileTransfer>
-      </webServer>
-      <webServer id="507d5d84-6b71-46e5-a4d4-d27d7b285998" name="Local" url="http://localhost:63342/0912716">
-        <fileTransfer port="0" mountedRoot="D:\OneDrive - Hogeschool Rotterdam\School\Programming\Website\0912716" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

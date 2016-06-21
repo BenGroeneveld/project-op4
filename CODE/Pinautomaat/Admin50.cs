@@ -3,16 +3,8 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Admin50 : Form
+    public partial class Admin50 : Helper
     {
-        private DatabaseConnection dbConnect = new DatabaseConnection();
-        private MainBackend mainBackend = new MainBackend();
-        private Dispenser dispenser = new Dispenser();
-        private Rekening rekening = new Rekening();
-        private Pas pas = new Pas();
-        private Klant klant = new Klant();
-        private Transactie transactie = new Transactie();
-
         private bool leaveThisPage = false;
         private string geldToevoegenAantal = "";
 
@@ -27,7 +19,6 @@ namespace Pinautomaat
             {
                 AdminCheck next = new AdminCheck();
                 next.Show();
-                next.Focus();
             }
             else
             {
@@ -120,7 +111,6 @@ namespace Pinautomaat
         {
             Admin20 next = new Admin20();
             next.Show();
-            next.Focus();
         }
     }
 }

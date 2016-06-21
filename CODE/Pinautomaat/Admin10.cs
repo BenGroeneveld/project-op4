@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Pinautomaat
 {
-    public partial class Admin10 : Form
+    public partial class Admin10 : Helper
     {
         private bool leaveThisPage = false;
         private string geldToevoegenAantal = "";
@@ -19,7 +19,6 @@ namespace Pinautomaat
             {
                 Admin20 next = new Admin20();
                 next.Show();
-                next.Focus();
                 leaveThisPage = true;
             }
             else
@@ -111,7 +110,6 @@ namespace Pinautomaat
         {
             AdminHome next = new AdminHome();
             next.Show();
-            next.Focus();
             leaveThisPage = true;
         }
     }

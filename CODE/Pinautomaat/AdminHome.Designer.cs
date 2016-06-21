@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnStoppen = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolgende = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnStoppen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,41 +76,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 750);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // btnStoppen
-            // 
-            this.btnStoppen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.btnStoppen, 3);
-            this.btnStoppen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStoppen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStoppen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnStoppen.FlatAppearance.BorderSize = 2;
-            this.btnStoppen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStoppen.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStoppen.ForeColor = System.Drawing.Color.White;
-            this.btnStoppen.Location = new System.Drawing.Point(180, 558);
-            this.btnStoppen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnStoppen.Name = "btnStoppen";
-            this.tableLayoutPanel1.SetRowSpan(this.btnStoppen, 2);
-            this.btnStoppen.Size = new System.Drawing.Size(270, 124);
-            this.btnStoppen.TabIndex = 16;
-            this.btnStoppen.Text = "[C] Stoppen";
-            this.btnStoppen.UseVisualStyleBackColor = false;
-            this.btnStoppen.Click += new System.EventHandler(this.btnStoppen_Click);
-            // 
-            // pictureBox1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(180, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnVolgende
             // 
             this.btnVolgende.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -150,15 +115,49 @@
             this.label1.Text = "In dit menu kunt u aangeven hoeveel biljetten er in de dispenser zitten";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnStoppen
+            // 
+            this.btnStoppen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.btnStoppen, 3);
+            this.btnStoppen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStoppen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStoppen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.btnStoppen.FlatAppearance.BorderSize = 2;
+            this.btnStoppen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStoppen.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStoppen.ForeColor = System.Drawing.Color.White;
+            this.btnStoppen.Location = new System.Drawing.Point(180, 558);
+            this.btnStoppen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStoppen.Name = "btnStoppen";
+            this.tableLayoutPanel1.SetRowSpan(this.btnStoppen, 2);
+            this.btnStoppen.Size = new System.Drawing.Size(270, 124);
+            this.btnStoppen.TabIndex = 16;
+            this.btnStoppen.Text = "[C] Stoppen";
+            this.btnStoppen.UseVisualStyleBackColor = false;
+            this.btnStoppen.Click += new System.EventHandler(this.btnStoppen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Pinautomaat.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminHome
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1000, 750);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "AdminHome";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminHome_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminHome_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
