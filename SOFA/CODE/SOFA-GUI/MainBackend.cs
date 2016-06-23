@@ -1,7 +1,4 @@
-﻿using System;
-using MySql.Data.MySqlClient;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Text;
 using System.Security.Cryptography;
@@ -63,9 +60,9 @@ namespace Pinautomaat
             }
             return hashString;
         }
-        private static int baud = 9600;
-        private static string recognizeText = "Arduino";
-        private static int loggedInValue = 0;
+        public static int baud = 9600;
+        public static string recognizeText = "Arduino";
+        public static int loggedInValue = 0;
         
         public static bool AdminKaart { get; set; }
         public static int AantalBiljetten10 { get; set; }
@@ -74,21 +71,14 @@ namespace Pinautomaat
 
         public static bool checkAllConnections()
         {
-            if(privateCheckAllConnections())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return privateCheckAllConnections();
         }
 
         private static bool privateCheckAllConnections()
         {
             try
             {
-                if(checkArduino() && Dispenser.testDispense() && checkPrinter())
+                if(checkArduino() && DatabaseConnection.isDatabaseConnected().Result)// && Dispenser.testDispense() && checkPrinter())
                 {
                     return true;
                 }
@@ -112,7 +102,7 @@ namespace Pinautomaat
         {
             try
             {
-                if(!ArduinoInput.isConnected(baud, recognizeText, loggedInValue))
+                if(!ArduinoInput.isConnected())
                 {
                     ArduinoInput.connect(baud, recognizeText, loggedInValue);
                 }
@@ -161,7 +151,10 @@ namespace Pinautomaat
                 Program.Poging = DatabaseConnection.getPasFromDatabase().Result.Poging;
                 loggedInValue = 255;
             }
-            catch { }
+            catch
+            {
+                Program.SystemGood = false;
+            }
         }
 
         public static void restart()
@@ -207,10 +200,6 @@ namespace Pinautomaat
                     if(f.Name != Form.ActiveForm.Name && f.Name != "Welkom" && f.Name != "Background")
                     {
                         f.Close();
-                    }
-                    else if(f.Name == "Welkom")
-                    {
-                        f.Hide();
                     }
                 }
                 catch { }

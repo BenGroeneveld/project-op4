@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
@@ -9,6 +10,46 @@ namespace Pinautomaat
 {
     public class DatabaseConnection
     {
+        public static async Task<bool> isDatabaseConnected()
+        {
+            Pas pas = new Pas();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            using(var client = new HttpClient(new HttpClientHandler { UseProxy = false, ClientCertificateOptions = ClientCertificateOption.Automatic }))
+            {
+                string loadURL = string.Concat("/api/pass/", "123");
+                client.BaseAddress = new Uri("https://hrsqlapp.tk");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                client.GetAsync(loadURL).Wait();
+                HttpResponseMessage response = await client.GetAsync(loadURL).ConfigureAwait(false);
+
+                if(response.IsSuccessStatusCode)
+                {
+                    try
+                    {
+                        pas = await response.Content.ReadAsAsync<Pas>();
+                        if(pas != null)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public static async Task<Pas> getPasFromDatabase()
         {
             Pas pas = new Pas();
@@ -19,6 +60,8 @@ namespace Pinautomaat
                 client.BaseAddress = new Uri("https://hrsqlapp.tk");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                client.GetAsync(loadURL).Wait();
                 HttpResponseMessage response = await client.GetAsync(loadURL).ConfigureAwait(false);
 
                 if(response.IsSuccessStatusCode)
@@ -50,6 +93,8 @@ namespace Pinautomaat
                 client.BaseAddress = new Uri("https://hrsqlapp.tk");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                client.GetAsync(loadURL).Wait();
                 HttpResponseMessage response = await client.GetAsync(loadURL).ConfigureAwait(false);
 
                 if(response.IsSuccessStatusCode)

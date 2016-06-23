@@ -11,6 +11,21 @@ namespace Pinautomaat
         {
             InitializeComponent();
         }
+        
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin10 next = new Admin10();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
 
         private void btnStoppen_Click(object sender, EventArgs e)
         {
@@ -19,8 +34,7 @@ namespace Pinautomaat
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
-            Admin10 next = new Admin10();
-            next.Show();
+            nextPage();
         }
 
         private void AdminHome_Load(object sender, EventArgs e)

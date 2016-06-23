@@ -13,12 +13,41 @@ namespace Pinautomaat
             InitializeComponent();
         }
 
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                AdminCheck next = new AdminCheck();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
+        private void prevPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin20 next = new Admin20();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
         private void btnVolgende_Click(object sender, EventArgs e)
         {
             if(isCorrectBedrag(geldToevoegenAantal))
             {
-                AdminCheck next = new AdminCheck();
-                next.Show();
+                nextPage();
             }
             else
             {
@@ -109,8 +138,7 @@ namespace Pinautomaat
 
         private void btnVorige_Click(object sender, EventArgs e)
         {
-            Admin20 next = new Admin20();
-            next.Show();
+            prevPage();
         }
     }
 }

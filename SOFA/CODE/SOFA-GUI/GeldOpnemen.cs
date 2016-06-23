@@ -23,8 +23,16 @@ namespace Pinautomaat
 
         private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(bon, saldo, bedrag);
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Bedankt next = new Bedankt(bon, saldo, bedrag);
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)

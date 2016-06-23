@@ -6,7 +6,12 @@ namespace Pinautomaat
 {
     public static class Program
     {
-        private static bool SystemGood
+        private static Welkom welkom;
+        private static BuitenGebruik buitenGebruik;
+        private static Thread thBuitenGebruik;
+        private static Thread thBackground;
+
+        public static bool SystemGood
         {
             get; set;
         }
@@ -51,51 +56,59 @@ namespace Pinautomaat
             runProgram();
         }
 
-        private static void runBackground()
+        private static void runProgram()
         {
-            Thread thBackground = new Thread(bg);
-            thBackground.Start();
+            SystemGood = false; //USE THIS IN NORMAL SITUATIONS
+            //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
+
+            thBuitenGebruik = new Thread(runBuitenGebruik);
+            thBackground = new Thread(bg);
+            thBackground.IsBackground = true;
+
+            try
+            {
+                background(thBackground);
+                SystemGood = MainBackend.checkAllConnections();
+                while(SystemGood)
+                {
+                    MainBackend.closePrevForms();
+                    welkom = new Welkom();
+                    welkom.Activate();
+                    Application.Run(welkom);
+                    welkom = null;
+                    SystemGood = MainBackend.checkAllConnections();
+                }
+                startBuitenGebruik();
+            }
+            catch
+            {
+                startBuitenGebruik();
+            }
         }
 
         private static void bg()
         {
-            Background bg = new Background();
-            Application.Run(bg);
+            Application.Run(new Background());
         }
 
-        private static void runProgram()
+        private static void background(Thread th)
         {
-            try
-            {
-                SystemGood = false; //USE THIS IN NORMAL SITUATIONS
-                //SystemGood = true; //USE THIS FOR DEBUGGING ONLY
-
-                runBackground();
-                while(true)
-                {
-                    if(MainBackend.checkAllConnections())
-                    {
-                        SystemGood = true;
-                    }
-                    if(SystemGood)
-                    {
-                        Application.Run(new Welkom());
-                    }
-                    else
-                    {
-                        runBuitenGebruik();
-                    }
-                }
-            }
-            catch
-            {
-                runBuitenGebruik();
-            }
+            th.Start();
         }
 
         private static void runBuitenGebruik()
         {
-            Application.Run(new BuitenGebruik());
+            MainBackend.closePrevForms();
+            welkom = null;
+            buitenGebruik = new BuitenGebruik();
+            buitenGebruik.Activate();
+            Application.Run(buitenGebruik);
+            buitenGebruik = null;
+        }
+
+        private static void startBuitenGebruik()
+        {
+            thBuitenGebruik.Start();
         }
     }
 }

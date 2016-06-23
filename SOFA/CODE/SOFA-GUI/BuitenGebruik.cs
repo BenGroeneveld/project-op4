@@ -9,5 +9,10 @@ namespace Pinautomaat
         {
             InitializeComponent();
         }
+
+        private void BuitenGebruik_Load(object sender, EventArgs e)
+        {
+            Activate();
+        }
     }
 }

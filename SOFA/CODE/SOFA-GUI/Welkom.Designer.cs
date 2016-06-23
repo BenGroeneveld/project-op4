@@ -113,7 +113,7 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Welkom";
             this.Text = "Welkom";
-            this.Shown += new System.EventHandler(this.Welkom_Shown);
+            this.Load += new System.EventHandler(this.Welkom_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

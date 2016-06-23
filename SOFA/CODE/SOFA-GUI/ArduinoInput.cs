@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -7,19 +8,16 @@ namespace Pinautomaat
 {
     public static class ArduinoInput
     {
-        public static string port = "";
-        public static SerialPort currentPort;
-        public static int connectionCorrect = 128;
+        private static string port = "";
+        private static SerialPort currentPort;
+        private static int connectionCorrect = 128;
 
         public static void connect(int baud, string recognizeText, int loggedInValue)
         {
-            while(!isConnected(baud, recognizeText, loggedInValue))
-            {
-                tryConnect(baud, recognizeText, loggedInValue);
-            }
+            tryConnect(baud, recognizeText, loggedInValue);
         }
 
-        public static bool isConnected(int baud, string recognizeText, int loggedInValue)
+        public static bool isConnected()
         {
             if(currentPort == null)
             {
@@ -75,6 +73,10 @@ namespace Pinautomaat
                         connectionCorrect = 127;
                         break;
                     }
+                    else
+                    {
+                        currentPort.Close();
+                    }
                 }
                 catch
                 {
@@ -86,12 +88,12 @@ namespace Pinautomaat
         public static string strRFID()
         {
             string str = "";
-            while(!str.StartsWith("PasID: "))
+            
+            while(!str.StartsWith("PasID: ") && isConnected())
             {
-                str = currentPort.ReadLine().ToString().Trim();
+                str = currentPort.ReadLine();
             }
             str = str.Remove(0, 7);
-
             if(str.EndsWith("125"))
             {
                 MainBackend.AdminKaart = true;
@@ -106,8 +108,7 @@ namespace Pinautomaat
         public static string strInputText()
         {
             string str = "";
-
-            while(str.Equals("") || str.Contains("*") || str.Contains("#") || str.Contains("ID"))
+            while(str.Equals("") || str.Contains("*") || str.Contains("#") || str.Contains("PasID"))
             {
                 str = currentPort.ReadLine().ToString().Trim();
             }
@@ -121,13 +122,15 @@ namespace Pinautomaat
 
         private static void privateCheckKeypad()
         {
-            string str = "";
-            while(str.Equals("") || str.Contains("ID"))
+            if(Form.ActiveForm.Focused)
             {
-                str = strInputText();
+                string str = "";
+                while(str.Equals("") || str.Contains("PasID"))
+                {
+                    str = strInputText();
+                }
+                SendKeys.SendWait(str.ToLower());
             }
-            SendKeys.SendWait(str.ToLower());
-            //SendKeys.Send(str.ToLower());
         }
     }
 }

@@ -12,6 +12,35 @@ namespace Pinautomaat
             InitializeComponent();
         }
 
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                leaveThisPage = true;
+                MainBackend.restart();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
+        private void prevPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin50 next = new Admin50();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
         private void AdminCheck_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
@@ -41,14 +70,11 @@ namespace Pinautomaat
 
         private void btnVorige_Click(object sender, EventArgs e)
         {
-            Admin50 next = new Admin50();
-            next.Show();
+            prevPage();
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
-            leaveThisPage = true;
-            MainBackend.restart();
         }
 
         private void checkInput()

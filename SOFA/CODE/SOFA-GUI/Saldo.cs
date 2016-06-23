@@ -33,6 +33,20 @@ namespace Pinautomaat
             saldo = Convert.ToInt32(100 * j);
         }
 
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                GeldOpnemen next = new GeldOpnemen();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
         private void btnUitloggen_Click(object sender, EventArgs e)
         {
             MainBackend.restart();
@@ -40,10 +54,7 @@ namespace Pinautomaat
 
         private void btnGeldOpnemen_Click(object sender, EventArgs e)
         {
-            var geldOpnemenForm = new GeldOpnemen();
-            geldOpnemenForm.Show();
-            this.Hide();
-            geldOpnemenForm.Closed += (s, args) => this.Close();
+            nextPage();
         }
 
         private void checkButtonPushed()

@@ -16,8 +16,16 @@ namespace Pinautomaat
 
         private void btnSaldo_Click(object sender, EventArgs e)
         {
-            Saldo next = new Saldo();
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Saldo next = new Saldo();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnStoppen_Click(object sender, EventArgs e)
@@ -27,19 +35,35 @@ namespace Pinautomaat
 
         private void btnGeldOpnemen_Click(object sender, EventArgs e)
         {
-            GeldOpnemen next = new GeldOpnemen();
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                GeldOpnemen next = new GeldOpnemen();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void checkButtonPushed()
         {
             ArduinoInput.checkKeypad();
         }
-
+        
         private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(bon, saldo, bedrag);
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Bedankt next = new Bedankt(bon, saldo, bedrag);
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnSnelpinnen10_Click(object sender, EventArgs e)

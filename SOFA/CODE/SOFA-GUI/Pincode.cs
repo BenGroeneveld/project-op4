@@ -106,34 +106,51 @@ namespace Pinautomaat
 
         private void startPincode()
         {
-            if(Program.Actief == 1)
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
             {
-                checkButtonPushed(); ;
+                if(Program.Actief == 1)
+                {
+                    checkButtonPushed();
+                    ;
+                }
+                else if(Program.Actief == 0)
+                {
+                    inputInloggen.Hide();
+                    textBox1.Hide();
+                    textBox2.Hide();
+                    textBox3.Hide();
+                    btnCorrectie.Hide();
+                    btnVolgende.Hide();
+                    infoText.Text = "Uw pas is geblokkeerd.";
+                    checkButtonPushed();
+                }
             }
-            else if(Program.Actief == 0)
+            else
             {
-                inputInloggen.Hide();
-                textBox1.Hide();
-                textBox2.Hide();
-                textBox3.Hide();
-                btnCorrectie.Hide();
-                btnVolgende.Hide();
-                infoText.Text = "Uw pas is geblokkeerd.";
-                checkButtonPushed();
+                MainBackend.restart();
             }
         }
 
         private void nextPage()
         {
-            if(!MainBackend.AdminKaart)
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
             {
-                MainMenu next = new MainMenu();
-                next.Show();
+                if(!MainBackend.AdminKaart)
+                {
+                    MainMenu next = new MainMenu();
+                    next.Show();
+                }
+                else
+                {
+                    AdminHome next = new AdminHome();
+                    next.Show();
+                }
             }
             else
             {
-                AdminHome next = new AdminHome();
-                next.Show();
+                MainBackend.restart();
             }
         }
 

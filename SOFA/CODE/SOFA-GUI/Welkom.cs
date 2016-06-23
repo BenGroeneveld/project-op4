@@ -5,9 +5,6 @@ namespace Pinautomaat
 {
     public partial class Welkom : Helper
     {
-        public static bool waitingText = false;
-        public static bool restart { get; set; }
-
         public Welkom()
         {
             InitializeComponent();
@@ -15,14 +12,16 @@ namespace Pinautomaat
 
         private void nextPage()
         {
-            Pincode next = new Pincode();
-            next.Show();
-            this.Hide();
-        }
-
-        private void Welkom_Shown(object sender, EventArgs e)
-        {
-            startWelkom();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Pincode next = new Pincode();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         public void startWelkom()
@@ -34,6 +33,12 @@ namespace Pinautomaat
         {
             MainBackend.doWelkom();
             nextPage();
+        }
+
+        private void Welkom_Load(object sender, EventArgs e)
+        {
+            Activate();
+            startWelkom();
         }
     }
 }
