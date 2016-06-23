@@ -394,7 +394,6 @@
             this.Name = "MainMenu";
             this.Text = "Pinautomaat";
             this.Load += new System.EventHandler(this.MainMenu_Load);
-            this.Shown += new System.EventHandler(this.MainMenu_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainMenu_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

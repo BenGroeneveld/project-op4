@@ -59,12 +59,13 @@ namespace Pinautomaat
 
         private void checkButtonPushed()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
 
         private void Saldo_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             checkButtonPushed();
         }
 

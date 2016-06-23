@@ -44,6 +44,7 @@ namespace Pinautomaat
         private void AdminCheck_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             aantal10.Text = MainBackend.AantalBiljetten10.ToString();
             aantal20.Text = MainBackend.AantalBiljetten20.ToString();
             aantal50.Text = MainBackend.AantalBiljetten50.ToString();
@@ -81,7 +82,7 @@ namespace Pinautomaat
         {
             while(!leaveThisPage)
             {
-                ArduinoInput.checkKeypad();
+                ArduinoInput.checkKeypad(this);
             }
         }
     }

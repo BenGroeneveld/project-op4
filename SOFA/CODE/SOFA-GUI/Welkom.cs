@@ -16,6 +16,7 @@ namespace Pinautomaat
             if(Program.SystemGood)
             {
                 Pincode next = new Pincode();
+                Hide();
                 next.Show();
             }
             else

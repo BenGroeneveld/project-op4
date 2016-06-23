@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -115,14 +115,14 @@ namespace Pinautomaat
             return str;
         }
 
-        public static void checkKeypad()
+        public static void checkKeypad(Form f)
         {
-            privateCheckKeypad();
+            privateCheckKeypad(f);
         }
 
-        private static void privateCheckKeypad()
+        private static void privateCheckKeypad(Form f)
         {
-            if(Form.ActiveForm.Focused)
+            if(f.Focused)
             {
                 string str = "";
                 while(str.Equals("") || str.Contains("PasID"))

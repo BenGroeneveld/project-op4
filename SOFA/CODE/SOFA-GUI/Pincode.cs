@@ -101,7 +101,7 @@ namespace Pinautomaat
 
         private void checkInput()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
 
         private void startPincode()
@@ -112,7 +112,6 @@ namespace Pinautomaat
                 if(Program.Actief == 1)
                 {
                     checkButtonPushed();
-                    ;
                 }
                 else if(Program.Actief == 0)
                 {
@@ -229,6 +228,7 @@ namespace Pinautomaat
         private void Pincode_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             setup();
             startPincode();
         }

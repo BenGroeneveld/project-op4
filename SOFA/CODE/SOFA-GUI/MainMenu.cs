@@ -9,9 +9,47 @@ namespace Pinautomaat
         public MainMenu()
         {
             InitializeComponent();
-            label7.Text = MainBackend.AantalBiljetten10.ToString();
-            label8.Text = MainBackend.AantalBiljetten20.ToString();
-            label9.Text = MainBackend.AantalBiljetten50.ToString();
+            setWeergaveAantalBiljetten();
+        }
+
+        private void setWeergaveAantalBiljetten()
+        {
+            if(MainBackend.AantalBiljetten10 < 5 && MainBackend.AantalBiljetten10 > 0)
+            {
+                label7.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten10 == 0)
+            {
+                label7.Text = "Geen";
+            }
+            else
+            {
+                label7.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten20 < 5 && MainBackend.AantalBiljetten20 > 0)
+            {
+                label8.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten20 == 0)
+            {
+                label8.Text = "Geen";
+            }
+            else
+            {
+                label8.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten50 < 5 && MainBackend.AantalBiljetten50 > 0)
+            {
+                label9.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten50 == 0)
+            {
+                label9.Text = "Geen";
+            }
+            else
+            {
+                label9.Text = "OK";
+            }
         }
 
         private void btnSaldo_Click(object sender, EventArgs e)
@@ -49,7 +87,7 @@ namespace Pinautomaat
 
         private void checkButtonPushed()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
         
         private void bedankt(bool bon, int saldo, int bedrag)
@@ -138,10 +176,7 @@ namespace Pinautomaat
         private void MainMenu_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
-        }
-
-        private void MainMenu_Shown(object sender, EventArgs e)
-        {
+            Activate();
             checkButtonPushed();
         }
 

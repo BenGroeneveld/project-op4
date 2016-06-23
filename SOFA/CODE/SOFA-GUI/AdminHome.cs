@@ -40,6 +40,7 @@ namespace Pinautomaat
         private void AdminHome_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             checkInput();
         }
 
@@ -47,7 +48,7 @@ namespace Pinautomaat
         {
             while(!leaveThisPage)
             {
-                ArduinoInput.checkKeypad();
+                ArduinoInput.checkKeypad(this);
             }
         }
 

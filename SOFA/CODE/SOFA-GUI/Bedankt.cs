@@ -26,6 +26,7 @@ namespace Pinautomaat
 
         private void Bedankt_Load(object sender, EventArgs e)
         {
+            Activate();
             startBedankt();
         }
 

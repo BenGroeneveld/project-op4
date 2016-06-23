@@ -167,7 +167,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\bin\Release\System.Net.Http.Formatting.xml
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\bin\Release\System.Net.Http.Primitives.xml
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csproj.App.config
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csprojResolveAssemblyReference.cache
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Admin10.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Admin20.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Admin50.resources
@@ -184,3 +183,4 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Saldo.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Welkom.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csproj.GenerateResource.Cache
+D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csprojResolveAssemblyReference.cache
