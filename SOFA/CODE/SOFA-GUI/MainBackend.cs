@@ -5,46 +5,6 @@ using System.Security.Cryptography;
 
 namespace Pinautomaat
 {
-    public class Pas
-    {
-        public string PasID
-        {
-            get; set;
-        }
-        public int Poging
-        {
-            get; set;
-        }
-        public int Actief
-        {
-            get; set;
-        }
-        public string RekeningID
-        {
-            get; set;
-        }
-        public int KlantID
-        {
-            get; set;
-        }
-    }
-
-    public class Rekening
-    {
-        public string RekeningID
-        {
-            get; set;
-        }
-        public int Balans
-        {
-            get; set;
-        }
-        public string Hash
-        {
-            get; set;
-        }
-    }
-
     public static class MainBackend
     {
         public static string makeHash(string RekeningID, string pincode)
@@ -78,7 +38,7 @@ namespace Pinautomaat
         {
             try
             {
-                if(checkArduino() && DatabaseConnection.isDatabaseConnected().Result)// && Dispenser.testDispense() && checkPrinter())
+                if(checkArduino() && DatabaseConnection.isConnected().Result && Dispenser.testDispense())// && checkPrinter())
                 {
                     return true;
                 }
@@ -114,6 +74,11 @@ namespace Pinautomaat
             }
         }
 
+        public static bool isPrinterConnected()
+        {
+            return checkPrinter();
+        }
+
         private static bool checkPrinter()
         {
             try
@@ -143,12 +108,12 @@ namespace Pinautomaat
             try
             {
                 Program.PasID = ArduinoInput.strRFID();
-                Program.RekeningID = DatabaseConnection.getPasFromDatabase().Result.RekeningID;
-                Program.Actief = DatabaseConnection.getPasFromDatabase().Result.Actief;
-                Program.Balans = DatabaseConnection.getRekeningFromDatabase().Result.Balans;
-                Program.Hash = DatabaseConnection.getRekeningFromDatabase().Result.Hash;
-                Program.KlantID = DatabaseConnection.getPasFromDatabase().Result.KlantID;
-                Program.Poging = DatabaseConnection.getPasFromDatabase().Result.Poging;
+                Program.RekeningID = DatabaseConnection.getPas().Result.RekeningID;
+                Program.Actief = DatabaseConnection.getPas().Result.Actief;
+                Program.Balans = DatabaseConnection.getRekening().Result.Balans;
+                Program.Hash = DatabaseConnection.getRekening().Result.Hash;
+                Program.KlantID = DatabaseConnection.getPas().Result.KlantID;
+                Program.Poging = DatabaseConnection.getPas().Result.Poging;
                 loggedInValue = 255;
             }
             catch
@@ -182,6 +147,14 @@ namespace Pinautomaat
                 }
                 catch { }
             }
+
+            Program.Actief = 0;
+            Program.Balans = 0;
+            Program.Hash = null;
+            Program.KlantID = 0;
+            Program.PasID = null;
+            Program.Poging = 0;
+            Program.RekeningID = null;
         }
 
         public static void closePrevForms()
@@ -215,7 +188,7 @@ namespace Pinautomaat
             pas.KlantID = Program.KlantID;
             pas.PasID = Program.PasID;
             pas.Poging = Program.Poging;
-            DatabaseConnection.setPasFromDatabase(pas);
+            DatabaseConnection.setPas(pas);
             pas = null;
         }
 
@@ -226,7 +199,7 @@ namespace Pinautomaat
             rekening.Balans = Program.Balans;
             rekening.RekeningID = Program.RekeningID;
             rekening.Hash = Program.Hash;
-            DatabaseConnection.setRekeningFromDatabase(rekening);
+            DatabaseConnection.setRekening(rekening);
             rekening = null;
         }
 

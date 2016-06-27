@@ -15,6 +15,16 @@ namespace Pinautomaat
         public GeldOpnemen()
         {
             InitializeComponent();
+            if(MainBackend.isPrinterConnected())
+            {
+                btnPrintBonWel.Enabled = true;
+                btnPrintBonWel.Text = base.Text;
+            }
+            else
+            {
+                btnPrintBonWel.Enabled = false;
+                btnPrintBonWel.Text += "\nBUITEN GEBRUIK";
+            }
             setWeergaveAantalBiljetten();
         }
 
@@ -121,38 +131,7 @@ namespace Pinautomaat
 
         private void checkButtonPushed()
         {
-            string str = "";
-
-            while(!(str.Equals("A") || str.Equals("B") || str.Equals("C") || str.Equals("D")))
-            {
-                str = ArduinoInput.strInputText();
-
-                if(str.Equals("A"))
-                {
-                    button1.PerformClick();
-                }
-                else if(str.Equals("B"))
-                {
-                    btnPrintBonWel.PerformClick();
-                    leaveThisPage = true;
-                }
-                else if(str.Equals("C"))
-                {
-                    btnUitloggen.PerformClick();
-                    leaveThisPage = true;
-                }
-                else if(str.Equals("D"))
-                {
-                    btnPrintBonNiet.PerformClick();
-                    leaveThisPage = true;
-                }
-                else
-                {
-                    geldOpnemenBedrag += str;
-                    strGeldOpnemen = geldOpnemenBedrag + ",00";
-                    bedrag.Text = strGeldOpnemen;
-                }
-            }
+            ArduinoInput.checkKeypad(this);
         }
 
         private bool isCorrectBedrag(string str)
@@ -243,8 +222,11 @@ namespace Pinautomaat
             }
             else if(strKey.Equals(keyB))
             {
-                btnPrintBonWel.PerformClick();
-                leaveThisPage = true;
+                if(MainBackend.isPrinterConnected())
+                {
+                    btnPrintBonWel.PerformClick();
+                    leaveThisPage = true;
+                }
             }
             else if(strKey.Equals(keyC))
             {

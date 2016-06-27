@@ -63,7 +63,6 @@ namespace Pinautomaat
 
             thBuitenGebruik = new Thread(runBuitenGebruik);
             thBackground = new Thread(bg);
-            thBackground.IsBackground = true;
 
             try
             {

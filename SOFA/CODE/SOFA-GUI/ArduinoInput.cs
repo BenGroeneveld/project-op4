@@ -91,11 +91,12 @@ namespace Pinautomaat
             
             while(!str.StartsWith("PasID: ") && isConnected())
             {
-                str = currentPort.ReadLine();
+                str = currentPort.ReadLine().Trim();
             }
             str = str.Remove(0, 7);
-            if(str.EndsWith("125"))
+            if(str.EndsWith("126"))
             {
+                str = "1000";
                 MainBackend.AdminKaart = true;
             }
             else

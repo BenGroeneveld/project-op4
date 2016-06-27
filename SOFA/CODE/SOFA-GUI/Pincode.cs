@@ -8,7 +8,7 @@ namespace Pinautomaat
 
         private string password = "";
         private string correctPassword = Program.Hash;
-        private string cardID = Program.RekeningID + "\n#" + Program.PasID;
+        private string cardID = Program.RekeningID;
         private bool approval = true;
 
         public Pincode()
@@ -136,14 +136,15 @@ namespace Pinautomaat
             Program.SystemGood = MainBackend.checkAllConnections();
             if(Program.SystemGood)
             {
-                if(!MainBackend.AdminKaart)
+                if(MainBackend.AdminKaart)
                 {
-                    MainMenu next = new MainMenu();
+                    AdminHome next = new AdminHome();
+                    Hide();
                     next.Show();
                 }
                 else
                 {
-                    AdminHome next = new AdminHome();
+                    MainMenu next = new MainMenu();
                     next.Show();
                 }
             }

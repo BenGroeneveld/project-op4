@@ -8,9 +8,25 @@ using System.Collections.Generic;
 
 namespace Pinautomaat
 {
+    public class Pas
+    {
+        public string PasID { get; set; }
+        public int Poging { get; set; }
+        public int Actief { get; set; }
+        public string RekeningID { get; set; }
+        public int KlantID { get; set; }
+    }
+
+    public class Rekening
+    {
+        public string RekeningID { get; set; }
+        public int Balans { get; set; }
+        public string Hash { get; set; }
+    }
+
     public class DatabaseConnection
     {
-        public static async Task<bool> isDatabaseConnected()
+        public static async Task<bool> isConnected()
         {
             Pas pas = new Pas();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
@@ -50,7 +66,7 @@ namespace Pinautomaat
             }
         }
 
-        public static async Task<Pas> getPasFromDatabase()
+        public static async Task<Pas> getPas()
         {
             Pas pas = new Pas();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
@@ -83,7 +99,7 @@ namespace Pinautomaat
             }
         }
 
-        public static async Task<Rekening> getRekeningFromDatabase()
+        public static async Task<Rekening> getRekening()
         {
             Rekening rekening = new Rekening();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
@@ -116,7 +132,7 @@ namespace Pinautomaat
             }
         }
 
-        public static void setPasFromDatabase(Pas updateDataObject)
+        public static void setPas(Pas updateDataObject)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
             using(var client = new HttpClient(new HttpClientHandler { UseProxy = false, ClientCertificateOptions = ClientCertificateOption.Automatic }))
@@ -125,12 +141,11 @@ namespace Pinautomaat
                 client.BaseAddress = new Uri("https://hrsqlapp.tk");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = client.PutAsJsonAsync(loadURL, updateDataObject).Result;
             }
         }
 
-        public static void setRekeningFromDatabase(Rekening updateDataObject)
+        public static void setRekening(Rekening updateDataObject)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
             using(var client = new HttpClient(new HttpClientHandler { UseProxy = false, ClientCertificateOptions = ClientCertificateOption.Automatic }))
@@ -139,8 +154,45 @@ namespace Pinautomaat
                 client.BaseAddress = new Uri("https://hrsqlapp.tk");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = client.PutAsJsonAsync(loadURL, updateDataObject).Result;
+            }
+        }
+
+        public static void postPas(string pasID, int klantID, int actief, int poging, string rekeningID)
+        {
+            Pas pas = new Pas();
+            pas.PasID = pasID;
+            pas.KlantID = klantID;
+            pas.Actief = actief;
+            pas.Poging = poging;
+            pas.RekeningID = rekeningID;
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            using(var client = new HttpClient(new HttpClientHandler { UseProxy = false, ClientCertificateOptions = ClientCertificateOption.Automatic }))
+            {
+                string loadURL = string.Concat("/api/pass/", pas.RekeningID);
+                client.BaseAddress = new Uri("https://hrsqlapp.tk");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = client.PutAsJsonAsync(loadURL, pas).Result;
+            }
+        }
+
+        public static void postRekening(string rekeningID, int balans, string hash)
+        {
+            Rekening rekening = new Rekening();
+            rekening.RekeningID = rekeningID;
+            rekening.Balans = balans;
+            rekening.Hash = hash;
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            using(var client = new HttpClient(new HttpClientHandler { UseProxy = false, ClientCertificateOptions = ClientCertificateOption.Automatic }))
+            {
+                string loadURL = "/api/rekenings/";
+                client.BaseAddress = new Uri("https://hrsqlapp.tk");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = client.PostAsJsonAsync(loadURL, rekening).Result;
             }
         }
     }

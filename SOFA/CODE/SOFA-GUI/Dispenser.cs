@@ -1,6 +1,7 @@
-﻿using MonoBrick.EV3;
-using System.IO.Ports;
+﻿using MonoBrick;
+using MonoBrick.EV3;
 using System.Threading;
+using System;
 
 namespace Pinautomaat
 {
@@ -185,30 +186,36 @@ namespace Pinautomaat
 
         private static bool connect()
         {
-            string[] ports = SerialPort.GetPortNames();
-            foreach(string port in ports)
+            try
             {
-                Brick<Sensor, Sensor, Sensor, Sensor> brick = new Brick<Sensor, Sensor, Sensor, Sensor>(port.ToLower());
-
-                if(port.Contains("COM"))
+                if(brickEV3 != null)
                 {
-                    try
+                    string str = "";
+                    str = brickEV3.Connection.ToString();
+                    if(str.Contains("USB"))
                     {
-                        brick.Connection.Open();
-                        brick.Beep(20, 100);
-                        brickEV3 = brick;
-                        motor10 = brickEV3.MotorA;
-                        motor20 = brickEV3.MotorB;
-                        motor50 = brickEV3.MotorC;
                         return true;
                     }
-                    catch
+                    else
                     {
-                        // Ga verder...
+                        return false;
                     }
                 }
+                else
+                {
+                    brickEV3 = new Brick<Sensor, Sensor, Sensor, Sensor>("usb");
+                    brickEV3.Connection.Open();
+                    brickEV3.Beep(8, 100);
+                    motor10 = brickEV3.MotorA;
+                    motor20 = brickEV3.MotorB;
+                    motor50 = brickEV3.MotorC;
+                    return true;
+                }
             }
-            return false;
+            catch(Exception)
+            {
+                return false;
+            }
         }
     }
 }

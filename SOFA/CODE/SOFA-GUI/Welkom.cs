@@ -12,17 +12,9 @@ namespace Pinautomaat
 
         private void nextPage()
         {
-            Program.SystemGood = MainBackend.checkAllConnections();
-            if(Program.SystemGood)
-            {
-                Pincode next = new Pincode();
-                Hide();
-                next.Show();
-            }
-            else
-            {
-                MainBackend.restart();
-            }
+            Pincode next = new Pincode();
+            Hide();
+            next.Show();
         }
 
         public void startWelkom()
