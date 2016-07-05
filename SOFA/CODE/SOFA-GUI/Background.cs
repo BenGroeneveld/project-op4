@@ -6,7 +6,7 @@ namespace Pinautomaat
     {
         public Background()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
     }
 }

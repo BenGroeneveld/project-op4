@@ -14,7 +14,7 @@ namespace Pinautomaat
 
         public GeldOpnemen()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
             if(MainBackend.isPrinterConnected())
             {
                 btnPrintBonWel.Enabled = true;

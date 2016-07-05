@@ -9,12 +9,42 @@ namespace Pinautomaat
 
         public AdminCheck()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+        }
+
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                leaveThisPage = true;
+                MainBackend.restart();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
+        private void prevPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin50 next = new Admin50();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void AdminCheck_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             aantal10.Text = MainBackend.AantalBiljetten10.ToString();
             aantal20.Text = MainBackend.AantalBiljetten20.ToString();
             aantal50.Text = MainBackend.AantalBiljetten50.ToString();
@@ -41,21 +71,19 @@ namespace Pinautomaat
 
         private void btnVorige_Click(object sender, EventArgs e)
         {
-            Admin50 next = new Admin50();
-            next.Show();
+            prevPage();
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
-            leaveThisPage = true;
-            MainBackend.restart();
+            nextPage();
         }
 
         private void checkInput()
         {
             while(!leaveThisPage)
             {
-                ArduinoInput.checkKeypad();
+                ArduinoInput.checkKeypad(this);
             }
         }
     }

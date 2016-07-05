@@ -12,7 +12,7 @@ namespace Pinautomaat
 
         public Bedankt(bool bon, int saldo, int bedrag)
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
 
             Bon = bon;
             Saldo = saldo;
@@ -26,6 +26,7 @@ namespace Pinautomaat
 
         private void Bedankt_Load(object sender, EventArgs e)
         {
+            Activate();
             startBedankt();
         }
 
@@ -38,14 +39,14 @@ namespace Pinautomaat
             if(Bon)
             {
                 label1.Text += "\nVergeet uw geld en bon niet";
-                MainBackend.printBon(strBedrag, Program.StrRekeningID, Program.Rfid);
+                MainBackend.printBon(strBedrag, Program.RekeningID, Program.PasID);
             }
             else
             {
                 label1.Text += "\nVergeet uw geld niet";
             }
 
-            MainBackend.doTransactie(Saldo, Program.Rfid);
+            MainBackend.doTransactie(Saldo);
             Dispenser.dispense();
 
             Thread.Sleep(1000);

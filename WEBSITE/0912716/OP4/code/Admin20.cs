@@ -10,15 +10,44 @@ namespace Pinautomaat
 
         public Admin20()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+        }
+
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin50 next = new Admin50();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
+        }
+
+        private void prevPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Admin10 next = new Admin10();
+                next.Show();
+                leaveThisPage = true;
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
             if(isCorrectBedrag(geldToevoegenAantal))
             {
-                Admin50 next = new Admin50();
-                next.Show();
+                nextPage();
             }
             else
             {
@@ -61,7 +90,7 @@ namespace Pinautomaat
         {
             while(!leaveThisPage)
             {
-                ArduinoInput.checkKeypad();
+                ArduinoInput.checkKeypad(this);
             }
         }
 
@@ -104,13 +133,13 @@ namespace Pinautomaat
         private void Admin20_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             checkInput();
         }
 
         private void btnVorige_Click(object sender, EventArgs e)
         {
-            Admin10 next = new Admin10();
-            next.Show();
+            prevPage();
         }
     }
 }

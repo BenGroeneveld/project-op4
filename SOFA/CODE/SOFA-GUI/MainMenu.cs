@@ -8,7 +8,7 @@ namespace Pinautomaat
     {
         public MainMenu()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
             setWeergaveAantalBiljetten();
         }
 

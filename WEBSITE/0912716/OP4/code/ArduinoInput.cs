@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 using System.IO.Ports;
 using System.Windows.Forms;
 
@@ -7,20 +8,16 @@ namespace Pinautomaat
 {
     public static class ArduinoInput
     {
-        public static string port = "";
-        public static SerialPort currentPort;
-        public static string strCardID = "";
-        public static int connectionCorrect = 128;
+        private static string port = "";
+        private static SerialPort currentPort;
+        private static int connectionCorrect = 128;
 
         public static void connect(int baud, string recognizeText, int loggedInValue)
         {
-            while(!isConnected(baud, recognizeText, loggedInValue))
-            {
-                tryConnect(baud, recognizeText, loggedInValue);
-            }
+            tryConnect(baud, recognizeText, loggedInValue);
         }
 
-        public static bool isConnected(int baud, string recognizeText, int loggedInValue)
+        public static bool isConnected()
         {
             if(currentPort == null)
             {
@@ -76,6 +73,10 @@ namespace Pinautomaat
                         connectionCorrect = 127;
                         break;
                     }
+                    else
+                    {
+                        currentPort.Close();
+                    }
                 }
                 catch
                 {
@@ -86,48 +87,51 @@ namespace Pinautomaat
 
         public static string strRFID()
         {
-            while(!strCardID.Contains("ID"))
+            string str = "";
+            
+            while(!str.StartsWith("PasID: ") && isConnected())
             {
-                strCardID = currentPort.ReadLine().ToString().Trim();
+                str = currentPort.ReadLine().Trim();
             }
-
-            if(strCardID.EndsWith("RF"))
+            str = str.Remove(0, 7);
+            if(str.EndsWith("126"))
             {
+                str = "1000";
                 MainBackend.AdminKaart = true;
-                strCardID = strCardID.Remove(5, 2);
             }
             else
             {
                 MainBackend.AdminKaart = false;
             }
-            return strCardID;
+            return str;
         }
 
         public static string strInputText()
         {
             string str = "";
-
-            while(str.Equals("") || str.Contains("*") || str.Contains("#") || str.Contains("ID"))
+            while(str.Equals("") || str.Contains("*") || str.Contains("#") || str.Contains("PasID"))
             {
                 str = currentPort.ReadLine().ToString().Trim();
             }
             return str;
         }
 
-        public static void checkKeypad()
+        public static void checkKeypad(Form f)
         {
-            privateCheckKeypad();
+            privateCheckKeypad(f);
         }
 
-        private static void privateCheckKeypad()
+        private static void privateCheckKeypad(Form f)
         {
-            string str = "";
-            while(str.Equals("") || str.Contains("ID"))
+            if(f.Focused)
             {
-                str = strInputText();
+                string str = "";
+                while(str.Equals("") || str.Contains("PasID"))
+                {
+                    str = strInputText();
+                }
+                SendKeys.SendWait(str.ToLower());
             }
-            SendKeys.SendWait(str.ToLower());
-            //SendKeys.Send(str.ToLower());
         }
     }
 }

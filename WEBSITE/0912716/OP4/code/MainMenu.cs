@@ -8,20 +8,62 @@ namespace Pinautomaat
     {
         public MainMenu()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+            setWeergaveAantalBiljetten();
+        }
 
-            string attribute = "Balans";
-            Program.StrBedrag = MainBackend.strDbQuery(attribute, Program.Rfid);
-
-            label7.Text = MainBackend.AantalBiljetten10.ToString();
-            label8.Text = MainBackend.AantalBiljetten20.ToString();
-            label9.Text = MainBackend.AantalBiljetten50.ToString();
+        private void setWeergaveAantalBiljetten()
+        {
+            if(MainBackend.AantalBiljetten10 < 5 && MainBackend.AantalBiljetten10 > 0)
+            {
+                label7.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten10 == 0)
+            {
+                label7.Text = "Geen";
+            }
+            else
+            {
+                label7.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten20 < 5 && MainBackend.AantalBiljetten20 > 0)
+            {
+                label8.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten20 == 0)
+            {
+                label8.Text = "Geen";
+            }
+            else
+            {
+                label8.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten50 < 5 && MainBackend.AantalBiljetten50 > 0)
+            {
+                label9.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten50 == 0)
+            {
+                label9.Text = "Geen";
+            }
+            else
+            {
+                label9.Text = "OK";
+            }
         }
 
         private void btnSaldo_Click(object sender, EventArgs e)
         {
-            Saldo next = new Saldo();
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Saldo next = new Saldo();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnStoppen_Click(object sender, EventArgs e)
@@ -31,25 +73,41 @@ namespace Pinautomaat
 
         private void btnGeldOpnemen_Click(object sender, EventArgs e)
         {
-            GeldOpnemen next = new GeldOpnemen();
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                GeldOpnemen next = new GeldOpnemen();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void checkButtonPushed()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
-
+        
         private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(bon, saldo, bedrag);
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Bedankt next = new Bedankt(bon, saldo, bedrag);
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnSnelpinnen10_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 10;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -58,7 +116,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -72,7 +130,7 @@ namespace Pinautomaat
         private void btnSnelpinnen20_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 20;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -81,7 +139,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -95,7 +153,7 @@ namespace Pinautomaat
         private void btnSnelpinnen50_Click(object sender, EventArgs e)
         {
             int opnemenBedrag = 100 * 50;
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Convert.ToInt32(Program.Balans);
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
             int bedrag = 0;
 
@@ -104,7 +162,7 @@ namespace Pinautomaat
                 bedrag = opnemenBedrag;
                 if(Dispenser.isGeldBeschikbaar(bedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
+                    MainBackend.doTransactie(nieuwSaldo);
                     bedankt(false, nieuwSaldo, bedrag);
                 }
                 else
@@ -118,10 +176,7 @@ namespace Pinautomaat
         private void MainMenu_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
-        }
-
-        private void MainMenu_Shown(object sender, EventArgs e)
-        {
+            Activate();
             checkButtonPushed();
         }
 

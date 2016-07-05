@@ -7,6 +7,19 @@ namespace Pinautomaat
 {
     public static class MainBackend
     {
+        public static void moveCursor()
+        {
+            System.Drawing.Point coord = new System.Drawing.Point(0, 0);
+            if(Cursor.Position == coord)
+            {
+                Cursor.Position = new System.Drawing.Point(50, 0);
+            }
+            else
+            {
+                Cursor.Position = new System.Drawing.Point(0, 0);
+            }
+        }
+        
         public static string makeHash(string RekeningID, string pincode)
         {
             string input = string.Concat(RekeningID, pincode);

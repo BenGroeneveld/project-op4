@@ -6,16 +6,15 @@ namespace Pinautomaat
     public partial class Pincode : Helper
     {
 
-        public int password = 0;
-        private int correctPassword = 987654321;
-        private string cardID = ArduinoInput.strCardID;
+        private string password = "";
+        private string correctPassword = Program.Hash;
+        private string cardID = Program.RekeningID;
         private bool approval = true;
-        private int poging = 1;
-        private int actief = 0;
 
         public Pincode()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+            MainBackend.moveCursor();
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)
@@ -34,10 +33,10 @@ namespace Pinautomaat
                         approval = false;
                         clearPincode();
                         infoText.Text = "Verkeerd wachtwoord";
-                        if(poging < 3)
+                        if((Program.Poging + 1) < 3)
                         {
-                            infoText.Text += " (" + poging + " / 3)";
-                            poging++;
+                            infoText.Text += " (" + (Program.Poging + 1) + " / 3)";
+                            Program.Poging++;
                             approval = true;
                         }
                         else
@@ -50,13 +49,13 @@ namespace Pinautomaat
                             textBox3.Hide();
                             btnCorrectie.Hide();
                             btnVolgende.Hide();
-                            MainBackend.blokkeerPas(Program.Rfid);
+                            MainBackend.blokkeerPas(Program.PasID);
                         }
                         startPincode();
                     }
                     else
                     {
-                        poging = 0;
+                        Program.Poging = 0;
                         nextPage();
                     }
                 }
@@ -71,8 +70,6 @@ namespace Pinautomaat
         {
             setCardID();
             setCorrectPassword();
-            string strToInt = MainBackend.strDbQuery("Actief", Program.Rfid);
-            actief = Convert.ToInt32(strToInt);
         }
 
         public void setCardID()
@@ -87,8 +84,7 @@ namespace Pinautomaat
 
         private void setCorrectPassword()
         {
-            string strPassword = MainBackend.strDbQuery("Pincode", Program.Rfid);
-            correctPassword = Convert.ToInt32(strPassword);
+            correctPassword = Program.Hash;
         }
 
         private void clearPincode()
@@ -106,39 +102,56 @@ namespace Pinautomaat
 
         private void checkInput()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
 
         private void startPincode()
         {
-            if(actief == 1)
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
             {
-                checkButtonPushed(); ;
+                if(Program.Actief == 1)
+                {
+                    checkButtonPushed();
+                }
+                else if(Program.Actief == 0)
+                {
+                    inputInloggen.Hide();
+                    textBox1.Hide();
+                    textBox2.Hide();
+                    textBox3.Hide();
+                    btnCorrectie.Hide();
+                    btnVolgende.Hide();
+                    infoText.Text = "Uw pas is geblokkeerd.";
+                    checkButtonPushed();
+                }
             }
-            else if(actief == 0)
+            else
             {
-                inputInloggen.Hide();
-                textBox1.Hide();
-                textBox2.Hide();
-                textBox3.Hide();
-                btnCorrectie.Hide();
-                btnVolgende.Hide();
-                infoText.Text = "Uw pas is geblokkeerd.";
-                checkButtonPushed();
+                MainBackend.restart();
             }
         }
 
         private void nextPage()
         {
-            if(!MainBackend.AdminKaart)
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
             {
-                MainMenu next = new MainMenu();
-                next.Show();
+                if(MainBackend.AdminKaart)
+                {
+                    AdminHome next = new AdminHome();
+                    Hide();
+                    next.Show();
+                }
+                else
+                {
+                    MainMenu next = new MainMenu();
+                    next.Show();
+                }
             }
             else
             {
-                AdminHome next = new AdminHome();
-                next.Show();
+                MainBackend.restart();
             }
         }
 
@@ -203,7 +216,7 @@ namespace Pinautomaat
                         string str = e.KeyCode.ToString().Remove(0, 1);
                         textBox3.Text = str;
                         string passwordStr = inputInloggen.Text + textBox1.Text + textBox2.Text + textBox3.Text;
-                        password = Convert.ToInt32(passwordStr);
+                        password = MainBackend.makeHash(Program.RekeningID, passwordStr);
                     }
                 }
                 startPincode();
@@ -217,6 +230,7 @@ namespace Pinautomaat
         private void Pincode_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             setup();
             startPincode();
         }

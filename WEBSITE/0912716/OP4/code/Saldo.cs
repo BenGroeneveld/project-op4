@@ -5,16 +5,13 @@ namespace Pinautomaat
 {
     public partial class Saldo : Helper
     {
-        private static string attribute = "";
         private static string doubleBedrag = "";
 
         public Saldo()
         {
-            InitializeComponent();
-
-            attribute = "Balans";
-            string str = MainBackend.strDbQuery(attribute, Program.Rfid);
-            double i = Convert.ToDouble(str);
+            InitializeComponent(); MainBackend.moveCursor();
+            
+            double i = Convert.ToDouble(Program.Balans);
             double j = i / 100;
             int saldo = 0;
             doubleBedrag = Convert.ToString(j);
@@ -34,7 +31,20 @@ namespace Pinautomaat
                 bedrag.Text = doubleBedrag;
             }
             saldo = Convert.ToInt32(100 * j);
-            Program.StrBedrag = Convert.ToString(saldo);
+        }
+
+        private void nextPage()
+        {
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                GeldOpnemen next = new GeldOpnemen();
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)
@@ -44,20 +54,18 @@ namespace Pinautomaat
 
         private void btnGeldOpnemen_Click(object sender, EventArgs e)
         {
-            var geldOpnemenForm = new GeldOpnemen();
-            geldOpnemenForm.Show();
-            this.Hide();
-            geldOpnemenForm.Closed += (s, args) => this.Close();
+            nextPage();
         }
 
         private void checkButtonPushed()
         {
-            ArduinoInput.checkKeypad();
+            ArduinoInput.checkKeypad(this);
         }
 
         private void Saldo_Load(object sender, EventArgs e)
         {
             MainBackend.closePrevForms();
+            Activate();
             checkButtonPushed();
         }
 

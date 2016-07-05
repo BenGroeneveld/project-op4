@@ -9,7 +9,7 @@ namespace Pinautomaat
 
         public AdminCheck()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
 
         private void nextPage()
@@ -76,6 +76,7 @@ namespace Pinautomaat
 
         private void btnVolgende_Click(object sender, EventArgs e)
         {
+            nextPage();
         }
 
         private void checkInput()

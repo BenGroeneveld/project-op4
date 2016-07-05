@@ -1,6 +1,7 @@
-﻿using MonoBrick.EV3;
-using System.IO.Ports;
+﻿using MonoBrick;
+using MonoBrick.EV3;
 using System.Threading;
+using System;
 
 namespace Pinautomaat
 {
@@ -25,9 +26,7 @@ namespace Pinautomaat
             {
                 try
                 {
-                    geefBiljetten(motor10, 0);
-                    geefBiljetten(motor20, 0);
-                    geefBiljetten(motor50, 0);
+                    geefBiljetten(0, 0, 0);
                     return true;
                 }
                 catch
@@ -45,23 +44,14 @@ namespace Pinautomaat
         {
             try
             {
-                geefBiljetten(motor10, aantal10);
-                geefBiljetten(motor20, aantal20);
-                geefBiljetten(motor50, aantal50);
+                geefBiljetten(aantal10, aantal20, aantal50);
             }
             catch { }
         }
 
         public static bool isGeldBeschikbaar(int bedrag)
         {
-            if(privateIsGeldBeschikbaar(bedrag))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return privateIsGeldBeschikbaar(bedrag);
         }
 
         private static bool privateIsGeldBeschikbaar(int bedrag)
@@ -163,52 +153,77 @@ namespace Pinautomaat
             }
         }
 
-        private static void geefBiljetten(Motor motor, int aantalBiljetten)
+        private static void geefBiljetten(int aantalBiljettenA, int aantalBiljettenB, int aantalBiljettenC)
         {
-            for(int i = 0; i < aantalBiljetten; i++)
-            {
-                motor.Reverse = true;
-                motor.On(20);
-                Thread.Sleep(3000);
-                motor.Off();
-                correctie(motor);
-            }
-        }
+            uint degrees = 700;
+            sbyte speed = -35;
+            sbyte speedReverse = 35;
+            int time = 2000;
+            bool brake = true;
 
-        private static void correctie(Motor motor)
-        {
-            motor.Reverse = false;
-            motor.On(20);
-            Thread.Sleep(1500);
-            motor.Off();
+            for(int i = 0; i < aantalBiljettenA; i++)
+            {
+                motor10.On(speed, degrees, brake);
+                Thread.Sleep(time);
+
+                motor10.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor10.Off();
+
+            for(int i = 0; i < aantalBiljettenB; i++)
+            {
+                motor20.On(speed, degrees, brake);
+                Thread.Sleep(time);
+                
+                motor20.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor20.Off();
+
+            for(int i = 0; i < aantalBiljettenC; i++)
+            {
+                motor50.On(speed, degrees, brake);
+                Thread.Sleep(time);
+                
+                motor50.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor50.Off();
         }
 
         private static bool connect()
         {
-            string[] ports = SerialPort.GetPortNames();
-            foreach(string port in ports)
+            try
             {
-                Brick<Sensor, Sensor, Sensor, Sensor> brick = new Brick<Sensor, Sensor, Sensor, Sensor>(port.ToLower());
-
-                if(port.Contains("COM"))
+                if(brickEV3 != null)
                 {
-                    try
+                    string str = "";
+                    str = brickEV3.Connection.ToString();
+                    if(str.Contains("USB"))
                     {
-                        brick.Connection.Open();
-                        brick.Beep(20, 100);
-                        brickEV3 = brick;
-                        motor10 = brickEV3.MotorA;
-                        motor20 = brickEV3.MotorB;
-                        motor50 = brickEV3.MotorC;
                         return true;
                     }
-                    catch
+                    else
                     {
-                        // Ga verder...
+                        return false;
                     }
                 }
+                else
+                {
+                    brickEV3 = new Brick<Sensor, Sensor, Sensor, Sensor>("usb");
+                    brickEV3.Connection.Open();
+                    brickEV3.Beep(8, 100);
+                    motor10 = brickEV3.MotorA;
+                    motor20 = brickEV3.MotorB;
+                    motor50 = brickEV3.MotorC;
+                    return true;
+                }
             }
-            return false;
+            catch(Exception)
+            {
+                return false;
+            }
         }
     }
 }

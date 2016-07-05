@@ -9,7 +9,7 @@ namespace Pinautomaat
 
         public Saldo()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
             
             double i = Convert.ToDouble(Program.Balans);
             double j = i / 100;

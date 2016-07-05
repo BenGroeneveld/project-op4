@@ -9,7 +9,7 @@ namespace Pinautomaat
 
         public AdminHome()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
         
         private void nextPage()

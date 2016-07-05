@@ -14,17 +14,72 @@ namespace Pinautomaat
 
         public GeldOpnemen()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+            if(MainBackend.isPrinterConnected())
+            {
+                btnPrintBonWel.Enabled = true;
+                btnPrintBonWel.Text = base.Text;
+            }
+            else
+            {
+                btnPrintBonWel.Enabled = false;
+                btnPrintBonWel.Text += "\nBUITEN GEBRUIK";
+            }
+            setWeergaveAantalBiljetten();
+        }
 
-            label7.Text = MainBackend.AantalBiljetten10.ToString();
-            label8.Text = MainBackend.AantalBiljetten20.ToString();
-            label9.Text = MainBackend.AantalBiljetten50.ToString();
+        private void setWeergaveAantalBiljetten()
+        {
+            if(MainBackend.AantalBiljetten10 < 5 && MainBackend.AantalBiljetten10 > 0)
+            {
+                label7.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten10 == 0)
+            {
+                label7.Text = "Geen";
+            }
+            else
+            {
+                label7.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten20 < 5 && MainBackend.AantalBiljetten20 > 0)
+            {
+                label8.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten20 == 0)
+            {
+                label8.Text = "Geen";
+            }
+            else
+            {
+                label8.Text = "OK";
+            }
+            if(MainBackend.AantalBiljetten50 < 5 && MainBackend.AantalBiljetten50 > 0)
+            {
+                label9.Text = "Laag";
+            }
+            else if(MainBackend.AantalBiljetten50 == 0)
+            {
+                label9.Text = "Geen";
+            }
+            else
+            {
+                label9.Text = "OK";
+            }
         }
 
         private void bedankt(bool bon, int saldo, int bedrag)
         {
-            Bedankt next = new Bedankt(bon, saldo, bedrag);
-            next.Show();
+            Program.SystemGood = MainBackend.checkAllConnections();
+            if(Program.SystemGood)
+            {
+                Bedankt next = new Bedankt(bon, saldo, bedrag);
+                next.Show();
+            }
+            else
+            {
+                MainBackend.restart();
+            }
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)
@@ -38,7 +93,7 @@ namespace Pinautomaat
             {
                 printBon = true;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int huidigSaldo = Convert.ToInt32(Program.Balans);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -55,7 +110,7 @@ namespace Pinautomaat
             {
                 printBon = false;
                 int bedrag = 100 * (Convert.ToInt32(geldOpnemenBedrag));
-                int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+                int huidigSaldo = Convert.ToInt32(Program.Balans);
                 int nieuwSaldo = huidigSaldo - bedrag;
 
                 bedankt(printBon, nieuwSaldo, bedrag);
@@ -76,38 +131,7 @@ namespace Pinautomaat
 
         private void checkButtonPushed()
         {
-            string str = "";
-
-            while(!(str.Equals("A") || str.Equals("B") || str.Equals("C") || str.Equals("D")))
-            {
-                str = ArduinoInput.strInputText();
-
-                if(str.Equals("A"))
-                {
-                    button1.PerformClick();
-                }
-                else if(str.Equals("B"))
-                {
-                    btnPrintBonWel.PerformClick();
-                    leaveThisPage = true;
-                }
-                else if(str.Equals("C"))
-                {
-                    btnUitloggen.PerformClick();
-                    leaveThisPage = true;
-                }
-                else if(str.Equals("D"))
-                {
-                    btnPrintBonNiet.PerformClick();
-                    leaveThisPage = true;
-                }
-                else
-                {
-                    geldOpnemenBedrag += str;
-                    strGeldOpnemen = geldOpnemenBedrag + ",00";
-                    bedrag.Text = strGeldOpnemen;
-                }
-            }
+            ArduinoInput.checkKeypad(this);
         }
 
         private bool isCorrectBedrag(string str)
@@ -125,7 +149,7 @@ namespace Pinautomaat
                 resetBedrag();
                 return false;
             }
-            int huidigSaldo = Convert.ToInt32(Program.StrBedrag);
+            int huidigSaldo = Program.Balans;
             int nieuwSaldo = huidigSaldo - opnemenBedrag;
 
             if(opnemenBedrag % (100 * veelvoudBedrag) != 0)
@@ -144,7 +168,6 @@ namespace Pinautomaat
             {
                 if(Dispenser.isGeldBeschikbaar(opnemenBedrag))
                 {
-                    MainBackend.doTransactie(nieuwSaldo, Program.Rfid);
                     return true;
                 }
                 else
@@ -180,6 +203,7 @@ namespace Pinautomaat
         {
             label1.Text = "Hoeveel geld wilt u opnemen?\nTyp een veelvoud van €" + veelvoudBedrag + ",00 in.";
             MainBackend.closePrevForms();
+            Activate();
             doGeldOpnemen();
         }
 
@@ -198,8 +222,11 @@ namespace Pinautomaat
             }
             else if(strKey.Equals(keyB))
             {
-                btnPrintBonWel.PerformClick();
-                leaveThisPage = true;
+                if(MainBackend.isPrinterConnected())
+                {
+                    btnPrintBonWel.PerformClick();
+                    leaveThisPage = true;
+                }
             }
             else if(strKey.Equals(keyC))
             {

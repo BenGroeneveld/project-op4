@@ -13,7 +13,8 @@ namespace Pinautomaat
 
         public Pincode()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
+            MainBackend.moveCursor();
         }
 
         private void btnUitloggen_Click(object sender, EventArgs e)

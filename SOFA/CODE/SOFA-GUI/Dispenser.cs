@@ -26,9 +26,7 @@ namespace Pinautomaat
             {
                 try
                 {
-                    geefBiljetten(motor10, 0);
-                    geefBiljetten(motor20, 0);
-                    geefBiljetten(motor50, 0);
+                    geefBiljetten(0, 0, 0);
                     return true;
                 }
                 catch
@@ -46,23 +44,14 @@ namespace Pinautomaat
         {
             try
             {
-                geefBiljetten(motor10, aantal10);
-                geefBiljetten(motor20, aantal20);
-                geefBiljetten(motor50, aantal50);
+                geefBiljetten(aantal10, aantal20, aantal50);
             }
             catch { }
         }
 
         public static bool isGeldBeschikbaar(int bedrag)
         {
-            if(privateIsGeldBeschikbaar(bedrag))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return privateIsGeldBeschikbaar(bedrag);
         }
 
         private static bool privateIsGeldBeschikbaar(int bedrag)
@@ -164,24 +153,43 @@ namespace Pinautomaat
             }
         }
 
-        private static void geefBiljetten(Motor motor, int aantalBiljetten)
+        private static void geefBiljetten(int aantalBiljettenA, int aantalBiljettenB, int aantalBiljettenC)
         {
-            for(int i = 0; i < aantalBiljetten; i++)
-            {
-                motor.Reverse = true;
-                motor.On(20);
-                Thread.Sleep(3000);
-                motor.Off();
-                correctie(motor);
-            }
-        }
+            uint degrees = 700;
+            sbyte speed = -35;
+            sbyte speedReverse = 35;
+            int time = 2000;
+            bool brake = true;
 
-        private static void correctie(Motor motor)
-        {
-            motor.Reverse = false;
-            motor.On(20);
-            Thread.Sleep(1500);
-            motor.Off();
+            for(int i = 0; i < aantalBiljettenA; i++)
+            {
+                motor10.On(speed, degrees, brake);
+                Thread.Sleep(time);
+
+                motor10.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor10.Off();
+
+            for(int i = 0; i < aantalBiljettenB; i++)
+            {
+                motor20.On(speed, degrees, brake);
+                Thread.Sleep(time);
+                
+                motor20.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor20.Off();
+
+            for(int i = 0; i < aantalBiljettenC; i++)
+            {
+                motor50.On(speed, degrees, brake);
+                Thread.Sleep(time);
+                
+                motor50.On(speedReverse, degrees, brake);
+                Thread.Sleep(time);
+            }
+            motor50.Off();
         }
 
         private static bool connect()

@@ -12,7 +12,7 @@ namespace Pinautomaat
 
         public Bedankt(bool bon, int saldo, int bedrag)
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
 
             Bon = bon;
             Saldo = saldo;

@@ -6,7 +6,7 @@ namespace Pinautomaat
     {
         public Helper()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
 
         protected override CreateParams CreateParams

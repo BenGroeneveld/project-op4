@@ -7,7 +7,7 @@ namespace Pinautomaat
     {
         public Welkom()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
 
         private void nextPage()

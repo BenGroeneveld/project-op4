@@ -7,7 +7,7 @@ namespace Pinautomaat
     {
         public BuitenGebruik()
         {
-            InitializeComponent();
+            InitializeComponent(); MainBackend.moveCursor();
         }
 
         private void BuitenGebruik_Load(object sender, EventArgs e)

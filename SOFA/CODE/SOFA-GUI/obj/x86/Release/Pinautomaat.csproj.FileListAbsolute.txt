@@ -183,7 +183,6 @@ D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Saldo.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.Welkom.resources
 D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csproj.GenerateResource.Cache
-D:\OneDrive - Hogeschool Rotterdam\School\GitHub\project-op4\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.csprojResolveAssemblyReference.cache
 E:\SOFA\CODE\SOFA-GUI\bin\Release\Pinautomaat.exe.config
 E:\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.exe
 E:\SOFA\CODE\SOFA-GUI\obj\x86\Release\Pinautomaat.pdb
