@@ -2557,13 +2557,15 @@ body.is-menu-visible #menu {
         @media screen and (max-width: 638px) {
           .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child, .wrapper.main .inner .content .docButton .veranderContainer button:nth-last-child(1n):first-child ~ button {
             width: 100%; } }
-      .wrapper.main .inner .content .switchable {
-        height: calc((60em / 16) * 9);
-        width: 100%;
-        display: none; }
-      @media screen and (max-width: 1050px) {
-        .wrapper.main .inner .content .switchable {
-          height: calc((100% / 16) * 9); } }
+      .wrapper.main .inner .content #codeContent {
+        height: calc((100% / 16) * 9);
+        display: none;
+        overflow-x: hidden; }
+        .wrapper.main .inner .content #codeContent .switchable {
+          position: relative;
+          overflow: hidden;
+          height: 100%;
+          display: none; }
     .wrapper.main .image {
       border-radius: 100%;
       margin: 0 3em 1.25em 0;

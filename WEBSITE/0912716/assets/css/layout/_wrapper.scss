@@ -206,19 +206,18 @@
                          }
                      }
                  }
-
-                 .switchable
+                 #codeContent
                  {
-                     height: calc((60em / 16) * 9);
-                     width: 100%;
+                     height: calc((100% / 16) * 9);
                      display: none;
-                 }
+                     overflow-x: hidden;
 
-                 @include breakpoint(medium)
-                 {
                      .switchable
                      {
-                         height:  calc((100% / 16) * 9);
+                         position: relative;
+                         overflow: hidden;
+                         height: 100%;
+                         display: none;
                      }
                  }
              }
